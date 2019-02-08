@@ -1,0 +1,26 @@
+/*
+ * Configuration for projects with default layout (src/main/java etc.)
+ */
+
+ext.eclipseProjectLayout = false
+
+sourceSets {
+	main {
+		java.srcDir 'src/main/xtext-gen'
+		xtendOutputDir = 'src/main/xtend-gen'
+	}
+	test {
+		java.srcDir 'src/test/xtext-gen'
+		xtendOutputDir = 'src/test/xtend-gen'
+	}
+}
+
+if (name.contains('example')) {
+	tasks.withType(Javadoc) {
+		enabled = false
+	}
+	javadocJar.enabled = false
+	uploadArchives.enabled = false
+} else {
+	artifacts.archives javadocJar
+}

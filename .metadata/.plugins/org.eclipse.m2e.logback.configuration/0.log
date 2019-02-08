@@ -1,0 +1,14 @@
+2019-02-08 09:31:53,036 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-02-08 09:32:27,945 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2019-02-08 09:32:28,042 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2019-02-08 09:32:28,098 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2019-02-08 09:32:28,149 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2019-02-08 09:33:22,099 [Worker-11: Creating project "spotify_requetor"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: spotify_requetor:spotify_requetor:0.0.1-SNAPSHOT @ D:\GIT\ICE_Spotify_Roquetor\spotify_requetor\pom.xml.
+2019-02-08 09:33:24,524 [Worker-11: Creating project "spotify_requetor"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /spotify_requetor/src/main/java
+2019-02-08 09:33:24,526 [Worker-11: Creating project "spotify_requetor"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /spotify_requetor/src/main/resources
+2019-02-08 09:33:24,527 [Worker-11: Creating project "spotify_requetor"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /spotify_requetor/src/test/java
+2019-02-08 09:33:24,527 [Worker-11: Creating project "spotify_requetor"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /spotify_requetor/src/test/resources
+2019-02-08 09:33:26,757 [Worker-3: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-02-08 09:33:26,775 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-08 09:33:26,778 [Worker-3: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-02-08 09:33:26,789 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\GIT\ICE_Spotify_Roquetor\.metadata\.plugins\org.eclipse.jdt.core
+702700361.index

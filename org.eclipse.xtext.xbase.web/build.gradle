@@ -1,0 +1,22 @@
+apply from: "${rootDir}/gradle/default-project-layout.gradle"
+
+ext.title = 'Xbase Web Integration'
+description = 'Additional services for the web integration of Xbase.'
+
+dependencies {
+	compile project(':org.eclipse.xtext.web')
+	compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:$versions.xtext"
+	testCompile 'junit:junit'
+	testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:$versions.xtext"
+	testCompile project(':org.eclipse.xtext.web.example.entities.ide')
+}
+
+jar.manifest {
+	name 'Xbase Web Integration'
+	vendor 'Eclipse Xtext'
+	instruction 'Import-Package', "org.eclipse.xtext.web.server.*;version=\"${version}\""
+	instruction 'Import-Package', '!org.eclipse.xtext.xbase.web.*'
+	instruction 'Import-Package', '*'
+	instruction 'Export-Package', '!org.eclipse.xtext.xbase.web.test.*'
+	instruction 'Export-Package', "org.eclipse.xtext.xbase.web.*;version=\"${version}\""
+}
