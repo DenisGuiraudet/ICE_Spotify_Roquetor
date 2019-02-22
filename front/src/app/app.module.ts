@@ -8,7 +8,9 @@ import {
   MatAutocompleteModule,
   MatOptionModule,
   MatInputModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule,
+  MatButtonModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -42,6 +44,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
     AppRoutingModule
   ],
   providers: [],
