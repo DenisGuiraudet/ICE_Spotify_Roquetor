@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: m1ice.spotifyRequetor
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: m1ice.spotifyRequetor; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ Spotify_Requetor;bundle-version="0.1.0",
+ org.eclipse.xtext.generator;bundle-version="2.12.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: m1ice,
+ m1ice.validation,
+ m1ice.formatting2,
+ m1ice.parser.antlr,
+ m1ice.parser.antlr.internal,
+ m1ice.scoping,
+ m1ice.generator,
+ m1ice.services,
+ m1ice.serializer
+Import-Package: org.apache.log4j
