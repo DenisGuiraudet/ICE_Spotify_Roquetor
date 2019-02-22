@@ -1,11 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
-export interface User {
-  name: string;
+export interface StateGroup {
+  letter: string;
+  names: string[];
 }
+
+export const _filter = (opt: string[], value: string): string[] => {
+  const filterValue = value.toLowerCase();
+
+  return opt.filter(item => item.toLowerCase().indexOf(filterValue) === 0);
+};
 
 @Component({
   selector: 'app-searchbar',
@@ -14,31 +21,42 @@ export interface User {
 })
 export class SearchbarComponent implements OnInit {
   
-  myControl = new FormControl();
-  options: User[] = [
-    {name: 'Mary'},
-    {name: 'Shelley'},
-    {name: 'Igor'}
-  ];
-  filteredOptions: Observable<User[]>;
+  stateForm: FormGroup = this.fb.group({
+    stateGroup: '',
+  });
+
+  stateGroups: StateGroup[] = [{
+    letter: 'show',
+    names: ['show artist ', 'show album ', 'show track ', 'show playlist ']
+  }, {
+    letter: 'search',
+    names: ['search artist ', 'search album ', 'search track ', 'search playlist ']
+  }];
+
+  stateGroupOptions: Observable<StateGroup[]>;
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
+    this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
       .pipe(
-        startWith<string | User>(''),
-        map(value => typeof value === 'string' ? value : value.name),
-        map(name => name ? this._filter(name) : this.options.slice())
+        startWith(''),
+        map(value => this._filterGroup(value))
       );
   }
 
-  displayFn(user?: User): string | undefined {
-    return user ? user.name : undefined;
+  private _filterGroup(value: string): StateGroup[] {
+    if (value) {
+      return this.stateGroups
+        .map(group => ({letter: group.letter, names: _filter(group.names, value)}))
+        .filter(group => group.names.length > 0);
+    }
+
+    return this.stateGroups;
   }
 
-  private _filter(name: string): User[] {
-    const filterValue = name.toLowerCase();
-
-    return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
+  private search() {
+    console.log(this.stateForm.get('stateGroup').value);
   }
 
 }

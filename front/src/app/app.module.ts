@@ -10,7 +10,10 @@ import {
   MatInputModule,
   MatCardModule,
   MatGridListModule,
-  MatButtonModule
+  MatIconModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatTableModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -45,7 +48,10 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     MatCardModule,
     MatGridListModule,
+    MatIconModule,
     MatButtonModule,
+    MatDividerModule,
+    MatTableModule,
     AppRoutingModule
   ],
   providers: [],
