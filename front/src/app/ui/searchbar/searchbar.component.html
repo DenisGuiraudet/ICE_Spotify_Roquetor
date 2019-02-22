@@ -1,11 +1,17 @@
 
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input type="text" placeholder="Assignee" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option.name}}
-      </mat-option>
+<form [formGroup]="stateForm">
+  <mat-form-field appearance="fill">
+    <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+      <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+          <mat-option *ngFor="let name of group.names" [value]="name">
+            {{name}}
+          </mat-option>
+      </mat-optgroup>
     </mat-autocomplete>
+    <button mat-button matSuffix (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
   </mat-form-field>
 </form>
+
