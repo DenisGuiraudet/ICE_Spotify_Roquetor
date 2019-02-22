@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Spotify_Requetor/src-gen" creationIcons="false"
+    editDirectory="/Spotify_Requetor.edit/src-gen" editorDirectory="/Spotify_Requetor.editor/src-gen"
+    modelPluginID="Spotify_Requetor" modelName="Spotify_Requetor" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>spotify_Requetor.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Spotify_Requetor" disposableProviderFactory="true" ecorePackage="spotify_Requetor.ecore#/">
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Command"/>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Search">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Search/type"/>
+      <genOperations ecoreOperation="spotify_Requetor.ecore#//Search/search">
+        <genParameters ecoreParameter="spotify_Requetor.ecore#//Search/search/target"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Show">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Show/type"/>
+      <genOperations ecoreOperation="spotify_Requetor.ecore#//Show/show">
+        <genParameters ecoreParameter="spotify_Requetor.ecore#//Show/show/target"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//CommandManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//CommandManager/commandmanager"/>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Type/target"/>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Artist">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Artist/album"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Artist/track"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Artist/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Album">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Album/track"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Album/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Track">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spotify_Requetor.ecore#//Playlist">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Playlist/track"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Playlist/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

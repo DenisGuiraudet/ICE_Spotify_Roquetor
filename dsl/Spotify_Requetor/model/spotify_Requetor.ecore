@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spotify_Requetor" nsURI="http://www.example.org/spotify_Requetor"
+    nsPrefix="spotify_Requetor">
+  <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Search" eSuperTypes="#//Command">
+    <eOperations name="search">
+      <eParameters name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Show" eSuperTypes="#//Command">
+    <eOperations name="show">
+      <eParameters name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommandManager">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commandmanager" eType="#//Command"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artist" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="album" upperBound="-1"
+        eType="#//Album"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="track" upperBound="-1"
+        eType="#//Track"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Album" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="track" lowerBound="1" upperBound="-1"
+        eType="#//Track" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Track" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Playlist" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="track" upperBound="-1"
+        eType="#//Track"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
