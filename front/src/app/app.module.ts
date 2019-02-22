@@ -11,7 +11,8 @@ import {
   MatCardModule,
   MatIconModule,
   MatButtonModule,
-  MatDividerModule
+  MatDividerModule,
+  MatTableModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -48,6 +49,7 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
+    MatTableModule,
     AppRoutingModule
   ],
   providers: [],

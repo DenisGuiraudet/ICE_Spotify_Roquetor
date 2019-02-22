@@ -27,10 +27,10 @@ export class SearchbarComponent implements OnInit {
 
   stateGroups: StateGroup[] = [{
     letter: 'show',
-    names: ['show artist ', 'show album ', 'show track ', 'show track ']
+    names: ['show artist ', 'show album ', 'show track ', 'show playlist ']
   }, {
     letter: 'search',
-    names: ['search artist ', 'search album ', 'search track ', 'search track ']
+    names: ['search artist ', 'search album ', 'search track ', 'search playlist ']
   }];
 
   stateGroupOptions: Observable<StateGroup[]>;
