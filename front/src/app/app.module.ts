@@ -25,6 +25,10 @@ import { AlbumComponent } from './album/album.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { SearchbarComponent } from './ui/searchbar/searchbar.component';
 import { HomeComponent } from './home/home.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { PlaylistsComponent } from './playlists/playlists.component';
+import { TracksComponent } from './tracks/tracks.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { HomeComponent } from './home/home.component';
     AlbumComponent,
     PlaylistComponent,
     SearchbarComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumsComponent,
+    ArtistsComponent,
+    PlaylistsComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
