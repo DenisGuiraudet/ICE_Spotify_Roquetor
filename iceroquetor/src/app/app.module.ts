@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtistComponent } from './artist/artist.component';
+import { EmployeeModule } from './employee/employee.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { ArtistComponent } from './artist/artist.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EmployeeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtistComponent } from './artist/artist.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 
 const routes: Routes = [
   { path: '',
@@ -10,7 +11,9 @@ const routes: Routes = [
   {
     path: 'artist',
     component: ArtistComponent
-  }
+  },
+  {path: 'api/employees', component: EmployeeListComponent},
+
 ];
 
 @NgModule({
