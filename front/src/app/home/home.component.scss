@@ -1,0 +1,21 @@
+
+.mat-grid-list {
+    margin-top: 1.34375em;
+}
+
+.mat-button {
+    width: 100%;
+    height: 100%;
+    background: rbga(0, 0, 0, 0.7);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
