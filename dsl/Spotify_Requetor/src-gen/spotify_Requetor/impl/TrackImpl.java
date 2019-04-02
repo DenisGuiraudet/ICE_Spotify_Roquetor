@@ -22,7 +22,7 @@ import spotify_Requetor.Track;
  *
  * @generated
  */
-public class TrackImpl extends TypeImpl implements Track {
+public class TrackImpl extends RequestImpl implements Track {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

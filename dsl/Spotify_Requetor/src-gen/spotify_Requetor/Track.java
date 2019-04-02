@@ -18,7 +18,7 @@ package spotify_Requetor;
  * @model
  * @generated
  */
-public interface Track extends Type {
+public interface Track extends Request {
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

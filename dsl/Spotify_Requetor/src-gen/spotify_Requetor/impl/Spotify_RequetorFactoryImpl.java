@@ -56,10 +56,6 @@ public class Spotify_RequetorFactoryImpl extends EFactoryImpl implements Spotify
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Spotify_RequetorPackage.SEARCH:
-			return createSearch();
-		case Spotify_RequetorPackage.SHOW:
-			return createShow();
 		case Spotify_RequetorPackage.COMMAND_MANAGER:
 			return createCommandManager();
 		case Spotify_RequetorPackage.ARTIST:
@@ -73,26 +69,6 @@ public class Spotify_RequetorFactoryImpl extends EFactoryImpl implements Spotify
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Search createSearch() {
-		SearchImpl search = new SearchImpl();
-		return search;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Show createShow() {
-		ShowImpl show = new ShowImpl();
-		return show;
 	}
 
 	/**

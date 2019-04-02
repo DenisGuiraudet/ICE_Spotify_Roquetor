@@ -22,24 +22,6 @@ public interface Spotify_RequetorFactory extends EFactory {
 	Spotify_RequetorFactory eINSTANCE = spotify_Requetor.impl.Spotify_RequetorFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Search</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Search</em>'.
-	 * @generated
-	 */
-	Search createSearch();
-
-	/**
-	 * Returns a new object of class '<em>Show</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Show</em>'.
-	 * @generated
-	 */
-	Show createShow();
-
-	/**
 	 * Returns a new object of class '<em>Command Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

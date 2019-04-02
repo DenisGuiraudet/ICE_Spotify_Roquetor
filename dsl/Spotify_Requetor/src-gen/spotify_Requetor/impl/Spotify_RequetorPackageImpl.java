@@ -12,15 +12,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import spotify_Requetor.Album;
 import spotify_Requetor.Artist;
-import spotify_Requetor.Command;
 import spotify_Requetor.CommandManager;
 import spotify_Requetor.Playlist;
-import spotify_Requetor.Search;
-import spotify_Requetor.Show;
+import spotify_Requetor.Request;
 import spotify_Requetor.Spotify_RequetorFactory;
 import spotify_Requetor.Spotify_RequetorPackage;
 import spotify_Requetor.Track;
-import spotify_Requetor.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,35 +31,7 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass commandEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass searchEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass showEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass commandManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass typeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,6 +60,13 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * @generated
 	 */
 	private EClass playlistEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requestEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -160,69 +136,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCommand() {
-		return commandEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSearch() {
-		return searchEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSearch_Type() {
-		return (EReference) searchEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getSearch__Search__String() {
-		return searchEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getShow() {
-		return showEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getShow_Type() {
-		return (EReference) showEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getShow__Show__String() {
-		return showEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCommandManager() {
 		return commandManagerEClass;
 	}
@@ -232,26 +145,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCommandManager_Commandmanager() {
+	public EReference getCommandManager_Request() {
 		return (EReference) commandManagerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getType() {
-		return typeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getType_Target() {
-		return (EAttribute) typeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -268,26 +163,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArtist_Album() {
-		return (EReference) artistEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArtist_Track() {
-		return (EReference) artistEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getArtist_Name() {
-		return (EAttribute) artistEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) artistEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -304,17 +181,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAlbum_Track() {
-		return (EReference) albumEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAlbum_Name() {
-		return (EAttribute) albumEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) albumEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -349,8 +217,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPlaylist_Track() {
-		return (EReference) playlistEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPlaylist_Name() {
+		return (EAttribute) playlistEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -358,8 +226,26 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlaylist_Name() {
-		return (EAttribute) playlistEClass.getEStructuralFeatures().get(1);
+	public EClass getRequest() {
+		return requestEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRequest__Search__String() {
+		return requestEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRequest__Show() {
+		return requestEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -391,37 +277,24 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		isCreated = true;
 
 		// Create classes and their features
-		commandEClass = createEClass(COMMAND);
-
-		searchEClass = createEClass(SEARCH);
-		createEReference(searchEClass, SEARCH__TYPE);
-		createEOperation(searchEClass, SEARCH___SEARCH__STRING);
-
-		showEClass = createEClass(SHOW);
-		createEReference(showEClass, SHOW__TYPE);
-		createEOperation(showEClass, SHOW___SHOW__STRING);
-
 		commandManagerEClass = createEClass(COMMAND_MANAGER);
-		createEReference(commandManagerEClass, COMMAND_MANAGER__COMMANDMANAGER);
-
-		typeEClass = createEClass(TYPE);
-		createEAttribute(typeEClass, TYPE__TARGET);
+		createEReference(commandManagerEClass, COMMAND_MANAGER__REQUEST);
 
 		artistEClass = createEClass(ARTIST);
-		createEReference(artistEClass, ARTIST__ALBUM);
-		createEReference(artistEClass, ARTIST__TRACK);
 		createEAttribute(artistEClass, ARTIST__NAME);
 
 		albumEClass = createEClass(ALBUM);
-		createEReference(albumEClass, ALBUM__TRACK);
 		createEAttribute(albumEClass, ALBUM__NAME);
 
 		trackEClass = createEClass(TRACK);
 		createEAttribute(trackEClass, TRACK__NAME);
 
 		playlistEClass = createEClass(PLAYLIST);
-		createEReference(playlistEClass, PLAYLIST__TRACK);
 		createEAttribute(playlistEClass, PLAYLIST__NAME);
+
+		requestEClass = createEClass(REQUEST);
+		createEOperation(requestEClass, REQUEST___SEARCH__STRING);
+		createEOperation(requestEClass, REQUEST___SHOW);
 	}
 
 	/**
@@ -453,56 +326,23 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		searchEClass.getESuperTypes().add(this.getCommand());
-		showEClass.getESuperTypes().add(this.getCommand());
-		artistEClass.getESuperTypes().add(this.getType());
-		albumEClass.getESuperTypes().add(this.getType());
-		trackEClass.getESuperTypes().add(this.getType());
-		playlistEClass.getESuperTypes().add(this.getType());
+		artistEClass.getESuperTypes().add(this.getRequest());
+		albumEClass.getESuperTypes().add(this.getRequest());
+		trackEClass.getESuperTypes().add(this.getRequest());
+		playlistEClass.getESuperTypes().add(this.getRequest());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(commandEClass, Command.class, "Command", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(searchEClass, Search.class, "Search", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSearch_Type(), this.getType(), null, "type", null, 1, 1, Search.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		EOperation op = initEOperation(getSearch__Search__String(), null, "search", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(showEClass, Show.class, "Show", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getShow_Type(), this.getType(), null, "type", null, 1, 1, Show.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		op = initEOperation(getShow__Show__String(), null, "show", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(commandManagerEClass, CommandManager.class, "CommandManager", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommandManager_Commandmanager(), this.getCommand(), null, "commandmanager", null, 0, 1,
+		initEReference(getCommandManager_Request(), this.getRequest(), null, "request", null, 0, -1,
 				CommandManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getType_Target(), ecorePackage.getEString(), "target", null, 0, 1, Type.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(artistEClass, Artist.class, "Artist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArtist_Album(), this.getAlbum(), null, "album", null, 0, -1, Artist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getArtist_Track(), this.getTrack(), null, "track", null, 0, -1, Artist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getArtist_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artist.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(albumEClass, Album.class, "Album", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlbum_Track(), this.getTrack(), null, "track", null, 1, -1, Album.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getAlbum_Name(), ecorePackage.getEString(), "name", null, 0, 1, Album.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -512,11 +352,15 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 
 		initEClass(playlistEClass, Playlist.class, "Playlist", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPlaylist_Track(), this.getTrack(), null, "track", null, 0, -1, Playlist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getPlaylist_Name(), ecorePackage.getEString(), "name", null, 0, 1, Playlist.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requestEClass, Request.class, "Request", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getRequest__Search__String(), null, "search", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getRequest__Show(), null, "show", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,6 +2,7 @@
  */
 package spotify_Requetor;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link spotify_Requetor.CommandManager#getCommandmanager <em>Commandmanager</em>}</li>
+ *   <li>{@link spotify_Requetor.CommandManager#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @see spotify_Requetor.Spotify_RequetorPackage#getCommandManager()
@@ -22,29 +23,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CommandManager extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Commandmanager</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Request</b></em>' containment reference list.
+	 * The list contents are of type {@link spotify_Requetor.Request}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Commandmanager</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Request</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Commandmanager</em>' containment reference.
-	 * @see #setCommandmanager(Command)
-	 * @see spotify_Requetor.Spotify_RequetorPackage#getCommandManager_Commandmanager()
+	 * @return the value of the '<em>Request</em>' containment reference list.
+	 * @see spotify_Requetor.Spotify_RequetorPackage#getCommandManager_Request()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Command getCommandmanager();
-
-	/**
-	 * Sets the value of the '{@link spotify_Requetor.CommandManager#getCommandmanager <em>Commandmanager</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Commandmanager</em>' containment reference.
-	 * @see #getCommandmanager()
-	 * @generated
-	 */
-	void setCommandmanager(Command value);
+	EList<Request> getRequest();
 
 } // CommandManager

@@ -2,17 +2,18 @@
  */
 package spotify_Requetor.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import spotify_Requetor.Command;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import spotify_Requetor.CommandManager;
+import spotify_Requetor.Request;
 import spotify_Requetor.Spotify_RequetorPackage;
 
 /**
@@ -23,21 +24,21 @@ import spotify_Requetor.Spotify_RequetorPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link spotify_Requetor.impl.CommandManagerImpl#getCommandmanager <em>Commandmanager</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.CommandManagerImpl#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CommandManagerImpl extends MinimalEObjectImpl.Container implements CommandManager {
 	/**
-	 * The cached value of the '{@link #getCommandmanager() <em>Commandmanager</em>}' containment reference.
+	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCommandmanager()
+	 * @see #getRequest()
 	 * @generated
 	 * @ordered
 	 */
-	protected Command commandmanager;
+	protected EList<Request> request;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,49 +64,12 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Command getCommandmanager() {
-		return commandmanager;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCommandmanager(Command newCommandmanager, NotificationChain msgs) {
-		Command oldCommandmanager = commandmanager;
-		commandmanager = newCommandmanager;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER, oldCommandmanager, newCommandmanager);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Request> getRequest() {
+		if (request == null) {
+			request = new EObjectContainmentEList<Request>(Request.class, this,
+					Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCommandmanager(Command newCommandmanager) {
-		if (newCommandmanager != commandmanager) {
-			NotificationChain msgs = null;
-			if (commandmanager != null)
-				msgs = ((InternalEObject) commandmanager).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER, null, msgs);
-			if (newCommandmanager != null)
-				msgs = ((InternalEObject) newCommandmanager).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER, null, msgs);
-			msgs = basicSetCommandmanager(newCommandmanager, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER, newCommandmanager, newCommandmanager));
+		return request;
 	}
 
 	/**
@@ -116,8 +80,8 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER:
-			return basicSetCommandmanager(null, msgs);
+		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
+			return ((InternalEList<?>) getRequest()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,8 +94,8 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER:
-			return getCommandmanager();
+		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
+			return getRequest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -141,11 +105,13 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER:
-			setCommandmanager((Command) newValue);
+		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
+			getRequest().clear();
+			getRequest().addAll((Collection<? extends Request>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -159,8 +125,8 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER:
-			setCommandmanager((Command) null);
+		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
+			getRequest().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -174,8 +140,8 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.COMMAND_MANAGER__COMMANDMANAGER:
-			return commandmanager != null;
+		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
+			return request != null && !request.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

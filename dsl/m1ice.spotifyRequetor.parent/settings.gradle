@@ -1,4 +1,0 @@
-include 'm1ice.spotifyRequetor'
-include 'm1ice.spotifyRequetor.ide'
-include 'm1ice.spotifyRequetor.web'
-include 'm1ice.spotifyRequetor.tests'

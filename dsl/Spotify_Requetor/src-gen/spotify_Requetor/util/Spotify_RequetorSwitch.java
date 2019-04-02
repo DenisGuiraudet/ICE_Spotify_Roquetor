@@ -66,41 +66,9 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case Spotify_RequetorPackage.COMMAND: {
-			Command command = (Command) theEObject;
-			T result = caseCommand(command);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Spotify_RequetorPackage.SEARCH: {
-			Search search = (Search) theEObject;
-			T result = caseSearch(search);
-			if (result == null)
-				result = caseCommand(search);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Spotify_RequetorPackage.SHOW: {
-			Show show = (Show) theEObject;
-			T result = caseShow(show);
-			if (result == null)
-				result = caseCommand(show);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Spotify_RequetorPackage.COMMAND_MANAGER: {
 			CommandManager commandManager = (CommandManager) theEObject;
 			T result = caseCommandManager(commandManager);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Spotify_RequetorPackage.TYPE: {
-			Type type = (Type) theEObject;
-			T result = caseType(type);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -109,7 +77,7 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 			Artist artist = (Artist) theEObject;
 			T result = caseArtist(artist);
 			if (result == null)
-				result = caseType(artist);
+				result = caseRequest(artist);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -118,7 +86,7 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 			Album album = (Album) theEObject;
 			T result = caseAlbum(album);
 			if (result == null)
-				result = caseType(album);
+				result = caseRequest(album);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -127,7 +95,7 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 			Track track = (Track) theEObject;
 			T result = caseTrack(track);
 			if (result == null)
-				result = caseType(track);
+				result = caseRequest(track);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -136,7 +104,14 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 			Playlist playlist = (Playlist) theEObject;
 			T result = casePlaylist(playlist);
 			if (result == null)
-				result = caseType(playlist);
+				result = caseRequest(playlist);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Spotify_RequetorPackage.REQUEST: {
+			Request request = (Request) theEObject;
+			T result = caseRequest(request);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -144,51 +119,6 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Command</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Command</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommand(Command object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Search</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Search</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSearch(Search object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Show</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Show</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseShow(Show object) {
-		return null;
 	}
 
 	/**
@@ -203,21 +133,6 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommandManager(CommandManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseType(Type object) {
 		return null;
 	}
 
@@ -278,6 +193,21 @@ public class Spotify_RequetorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePlaylist(Playlist object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Request</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Request</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequest(Request object) {
 		return null;
 	}
 
