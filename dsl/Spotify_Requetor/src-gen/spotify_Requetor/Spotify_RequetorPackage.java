@@ -77,13 +77,22 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int COMMAND_MANAGER__REQUEST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMAND_MANAGER__TOKEN = 1;
+
+	/**
 	 * The number of structural features of the '<em>Command Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_MANAGER_FEATURE_COUNT = 1;
+	int COMMAND_MANAGER_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Command Manager</em>' class.
@@ -382,6 +391,17 @@ public interface Spotify_RequetorPackage extends EPackage {
 	EReference getCommandManager_Request();
 
 	/**
+	 * Returns the meta object for the attribute '{@link spotify_Requetor.CommandManager#getToken <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token</em>'.
+	 * @see spotify_Requetor.CommandManager#getToken()
+	 * @see #getCommandManager()
+	 * @generated
+	 */
+	EAttribute getCommandManager_Token();
+
+	/**
 	 * Returns the meta object for class '{@link spotify_Requetor.Artist <em>Artist</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -535,6 +555,14 @@ public interface Spotify_RequetorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMAND_MANAGER__REQUEST = eINSTANCE.getCommandManager_Request();
+
+		/**
+		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMAND_MANAGER__TOKEN = eINSTANCE.getCommandManager_Token();
 
 		/**
 		 * The meta object literal for the '{@link spotify_Requetor.impl.ArtistImpl <em>Artist</em>}' class.

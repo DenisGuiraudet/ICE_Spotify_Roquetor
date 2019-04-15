@@ -154,6 +154,15 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCommandManager_Token() {
+		return (EAttribute) commandManagerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArtist() {
 		return artistEClass;
 	}
@@ -279,6 +288,7 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		// Create classes and their features
 		commandManagerEClass = createEClass(COMMAND_MANAGER);
 		createEReference(commandManagerEClass, COMMAND_MANAGER__REQUEST);
+		createEAttribute(commandManagerEClass, COMMAND_MANAGER__TOKEN);
 
 		artistEClass = createEClass(ARTIST);
 		createEAttribute(artistEClass, ARTIST__NAME);
@@ -337,6 +347,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		initEReference(getCommandManager_Request(), this.getRequest(), null, "request", null, 0, -1,
 				CommandManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommandManager_Token(), ecorePackage.getEString(), "token", null, 0, 1, CommandManager.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artistEClass, Artist.class, "Artist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtist_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artist.class, !IS_TRANSIENT,

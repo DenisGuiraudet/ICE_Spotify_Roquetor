@@ -3,11 +3,13 @@
 package spotify_Requetor.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -25,6 +27,7 @@ import spotify_Requetor.Spotify_RequetorPackage;
  * </p>
  * <ul>
  *   <li>{@link spotify_Requetor.impl.CommandManagerImpl#getRequest <em>Request</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.CommandManagerImpl#getToken <em>Token</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +42,25 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Request> request;
+
+	/**
+	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOKEN_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getToken() <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected String token = TOKEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,6 +99,28 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToken(String newToken) {
+		String oldToken = token;
+		token = newToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.COMMAND_MANAGER__TOKEN,
+					oldToken, token));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -96,6 +140,8 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
 			return getRequest();
+		case Spotify_RequetorPackage.COMMAND_MANAGER__TOKEN:
+			return getToken();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +159,9 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 			getRequest().clear();
 			getRequest().addAll((Collection<? extends Request>) newValue);
 			return;
+		case Spotify_RequetorPackage.COMMAND_MANAGER__TOKEN:
+			setToken((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,6 +177,9 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
 			getRequest().clear();
 			return;
+		case Spotify_RequetorPackage.COMMAND_MANAGER__TOKEN:
+			setToken(TOKEN_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,8 +194,27 @@ public class CommandManagerImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 		case Spotify_RequetorPackage.COMMAND_MANAGER__REQUEST:
 			return request != null && !request.isEmpty();
+		case Spotify_RequetorPackage.COMMAND_MANAGER__TOKEN:
+			return TOKEN_EDEFAULT == null ? token != null : !TOKEN_EDEFAULT.equals(token);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (token: ");
+		result.append(token);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CommandManagerImpl

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link spotify_Requetor.CommandManager#getRequest <em>Request</em>}</li>
+ *   <li>{@link spotify_Requetor.CommandManager#getToken <em>Token</em>}</li>
  * </ul>
  *
  * @see spotify_Requetor.Spotify_RequetorPackage#getCommandManager()
@@ -37,5 +38,31 @@ public interface CommandManager extends EObject {
 	 * @generated
 	 */
 	EList<Request> getRequest();
+
+	/**
+	 * Returns the value of the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Token</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Token</em>' attribute.
+	 * @see #setToken(String)
+	 * @see spotify_Requetor.Spotify_RequetorPackage#getCommandManager_Token()
+	 * @model
+	 * @generated
+	 */
+	String getToken();
+
+	/**
+	 * Sets the value of the '{@link spotify_Requetor.CommandManager#getToken <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Token</em>' attribute.
+	 * @see #getToken()
+	 * @generated
+	 */
+	void setToken(String value);
 
 } // CommandManager
