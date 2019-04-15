@@ -6,6 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist.component.scss']
 })
 export class ArtistComponent implements OnInit {
+  
+  data = {
+    followers: 0,
+    genres: [
+      'genres'
+    ],
+    id: 'id',
+    images: [
+      {
+        url: 'url'
+      }
+    ],
+    name: 'name',
+    popularity: 'popularity'
+  }
 
   constructor() { }
 
