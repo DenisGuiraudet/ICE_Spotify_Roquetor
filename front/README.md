@@ -39,22 +39,22 @@ ALBUM LIST:
     {
       artists: [
         {
-          id: '',
-          name: ''
+          id: 'id',
+          name: 'name'
         }
       ],
-      id: '',
+      id: 'id',
       images: [
         {
-          url: ''
+          url: 'url'
         }
       ],
-      name: '',
+      name: 'name',
       popularity: 0,
-      release_date: '',
-      release_date_precision: '',
+      release_date: 'release_date',
+      release_date_precision: 'release_date_precision',
       tracks: {
-        total: ''
+        total: 'total'
       }
     }
   ]
@@ -66,26 +66,26 @@ ALBUM:
 {
   artists: [
     {
-      id: '',
-      name: ''
+      id: 'id',
+      name: 'name'
     }
   ],
-  id: '',
+  id: 'id',
   images: [
     {
-      url: ''
+      url: 'url'
     }
   ],
-  name: '',
+  name: 'name',
   popularity: 0,
-  release_date: '',
-  release_date_precision: '',
+  release_date: 'release_date',
+  release_date_precision: 'release_date_precision',
   tracks: {
     items: [
     	{
       	duration_ms: 0,
-        id: '',
-        name: '',
+        id: 'id',
+        name: 'name',
         track_number: 0
       }
     ]
@@ -103,16 +103,16 @@ ARTIST LIST:
     {
       followers: 0,
       genres: [
-        ''
+        'genres'
       ],
-      id: '',
+      id: 'id',
       images: [
         {
-          url: ''
+          url: 'url'
         }
       ],
-      name: '',
-      popularity: ''
+      name: 'name',
+      popularity: 'popularity'
     }
   ]
 }
@@ -123,16 +123,16 @@ ARTIST:
 {
   followers: 0,
   genres: [
-    ''
+    'genres'
   ],
-  id: '',
+  id: 'id',
   images: [
     {
-      url: ''
+      url: 'url'
     }
   ],
-  name: '',
-  popularity: ''
+  name: 'name',
+  popularity: 'popularity'
 }
 
 // https://developer.spotify.com/documentation/web-api/reference/artists/get-artists-albums/
@@ -141,19 +141,19 @@ ARTIST:
   	{
       artists: [
         {
-          id: '',
-          name: ''
+          id: 'id',
+          name: 'name'
         }
       ],
-      id: '',
+      id: 'id',
       images: [
         {
-          url: ''
+          url: 'url'
         }
       ],
-      name: '',
-      release_date: '',
-      release_date_precision: ''
+      name: 'name',
+      release_date: 'release_date',
+      release_date_precision: 'release_date_precision'
     }
   ]
 }
@@ -168,17 +168,17 @@ TRACK LIST:
 	tracks: [
     {
       album: {
-        id: '',
+        id: 'id',
         images: [
           {
-            url: ''
+            url: 'url'
           }
         ],
-        name: ''
+        name: 'name'
       },
       duration_ms: 0,
-      id: '',
-      name: '',
+      id: 'id',
+      name: 'name',
       popularity: 0
     }
   ]
@@ -191,23 +191,23 @@ TRACK:
   album: {
     artists: [
       {
-        id: '',
-        name: ''
+        id: 'id',
+        name: 'name'
       }
     ],
-    id: '',
+    id: 'id',
     images: [
       {
-        url: ''
+        url: 'url'
       }
     ],
-    name: '',
-    release_date: '',
-    release_date_precision: ''
+    name: 'name',
+    release_date: 'release_date',
+    release_date_precision: 'release_date_precision'
   },
   duration_ms: 0,
-  id: '',
-  name: '',
+  id: 'id',
+  name: 'name',
   popularity: 0
 }
 
@@ -230,19 +230,19 @@ TRACK:
 PLAYLIST LIST:
 
 // https://developer.spotify.com/documentation/web-api/reference/playlists/get-playlist/
-for each
+// { playlists: [ for each ] }
 {
-    description: '',
+    description: 'description',
     followers: {
         total: 0
     },
-    id: '',
+    id: 'id',
     images: [
         {
-            url: ''
+            url: 'url'
         }
     ],
-    name: '',
+    name: 'name',
     total: 0
 }
 
@@ -250,37 +250,39 @@ PLAYLIST:
 
 // https://developer.spotify.com/documentation/web-api/reference/playlists/get-playlist/
 {
-    description: '',
+    description: 'description',
     followers: {
         total: 0
     },
-    id: '',
+    id: 'id',
     images: [
         {
-            url: ''
+            url: 'url'
         }
     ],
-    name: '',
+    name: 'name',
     tracks: {
         items: [
             {
                 track: {
-                    id: '',
-                    images: [
-                        {
-                            url: ''
-                        }
-                    ],
-                    name: '',
+                    album: {
+                      id: 'id',
+                      images: [
+                          {
+                              url: 'url'
+                          }
+                      ],
+                      name: 'name'
+                    },
                     artists: [
                         {
-                            id: '',
-                            name: ''
+                            id: 'id',
+                            name: 'name'
                         }
                     ],
                     duration_ms: 0,
-                    id: '',
-                    name: '',
+                    id: 'id',
+                    name: 'name',
                     popularity: 0
                 }
             }

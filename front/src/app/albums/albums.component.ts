@@ -31,7 +31,7 @@ export class AlbumsComponent implements OnInit {
         }
       }
     ]
-  };
+  }
 
   constructor() { }
 
