@@ -2,3 +2,29 @@
 <app-searchbar></app-searchbar>
 
 <mat-divider></mat-divider>
+
+<table>
+
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Popularity</th>
+        <th>Realease Date</th>
+    </tr>
+
+    <tr>
+        <td>
+            {{ data.images[0].url }}
+        </td>
+        <td>
+            {{ data.name }}
+        </td>
+        <td>
+            {{ data.popularity }}
+        </td>
+        <td>
+            {{ data.release_date }} {{ data.release_date_precision }}
+        </td>
+    </tr>
+  
+  </table>

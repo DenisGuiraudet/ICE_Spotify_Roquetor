@@ -5,17 +5,30 @@
 
 <table>
 
-  <tr>
-    <th>Image</th>
-    <th>Image</th>
-  </tr>
-
-  <tr *ngFor="let album of data.albums">
-    <td>
-      <ng-container *ngIf="data.albums.length > 0">
-        {{album.images[0].url}}
-      </ng-container>
-    </td>
-  </tr>
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Popularity</th>
+        <th>Nb tracks</th>
+        <th>Realease Date</th>
+    </tr>
+  
+    <tr *ngFor="let album of data.albums">
+        <td>
+            {{ album.images[0].url }}
+        </td>
+        <td>
+            {{ album.name }}
+        </td>
+        <td>
+            {{ album.popularity }}
+        </td>
+        <td>
+            {{ album.tracks.total }}
+        </td>
+        <td>
+            {{ album.release_date }} {{ album.release_date_precision }}
+        </td>
+    </tr>
 
 </table>
