@@ -4,24 +4,40 @@
 <mat-divider></mat-divider>
 
 <mat-grid-list cols="2" rowHeight="2:1" mg-top="2">
-    <mat-grid-tile>
-      <button mat-button routerLink="/artist" [style.backgroundImage]="'url(https://www.forbes.fr/wp-content/uploads/2017/08/0731_lb-dj-marshmello_1200x630-740x370.jpg)'">
-        <h1>Artiste</h1>
+    <mat-grid-tile [style.backgroundImage]="'url(https://www.forbes.fr/wp-content/uploads/2017/08/0731_lb-dj-marshmello_1200x630-740x370.jpg)'">
+      <button mat-button routerLink="/artist">
+        <mat-icon matSuffix>image</mat-icon>
       </button>
+      <button mat-button routerLink="/artists">
+        <mat-icon matSuffix>view_list</mat-icon>
+      </button>
+      <h1>Artiste</h1>
     </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-button routerLink="/album" [style.backgroundImage]="'url(https://i.ytimg.com/vi/j440-D5JhjI/maxresdefault.jpg)'">
-        <h1>Album</h1>
+    <mat-grid-tile [style.backgroundImage]="'url(https://i.ytimg.com/vi/j440-D5JhjI/maxresdefault.jpg)'">
+      <button mat-button routerLink="/album">
+        <mat-icon matSuffix>image</mat-icon>
       </button>
+      <button mat-button routerLink="/albums">
+        <mat-icon matSuffix>view_list</mat-icon>
+      </button>
+      <h1>Album</h1>
     </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-button routerLink="/track" [style.backgroundImage]="'url(https://i.ytimg.com/vi/X9qDjGtpHNY/maxresdefault.jpg)'">
-        <h1>Titre</h1>
+    <mat-grid-tile [style.backgroundImage]="'url(https://i.ytimg.com/vi/X9qDjGtpHNY/maxresdefault.jpg)'">
+      <button mat-button routerLink="/track">
+        <mat-icon matSuffix>image</mat-icon>
       </button>
+      <button mat-button routerLink="/tracks">
+        <mat-icon matSuffix>view_list</mat-icon>
+      </button>
+      <h1>Titre</h1>
     </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-button routerLink="/playlist" [style.backgroundImage]="'url(http://djschoolmetz.com/wp-content/uploads/2017/06/slider_djschool3.jpg)'">
-        <h1>Playlist</h1>
+    <mat-grid-tile [style.backgroundImage]="'url(http://djschoolmetz.com/wp-content/uploads/2017/06/slider_djschool3.jpg)'">
+      <button mat-button routerLink="/playlist">
+        <mat-icon matSuffix>image</mat-icon>
       </button>
+      <button mat-button routerLink="/playlists">
+        <mat-icon matSuffix>view_list</mat-icon>
+      </button>
+      <h1>Playlist</h1>
     </mat-grid-tile>
   </mat-grid-list>
