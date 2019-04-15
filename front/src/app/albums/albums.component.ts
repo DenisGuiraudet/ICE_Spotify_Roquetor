@@ -7,31 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumsComponent implements OnInit {
 
-  data: {
+  data = {
     albums: [
       {
         artists: [
           {
-            id: '',
-            name: ''
+            id: 'id',
+            name: 'name'
           }
         ],
-        id: '',
+        id: 'id',
         images: [
           {
-            url: ''
+            url: 'url'
           }
         ],
-        name: '',
+        name: 'name',
         popularity: 0,
-        release_date: '',
-        release_date_precision: '',
+        release_date: 'release_date',
+        release_date_precision: 'release_date_precision',
         tracks: {
-          total: ''
+          total: 'total'
         }
       }
     ]
-  } 
+  };
 
   constructor() { }
 
