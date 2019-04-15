@@ -3,8 +3,8 @@
   <viewpoint:DAnalysis xmi:id="_kie0UCkyEemlJ7DLEHeQbg" selectedViews="_klP0cCkyEemlJ7DLEHeQbg _bAAnEC3pEems8NFSUBAwKg _bAQesC3pEems8NFSUBAwKg _bA27oC3pEems8NFSUBAwKg" version="12.1.0.201708031200">
     <semanticResources>spotify_Requetor.ecore</semanticResources>
     <semanticResources>spotify_Requetor.genmodel</semanticResources>
-    <semanticResources>CommandManager.xmi</semanticResources>
     <semanticResources>CommandManager1.xmi</semanticResources>
+    <semanticResources>CommandManager.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_klP0cCkyEemlJ7DLEHeQbg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_knt5oCkyEemlJ7DLEHeQbg" name="spotify_Requetor" repPath="#_kmpioCkyEemlJ7DLEHeQbg">
@@ -45,6 +45,10 @@
         <children xmi:type="notation:Node" xmi:id="_4xMNUC3oEems8NFSUBAwKg" type="2003" element="_4xGtwC3oEems8NFSUBAwKg">
           <children xmi:type="notation:Node" xmi:id="_4xM0YC3oEems8NFSUBAwKg" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_4xNbcC3oEems8NFSUBAwKg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_kafM8F9LEempRZLiBxs4yQ" type="3010" element="_d7j3IF9KEempRZLiBxs4yQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_kafM8V9LEempRZLiBxs4yQ" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_kafM8l9LEempRZLiBxs4yQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_4xNbcS3oEems8NFSUBAwKg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_4xNbci3oEems8NFSUBAwKg"/>
           </children>
@@ -213,6 +217,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_d7j3IF9KEempRZLiBxs4yQ" name="token : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="spotify_Requetor.ecore#//CommandManager/token"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="spotify_Requetor.ecore#//CommandManager/token"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fnDvoV9KEempRZLiBxs4yQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UpcOoDaREemtVuBdUmxm1g" name="Artist" tooltipText="" outgoingEdges="_Q1-pIFVTEem1j8H3pRD5tQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="spotify_Requetor.ecore#//Artist"/>

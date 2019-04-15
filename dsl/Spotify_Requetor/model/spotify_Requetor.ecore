@@ -5,6 +5,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CommandManager">
     <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
         eType="#//Request" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artist" eSuperTypes="#//Request">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

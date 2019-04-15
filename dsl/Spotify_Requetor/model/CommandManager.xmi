@@ -4,13 +4,5 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:spotify_Requetor="http://www.example.org/spotify_Requetor"
-    xsi:schemaLocation="http://www.example.org/spotify_Requetor spotify_Requetor.ecore">
-  <request xsi:type="spotify_Requetor:Artist"
-      name="David Guetta"/>
-  <request xsi:type="spotify_Requetor:Album"
-      name="Feu"/>
-  <request xsi:type="spotify_Requetor:Track"
-      name="Bad Boy"/>
-  <request xsi:type="spotify_Requetor:Playlist"
-      name="Hits années 80"/>
-</spotify_Requetor:CommandManager>
+    xsi:schemaLocation="http://www.example.org/spotify_Requetor spotify_Requetor.ecore"
+    token=""/>

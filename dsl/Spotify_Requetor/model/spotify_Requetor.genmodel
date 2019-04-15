@@ -11,6 +11,7 @@
   <genPackages prefix="Spotify_Requetor" disposableProviderFactory="true" ecorePackage="spotify_Requetor.ecore#/">
     <genClasses ecoreClass="spotify_Requetor.ecore#//CommandManager">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//CommandManager/request"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//CommandManager/token"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Artist">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Artist/name"/>
