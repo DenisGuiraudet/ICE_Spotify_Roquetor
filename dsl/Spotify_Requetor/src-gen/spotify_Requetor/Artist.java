@@ -2,6 +2,8 @@
  */
 package spotify_Requetor;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Artist</b></em>'.
@@ -12,6 +14,8 @@ package spotify_Requetor;
  * </p>
  * <ul>
  *   <li>{@link spotify_Requetor.Artist#getName <em>Name</em>}</li>
+ *   <li>{@link spotify_Requetor.Artist#getAlbum <em>Album</em>}</li>
+ *   <li>{@link spotify_Requetor.Artist#getTrack <em>Track</em>}</li>
  * </ul>
  *
  * @see spotify_Requetor.Spotify_RequetorPackage#getArtist()
@@ -45,4 +49,36 @@ public interface Artist extends Request {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Album</b></em>' reference list.
+	 * The list contents are of type {@link spotify_Requetor.Album}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Album</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Album</em>' reference list.
+	 * @see spotify_Requetor.Spotify_RequetorPackage#getArtist_Album()
+	 * @model
+	 * @generated
+	 */
+	EList<Album> getAlbum();
+
+	/**
+	 * Returns the value of the '<em><b>Track</b></em>' reference list.
+	 * The list contents are of type {@link spotify_Requetor.Track}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Track</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Track</em>' reference list.
+	 * @see spotify_Requetor.Spotify_RequetorPackage#getArtist_Track()
+	 * @model
+	 * @generated
+	 */
+	EList<Track> getTrack();
 } // Artist

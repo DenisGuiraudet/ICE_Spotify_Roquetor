@@ -30,6 +30,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Playlist/track"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Request">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/dataCollected"/>
       <genOperations ecoreOperation="spotify_Requetor.ecore#//Request/search">
         <genParameters ecoreParameter="spotify_Requetor.ecore#//Request/search/target"/>
       </genOperations>

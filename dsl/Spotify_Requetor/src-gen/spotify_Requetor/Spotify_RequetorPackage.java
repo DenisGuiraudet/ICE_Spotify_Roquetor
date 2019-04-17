@@ -114,13 +114,22 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int REQUEST = 5;
 
 	/**
+	 * The feature id for the '<em><b>Data Collected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST__DATA_COLLECTED = 0;
+
+	/**
 	 * The number of structural features of the '<em>Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_FEATURE_COUNT = 0;
+	int REQUEST_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -160,6 +169,15 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ARTIST = 1;
 
 	/**
+	 * The feature id for the '<em><b>Data Collected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIST__DATA_COLLECTED = REQUEST__DATA_COLLECTED;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,13 +187,31 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ARTIST__NAME = REQUEST_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Album</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIST__ALBUM = REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Track</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIST__TRACK = REQUEST_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Artist</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 1;
+	int ARTIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -215,6 +251,15 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ALBUM = 2;
 
 	/**
+	 * The feature id for the '<em><b>Data Collected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__DATA_COLLECTED = REQUEST__DATA_COLLECTED;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,13 +269,22 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ALBUM__NAME = REQUEST_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Track</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__TRACK = REQUEST_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Album</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALBUM_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 1;
+	int ALBUM_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -268,6 +322,15 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Data Collected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACK__DATA_COLLECTED = REQUEST__DATA_COLLECTED;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -325,6 +388,15 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int PLAYLIST = 4;
 
 	/**
+	 * The feature id for the '<em><b>Data Collected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYLIST__DATA_COLLECTED = REQUEST__DATA_COLLECTED;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,13 +406,22 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int PLAYLIST__NAME = REQUEST_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Track</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYLIST__TRACK = REQUEST_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Playlist</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYLIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 1;
+	int PLAYLIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -423,6 +504,28 @@ public interface Spotify_RequetorPackage extends EPackage {
 	EAttribute getArtist_Name();
 
 	/**
+	 * Returns the meta object for the reference list '{@link spotify_Requetor.Artist#getAlbum <em>Album</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Album</em>'.
+	 * @see spotify_Requetor.Artist#getAlbum()
+	 * @see #getArtist()
+	 * @generated
+	 */
+	EReference getArtist_Album();
+
+	/**
+	 * Returns the meta object for the reference list '{@link spotify_Requetor.Artist#getTrack <em>Track</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Track</em>'.
+	 * @see spotify_Requetor.Artist#getTrack()
+	 * @see #getArtist()
+	 * @generated
+	 */
+	EReference getArtist_Track();
+
+	/**
 	 * Returns the meta object for class '{@link spotify_Requetor.Album <em>Album</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -442,6 +545,17 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAlbum_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link spotify_Requetor.Album#getTrack <em>Track</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Track</em>'.
+	 * @see spotify_Requetor.Album#getTrack()
+	 * @see #getAlbum()
+	 * @generated
+	 */
+	EReference getAlbum_Track();
 
 	/**
 	 * Returns the meta object for class '{@link spotify_Requetor.Track <em>Track</em>}'.
@@ -486,6 +600,17 @@ public interface Spotify_RequetorPackage extends EPackage {
 	EAttribute getPlaylist_Name();
 
 	/**
+	 * Returns the meta object for the reference list '{@link spotify_Requetor.Playlist#getTrack <em>Track</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Track</em>'.
+	 * @see spotify_Requetor.Playlist#getTrack()
+	 * @see #getPlaylist()
+	 * @generated
+	 */
+	EReference getPlaylist_Track();
+
+	/**
 	 * Returns the meta object for class '{@link spotify_Requetor.Request <em>Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -494,6 +619,17 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRequest();
+
+	/**
+	 * Returns the meta object for the attribute '{@link spotify_Requetor.Request#getDataCollected <em>Data Collected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data Collected</em>'.
+	 * @see spotify_Requetor.Request#getDataCollected()
+	 * @see #getRequest()
+	 * @generated
+	 */
+	EAttribute getRequest_DataCollected();
 
 	/**
 	 * Returns the meta object for the '{@link spotify_Requetor.Request#search(java.lang.String) <em>Search</em>}' operation.
@@ -583,6 +719,22 @@ public interface Spotify_RequetorPackage extends EPackage {
 		EAttribute ARTIST__NAME = eINSTANCE.getArtist_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Album</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIST__ALBUM = eINSTANCE.getArtist_Album();
+
+		/**
+		 * The meta object literal for the '<em><b>Track</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIST__TRACK = eINSTANCE.getArtist_Track();
+
+		/**
 		 * The meta object literal for the '{@link spotify_Requetor.impl.AlbumImpl <em>Album</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -599,6 +751,14 @@ public interface Spotify_RequetorPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ALBUM__NAME = eINSTANCE.getAlbum_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Track</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALBUM__TRACK = eINSTANCE.getAlbum_Track();
 
 		/**
 		 * The meta object literal for the '{@link spotify_Requetor.impl.TrackImpl <em>Track</em>}' class.
@@ -637,6 +797,14 @@ public interface Spotify_RequetorPackage extends EPackage {
 		EAttribute PLAYLIST__NAME = eINSTANCE.getPlaylist_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Track</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYLIST__TRACK = eINSTANCE.getPlaylist_Track();
+
+		/**
 		 * The meta object literal for the '{@link spotify_Requetor.impl.RequestImpl <em>Request</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -645,6 +813,14 @@ public interface Spotify_RequetorPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REQUEST = eINSTANCE.getRequest();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Collected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUEST__DATA_COLLECTED = eINSTANCE.getRequest_DataCollected();
 
 		/**
 		 * The meta object literal for the '<em><b>Search</b></em>' operation.

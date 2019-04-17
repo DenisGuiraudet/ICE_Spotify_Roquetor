@@ -29,16 +29,6 @@
   <diagram:DSemanticDiagram xmi:id="_knrdYCkyEemlJ7DLEHeQbg" name="spotify_Requetor" uid="_kmpioCkyEemlJ7DLEHeQbg">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_knrdYSkyEemlJ7DLEHeQbg" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_knrdYikyEemlJ7DLEHeQbg">
-        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_SmZ98F9kEempRZLiBxs4yQ" sourceArrow="FillDiamond" routingStyle="manhattan">
-          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_SmZ98V9kEempRZLiBxs4yQ" showIcon="false" labelExpression="service:render">
-            <labelFormat>bold</labelFormat>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </centerLabelStyleDescription>
-          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_SmZ98l9kEempRZLiBxs4yQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
-          </endLabelStyleDescription>
-        </computedStyleDescriptions>
         <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_GfgoIF9lEempRZLiBxs4yQ" routingStyle="manhattan">
           <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_GfgoIV9lEempRZLiBxs4yQ" showIcon="false" labelExpression="service:render">
@@ -46,6 +36,15 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </centerLabelStyleDescription>
           <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_GfgoIl9lEempRZLiBxs4yQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_59YLEGEWEemff8H87xWeng" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_59YLEWEWEemff8H87xWeng" showIcon="false" labelExpression="service:render">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </centerLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_59YLEmEWEemff8H87xWeng" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
           </endLabelStyleDescription>
         </computedStyleDescriptions>
@@ -128,6 +127,10 @@
             <children xmi:type="notation:Node" xmi:id="_mPQT0FVTEem1j8H3pRD5tQ" type="3010" element="_mPNQgFVTEem1j8H3pRD5tQ">
               <styles xmi:type="notation:FontStyle" xmi:id="_mPQT0VVTEem1j8H3pRD5tQ" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQT0lVTEem1j8H3pRD5tQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_UgKtQGEXEemff8H87xWeng" type="3010" element="_UfWN4GEXEemff8H87xWeng">
+              <styles xmi:type="notation:FontStyle" xmi:id="_UgKtQWEXEemff8H87xWeng" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_UgKtQmEXEemff8H87xWeng"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_Lr4KglVNEem1j8H3pRD5tQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_Lr4Kg1VNEem1j8H3pRD5tQ"/>
@@ -383,7 +386,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_3Jej0FVUEem1j8H3pRD5tQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ZFG4EGEXEemff8H87xWeng" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
@@ -405,15 +408,21 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UfWN4GEXEemff8H87xWeng" name="dataCollected : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="spotify_Requetor.ecore#//Request/dataCollected"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="spotify_Requetor.ecore#//Request/dataCollected"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZFM-sGEXEemff8H87xWeng" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ktcxkFVNEem1j8H3pRD5tQ" name="[1..1] request" sourceNode="_4xGtwC3oEems8NFSUBAwKg" targetNode="_LrWmEFVNEem1j8H3pRD5tQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ktcxkFVNEem1j8H3pRD5tQ" name="[0..*] request" sourceNode="_4xGtwC3oEems8NFSUBAwKg" targetNode="_LrWmEFVNEem1j8H3pRD5tQ">
       <target xmi:type="ecore:EReference" href="spotify_Requetor.ecore#//CommandManager/request"/>
       <semanticElements xmi:type="ecore:EReference" href="spotify_Requetor.ecore#//CommandManager/request"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SmZ9819kEempRZLiBxs4yQ" description="_SmZ98F9kEempRZLiBxs4yQ" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SmZ99F9kEempRZLiBxs4yQ" showIcon="false">
-          <labelFormat>bold</labelFormat>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_SmZ99V9kEempRZLiBxs4yQ" labelSize="6" showIcon="false" labelColor="39,76,114"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_59aAQGEWEemff8H87xWeng" description="_59YLEGEWEemff8H87xWeng" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_59aAQWEWEemff8H87xWeng" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_59aAQmEWEemff8H87xWeng" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

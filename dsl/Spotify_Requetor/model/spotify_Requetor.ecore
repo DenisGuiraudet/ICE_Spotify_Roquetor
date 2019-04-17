@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spotify_Requetor" nsURI="http://www.example.org/spotify_Requetor"
     nsPrefix="spotify_Requetor">
   <eClassifiers xsi:type="ecore:EClass" name="CommandManager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
         eType="#//Request" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -32,5 +32,6 @@
       <eParameters name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="show" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataCollected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
