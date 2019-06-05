@@ -3,28 +3,28 @@
 
 <mat-divider></mat-divider>
 
+<mat-card-header>
+    <img mat-card-avatar [attr.src]="data.images[0].url" alt="Description" />
+    <mat-card-title>
+        {{ data.popularity }} {{ data.name }}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{ data.release_date }} {{ data.release_date_precision }}
+    </mat-card-subtitle>
+</mat-card-header>
+
 <table>
-
-    <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Popularity</th>
-        <th>Realease Date</th>
-    </tr>
-
-    <tr>
+  
+    <tr *ngFor="let track of data.tracks.items">
         <td>
-            {{ data.images[0].url }}
+            {{ track.name }}
         </td>
         <td>
-            {{ data.name }}
+            {{ track.track_number }}
         </td>
         <td>
-            {{ data.popularity }}
-        </td>
-        <td>
-            {{ data.release_date }} {{ data.release_date_precision }}
+            {{ track.duration_ms }}
         </td>
     </tr>
   
-  </table>
+</table>

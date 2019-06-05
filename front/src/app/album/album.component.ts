@@ -19,7 +19,7 @@ export class AlbumComponent implements OnInit {
     id: 'id',
     images: [
       {
-        url: 'url'
+        url: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg'
       }
     ],
     name: 'name',
