@@ -1,3 +1,8 @@
+
+.mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
 .page-container {
     margin: 20px;
 }
@@ -5,3 +10,30 @@
 .logo {
     cursor: pointer;
 }
+
+.token {
+
+    float: right;
+    width: 50%;
+
+
+    .linkToken {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        margin-right: 30px;
+    }
+    
+
+    .formToken {
+        width: 50%;
+    }
+    
+}
+
+.token a {
+    text-decoration:none;
+}
+

@@ -1,6 +1,13 @@
 
 <mat-toolbar>
   <span class="logo" routerLink="/">Spotify Requetor</span>
+  <div class="token">
+    <a href="https://developer.spotify.com/console/get-current-user/" target="_blank"><span class="linkToken">Récupérer un token</span></a>
+    <mat-form-field class="formToken">
+      <input matInput [(ngModel)]="storeService.spotifyUserToken" />
+    </mat-form-field>
+  </div>
+
 </mat-toolbar>
 
 <mat-card class="page-container">
