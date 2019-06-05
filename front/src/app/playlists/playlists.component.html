@@ -5,6 +5,13 @@
 
 <table>
 
+    <tr>
+        <th>image</th>
+        <th>name</th>
+        <th>description</th>
+        <th>followers.total</th>
+    </tr>
+
     <tr *ngFor="let playlist of data.playlists">
         <td>
             {{ playlist.images[0].url }}
