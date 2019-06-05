@@ -8,30 +8,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artist" eSuperTypes="#//Request">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="album" upperBound="-1"
-        eType="#//Album"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="track" upperBound="-1"
-        eType="#//Track"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="albums" upperBound="-1"
+        eType="#//Album" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracks" upperBound="-1"
+        eType="#//Track" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Album" eSuperTypes="#//Request">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="track" lowerBound="1" upperBound="-1"
-        eType="#//Track"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracks" lowerBound="1"
+        upperBound="-1" eType="#//Track" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Track" eSuperTypes="#//Request">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duree" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Playlist" eSuperTypes="#//Request">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="track" upperBound="-1"
-        eType="#//Track"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracks" lowerBound="1"
+        upperBound="-1" eType="#//Track" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Request" abstract="true">
     <eOperations name="search" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="show" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataCollected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
