@@ -1,13 +1,13 @@
 
 <mat-toolbar>
   <img src="./assets/img/SpotifyReq_name_white.png" class="logo" routerLink="/" />
-  <div class="token">
-    <a href="https://developer.spotify.com/console/get-current-user/" target="_blank"><span class="linkToken">Récupérer un token</span></a>
-    <mat-form-field class="formToken">
-      <input matInput [(ngModel)]="storeService.spotifyUserToken" />
-    </mat-form-field>
-  </div>
-
+  <div class="flex-spacer"></div>
+  <a href="https://developer.spotify.com/console/get-current-user/" target="_blank">
+    Récupérer un token
+  </a>
+  <mat-form-field>
+    <input matInput [(ngModel)]="storeService.spotifyUserToken" />
+  </mat-form-field>
 </mat-toolbar>
 
 <mat-card class="page-container">
