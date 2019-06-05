@@ -1,3 +1,23 @@
-<p>
-  playlists works!
-</p>
+
+<app-searchbar></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table>
+
+    <tr *ngFor="let playlist of data.playlists">
+        <td>
+            {{ playlist.images[0].url }}
+        </td>
+        <td>
+            {{ playlist.name }}
+        </td>
+        <td>
+            {{ playlist.description }}
+        </td>
+        <td>
+            {{ playlist.followers.total }}
+        </td>
+    </tr>
+    
+</table>

@@ -2,3 +2,19 @@
 <app-searchbar></app-searchbar>
 
 <mat-divider></mat-divider>
+
+<mat-card-header>
+    <img mat-card-avatar [attr.src]="data.album.images[0].url" alt="Description" />
+    <mat-card-title>
+        {{ data.name }}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{ data.album.release_date }} {{ data.album.release_date_precision }}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        {{ data.popularity }}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        {{ data.duration_ms }}
+    </mat-card-subtitle>
+</mat-card-header>

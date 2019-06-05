@@ -1,3 +1,23 @@
-<p>
-  artists works!
-</p>
+
+<app-searchbar></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table>
+  
+    <tr *ngFor="let artist of data.artists">
+        <td>
+            {{ artist.images[0].url }}
+        </td>
+        <td>
+            {{ artist.name }}
+        </td>
+        <td>
+            {{ artist.popularity }}
+        </td>
+        <td>
+            {{ artist.followers }}
+        </td>
+    </tr>
+  
+</table>

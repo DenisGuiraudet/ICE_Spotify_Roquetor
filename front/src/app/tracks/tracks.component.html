@@ -1,3 +1,23 @@
-<p>
-  tracks works!
-</p>
+
+<app-searchbar></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table>
+
+    <tr *ngFor="let track of data.tracks">
+        <td>
+            {{ track.album.images[0].url }}
+        </td>
+        <td>
+            {{ track.name }}
+        </td>
+        <td>
+            {{ track.popularity }}
+        </td>
+        <td>
+            {{ track.duration_ms }}
+        </td>
+    </tr>
+    
+</table>
