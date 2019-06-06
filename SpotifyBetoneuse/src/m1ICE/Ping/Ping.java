@@ -1,4 +1,4 @@
-package m1ice.ping;
+package m1ICE.Ping;
 
 import java.io.IOException;
 import java.rmi.Remote;

@@ -1,4 +1,4 @@
-package m1ice.ping;
+package m1ICE.Ping;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,12 +7,12 @@ import java.net.InetAddress;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import m1ice.ping.Ping;
+import m1ICE.Ping.Ping;
 
+@SuppressWarnings("deprecation")
 public class PingAppliServer extends java.rmi.server.UnicastRemoteObject implements Ping{
 
 	private static final long serialVersionUID = 7036878533690593349L;

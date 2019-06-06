@@ -1,4 +1,4 @@
-package m1ice.ping;
+package m1ICE.Ping;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class PingAppliClient
        Registry registry;
        String serverAddress = "localhost";
        String serverPort = "3232";
-       String token = "BQAMRPZoU0KKyaJI-7a1iMPqFLOXD8KbM1lHLPkxlcGOee_HQzR5i8VXhrX_GzUHAGqCD5Q5vCqJTVIR7lPIyho5vuWtlw_zBxn1dfYRVEXVYYiSxUbbYO_g7dIggTtXlE5VLt91hSm2uYZIbgzIKIh1ZDZ9YWpSCiFsgZssHIlRl9QSiIF3_qKI1kxTM39b45SnEgMiS0SxeyNKoU4FbIW-PD6rLKpMU-B9ns252OYBGwtRcYUae5_eyUIoeogELy9kSHvvF5BS4YPf7ZDZQtlugxSAtCmTF60";
+       String token = "BQCK8XFE6zDMzaEq_HUxZUIfYIJ9Mnq5QzMTzjTeeGgCpGd6nK8eBZkGK03BLJ9-ayMCTwmVVQ8iTTU4Xmg3iEvndOiQI8W-ZnSTtknYc_jFjXAWH7MNAIGntnGJLZ446NZ1IQqRT92e4yK_dW9r0OHUH91Akx4TCn4zGdCvhnZAR8Fxg-fmJZIH1-Qu6o6nfmWyakYKG9UWvXCl9Kngp5Cz9NRz5q3zuXNqnHEg3tI6oLuwMNtmoCA-3iTXkrlhlWPrptLFU6hATKs";
        String searchValue = "Rammstein";
 
        System.out.println("sending " + searchValue + " to " + serverAddress + " : " + serverPort);
