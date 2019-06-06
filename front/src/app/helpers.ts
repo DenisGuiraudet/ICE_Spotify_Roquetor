@@ -4,13 +4,10 @@
 const parseAlbum = function (datas) {
   let newData = datas[0].$;
 
-  let tracks = [];
+  newData.tracks = [];
   for (let i = 1; i < datas.length; i++) {
-    tracks.push(datas[i].$);
+    newData.tracks.push(datas[i].$);
   }
-  newData['tracks'] = {
-    items: tracks
-  };
 
   return newData;
 };
@@ -37,28 +34,55 @@ const parseArtists = function (datas) {
   let newData = {
     artists: []
   };
-  // TODO
+
+  for (let i = 0; i < datas.length; i++) {
+    newData.artists.push(datas[i].$);
+  }
+
   return newData;
 };
 
 // PLAYLIST
 
 const parsePlaylist = function (datas) {
-  return datas;
+  let newData = datas[0].$;
+
+  newData.tracks = [];
+  for (let i = 1; i < datas.length; i++) {
+    newData.tracks.push(datas[i].$);
+  }
+
+  return newData;
 };
 
 const parsePlaylists = function (datas) {
-  return datas;
+  let newData = {
+    playlists: []
+  };
+
+  for (let i = 0; i < datas.length; i++) {
+    newData.playlists.push(datas[i].$);
+  }
+
+  return newData;
 };
 
 // TRACK
 
 const parseTrack = function (datas) {
-  return datas;
+  return datas[0].$;
 };
 
 const parseTracks = function (datas) {
-  return datas;
+  let newData = {
+    tracks: []
+  };
+
+  for (let i = 0; i < datas.length; i++) {
+    newData.tracks.push(datas[i].$);
+  }
+
+  return newData;
 };
 
 export default {
