@@ -11,9 +11,7 @@ import java.rmi.registry.Registry;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-
-
-
+import m1ice.ping.Ping;
 
 public class PingAppliServer extends java.rmi.server.UnicastRemoteObject implements Ping{
 
@@ -34,8 +32,6 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 	public void receiveMessage(String oauth, String artiste) throws RemoteException{
 		System.out.println(oauth+" , "+artiste);
 	}
-
-
 
 	public PingAppliServer() throws RemoteException{
 		try{
@@ -58,18 +54,23 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 
 	}
 	
+	public void getResquestArtist() {
+		//TODO
+		String initRequest = "https://api.spotify.com/v1/artists/";
+	}
+	
 	@Override
-	public String getRequest(String token, String request) throws IOException{
+	public String getRequest(String token, String request, String type) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
-		String initRequest = "https://api.spotify.com/v1/artists/";
+		SearchTypeEnum searchType = this.getSearchType(type);		
+		String initRequest = "https://api.spotify.com/v1/search?query=";
 		request = initRequest + request;
-		
+		request += "&type=artist";
+
 		HttpGet getRequest = new HttpGet(request);
-		getRequest.addHeader("Authorization", "Bearer " + token);
-		getRequest.addHeader("accept", "application/json");
-
-
+		this.addSeachRequestHeader(getRequest, token);
+		
 		try {
 			HttpResponse response = httpClient.execute(getRequest);
 			if (response.getStatusLine().getStatusCode() != 200) {
@@ -93,6 +94,26 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 		} catch (IOException e) {
 			throw e;
 		}
+	}
+	
+	private SearchTypeEnum getSearchType(String type) {
+		switch (type) {
+		case "artist":
+			return SearchTypeEnum.ARTIST;
+		case "album":
+			return SearchTypeEnum.ALBUM;
+		case "track":
+			return SearchTypeEnum.TRACK;
+		case "playlist":
+			return SearchTypeEnum.PLAYLIST;
+		default:
+			return SearchTypeEnum.UNKNOWN;
+		}
+	}
+	
+	private void addSeachRequestHeader(HttpGet getRequest, String token){
+		getRequest.addHeader("Authorization", "Bearer " + token);
+		getRequest.addHeader("accept", "application/json");
 	}
 	
 	static public void main(String args[]){
