@@ -25,14 +25,11 @@ export class AppComponent {
         value: "Michel le bresil",
         type: TYPES.ARTIST
       }
-    })
-    .then(function (response) {
+    }).then(function (response) {
       console.log("then", response);
-    })
-    .catch(function (error) {
+    }).catch(function (error) {
       console.log("catch", error);
-    })
-    .then(function () {
+    }).then(function () {
       // always executed
     }); 
 
