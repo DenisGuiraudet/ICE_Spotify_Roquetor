@@ -55,8 +55,23 @@ export class SearchbarComponent implements OnInit {
     return this.stateGroups;
   }
 
+  private cleaningRequest(request): string{
+    var words = request.split(' ');
+    let reqClean = "";
+    reqClean = words[1] + "/";
+    for(let i = 2; i < words.length; i++){
+      reqClean += words[i];
+      if(i != words.length-1)
+      reqClean += " "
+    }
+    if(words[0] == "search")
+    reqClean += "/only"
+    return reqClean;
+  }
   private search() {
-    console.log(this.stateForm.get('stateGroup').value);
+    let req = this.cleaningRequest(this.stateForm.get('stateGroup').value);
+    
+    console.log(req);
   }
 
 }
