@@ -3,7 +3,7 @@
 <mat-divider></mat-divider>
 
 <mat-card-header>
-    <img mat-card-avatar [attr.src]="data.images[0].url" alt="Description" />
+    <img mat-card-avatar [attr.src]="data.image" alt="Description" />
     <mat-card-title>
         {{ data.popularity }} {{ data.name }}
     </mat-card-title>
@@ -20,7 +20,7 @@
         <th class="mat-header-cell">duration_ms</th>
     </tr>
   
-    <tr class="mat-row" *ngFor="let track of data.tracks.items">
+    <tr class="mat-row" *ngFor="let track of data.tracks">
         <td class="mat-cell">
             {{ track.name }}
         </td>
