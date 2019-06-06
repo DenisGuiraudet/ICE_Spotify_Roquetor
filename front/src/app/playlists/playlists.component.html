@@ -3,26 +3,26 @@
 
 <mat-divider></mat-divider>
 
-<table>
+<table class="mat-table">
 
-    <tr>
-        <th>image</th>
-        <th>name</th>
-        <th>description</th>
-        <th>followers.total</th>
+    <tr class="mat-row">
+        <th class="mat-header-cell">image</th>
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">description</th>
+        <th class="mat-header-cell">followers.total</th>
     </tr>
 
-    <tr *ngFor="let playlist of data.playlists">
-        <td>
+    <tr class="mat-row" *ngFor="let playlist of data.playlists">
+        <td class="mat-cell">
             {{ playlist.images[0].url }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ playlist.name }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ playlist.description }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ playlist.followers.total }}
         </td>
     </tr>

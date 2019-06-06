@@ -3,26 +3,26 @@
 
 <mat-divider></mat-divider>
 
-<table>
+<table class="mat-table">
 
-    <tr>
-        <th>image</th>
-        <th>name</th>
-        <th>popularity</th>
-        <th>followers</th>
+    <tr class="mat-row">
+        <th class="mat-header-cell">image</th>
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">popularity</th>
+        <th class="mat-header-cell">followers</th>
     </tr>
   
-    <tr *ngFor="let artist of data.artists">
-        <td>
+    <tr class="mat-row" *ngFor="let artist of data.artists">
+        <td class="mat-cell">
             {{ artist.images[0].url }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ artist.name }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ artist.popularity }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ artist.followers }}
         </td>
     </tr>

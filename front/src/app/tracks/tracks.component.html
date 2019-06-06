@@ -3,26 +3,26 @@
 
 <mat-divider></mat-divider>
 
-<table>
+<table class="mat-table">
 
-    <tr>
-        <th>image</th>
-        <th>name</th>
-        <th>popularity</th>
-        <th>duration_ms</th>
+    <tr class="mat-row">
+        <th class="mat-header-cell">image</th>
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">popularity</th>
+        <th class="mat-header-cell">duration_ms</th>
     </tr>
 
-    <tr *ngFor="let track of data.tracks">
-        <td>
+    <tr class="mat-row" *ngFor="let track of data.tracks">
+        <td class="mat-cell"> 
             {{ track.album.images[0].url }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ track.name }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ track.popularity }}
         </td>
-        <td>
+        <td class="mat-cell">
             {{ track.duration_ms }}
         </td>
     </tr>
