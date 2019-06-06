@@ -34,7 +34,18 @@ export class AppComponent {
     }); 
 
     // Back Response
-    let xml = '<?xml version="1.0" encoding="ASCII"?><spotify_Requetor:CommandManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:spotify_Requetor="http://www.example.org/spotify_Requetor"><request xsi:type="spotify_Requetor:Artist" name="David Guetta" track="//@request.1 //@request.2 //@request.3"/><request xsi:type="spotify_Requetor:Track" name="Titanium"/><request xsi:type="spotify_Requetor:Track" name="Titanium2"/><request xsi:type="spotify_Requetor:Track" name="Titanium3"/></spotify_Requetor:CommandManager>';
+    let xml = "";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "../assets/teste.xmi", false);
+    rawFile.onreadystatechange = function () {
+        if(rawFile.readyState === 4){
+            if(rawFile.status === 200 || rawFile.status == 0){
+                xml = rawFile.responseText;
+                console.log(xml);
+            }
+        }
+    }
+    rawFile.send(null);
     parseString(xml, (err, result) => {
       this.parsexml(result);
     });
