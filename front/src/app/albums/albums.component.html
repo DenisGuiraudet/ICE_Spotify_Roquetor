@@ -15,7 +15,7 @@
   
     <tr class="mat-row" *ngFor="let album of data.albums">
         <td class="mat-cell"> 
-            {{ album.images[0].url }}
+            {{ album.image }}
         </td>
         <td class="mat-cell">
             {{ album.name }}
@@ -24,7 +24,7 @@
             {{ album.popularity }}
         </td>
         <td class="mat-cell">
-            {{ album.tracks.total }}
+            {{ album.tracks_total }}
         </td>
         <td class="mat-cell">
             {{ album.release_date }} {{ album.release_date_precision }}

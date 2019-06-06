@@ -10,32 +10,20 @@ import { StoreService } from '../store.service';
 export class AlbumComponent implements OnInit {
   
   data = {
-    artists: [
-      {
-        id: 'id',
-        name: 'name'
-      }
-    ],
     id: 'id',
-    images: [
-      {
-        url: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg'
-      }
-    ],
+    image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
     name: 'name',
     popularity: 0,
     release_date: 'release_date',
     release_date_precision: 'release_date_precision',
-    tracks: {
-      items: [
-        {
-          duration_ms: 0,
-          id: 'id',
-          name: 'name',
-          track_number: 0
-        }
-      ]
-    }
+    tracks: [
+      {
+        duration_ms: 0,
+        id: 'id',
+        name: 'name',
+        track_number: 0
+      }
+    ]
   }
 
   constructor(private storeService: StoreService) {

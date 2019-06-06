@@ -9,18 +9,8 @@ export class TrackComponent implements OnInit {
   
   data = {
     album: {
-      artists: [
-        {
-          id: 'id',
-          name: 'name'
-        }
-      ],
       id: 'id',
-      images: [
-        {
-          url: 'url'
-        }
-      ],
+      image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
       name: 'name',
       release_date: 'release_date',
       release_date_precision: 'release_date_precision'

@@ -9,12 +9,12 @@
         <th class="mat-header-cell">image</th>
         <th class="mat-header-cell">name</th>
         <th class="mat-header-cell">description</th>
-        <th class="mat-header-cell">followers.total</th>
+        <th class="mat-header-cell">followers</th>
     </tr>
 
     <tr class="mat-row" *ngFor="let playlist of data.playlists">
         <td class="mat-cell">
-            {{ playlist.images[0].url }}
+            {{ playlist.image }}
         </td>
         <td class="mat-cell">
             {{ playlist.name }}
@@ -23,7 +23,7 @@
             {{ playlist.description }}
         </td>
         <td class="mat-cell">
-            {{ playlist.followers.total }}
+            {{ playlist.followers }}
         </td>
     </tr>
     
