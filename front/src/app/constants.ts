@@ -14,5 +14,6 @@ const SPOTIFY_TYPES = {
 };
 
 export {
+    TYPES,
     SPOTIFY_TYPES
 };
