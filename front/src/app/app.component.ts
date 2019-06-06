@@ -21,19 +21,20 @@ export class AppComponent {
     // Back Call
     axios.get('http://localhost:3232', {
       params: {
-        token: "token",
+        token: this.storeService.spotifyUserToken,
         value: "Michel le bresil",
         type: TYPES.ARTIST
       }
-    }).then(function (response) {
-      console.log("then", response);
-    }).catch(function (error) {
-      console.log("catch", error);
-    }).then(function () {
-      // always executed
-    }); 
+    }).then(response => {
+      this.readXml();
+    }).catch(error => {
+      console.log(error);
+    }).then(() => {
+      this.readXml(); // TODO: remove from here once it works
+    });
+  }
 
-    // Back Response
+  readXml() {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "../assets/teste.xmi", false);
     rawFile.onreadystatechange = () => {
