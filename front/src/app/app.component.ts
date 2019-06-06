@@ -34,21 +34,18 @@ export class AppComponent {
     }); 
 
     // Back Response
-    let xml = "";
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "../assets/teste.xmi", false);
-    rawFile.onreadystatechange = function () {
+    rawFile.onreadystatechange = () => {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200 || rawFile.status == 0){
-                xml = rawFile.responseText;
-                console.log(xml);
+                parseString(rawFile.responseText, (err, result) => {
+                  this.parsexml(result);
+                });
             }
         }
     }
     rawFile.send(null);
-    parseString(xml, (err, result) => {
-      this.parsexml(result);
-    });
   }
 
   parsexml(xml) {
@@ -65,10 +62,25 @@ export class AppComponent {
         }
         break;
       case SPOTIFY_TYPES.ARTIST:
+          if (datas.length === 1) {
+            this.storeService.data = helpers.parseArtist(datas);
+          } else {
+            this.storeService.data = helpers.parseArtists(datas);
+          }
         break;
       case SPOTIFY_TYPES.PLAYLIST:
+          if (typeof mainData.track !== 'undefined') {
+            this.storeService.data = helpers.parsePlaylist(datas);
+          } else {
+            this.storeService.data = helpers.parsePlaylists(datas);
+          }
         break;
       case SPOTIFY_TYPES.TRACK:
+          if (datas.length === 1) {
+            this.storeService.data = helpers.parseTrack(datas);
+          } else {
+            this.storeService.data = helpers.parseTracks(datas);
+          }
         break;
       default:
         console.warn('Type unknown', mainDataType);
