@@ -8,5 +8,6 @@ export class StoreService {
   constructor() { }
 
   spotifyUserToken: string = null;
+  data: object = null;
 
 }
