@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { StoreService } from './store.service';
 import axios from 'axios';
 import { parseString } from 'xml2js';
-import { SPOTIFY_TYPES } from './constants';
+import { TYPES, SPOTIFY_TYPES } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +21,9 @@ export class AppComponent {
     // Optionally the request above could also be done as
     axios.get('http://localhost:3232', {
       params: {
-        token: "xptdr",
-        value: "michel",
-        type: "artist"
+        token: "token",
+        value: "Michel le bresil",
+        type: TYPES.ARTIST
       }
     })
     .then(function (response) {
@@ -57,7 +57,7 @@ export class AppComponent {
           case SPOTIFY_TYPES.TRACK:
             break;
           default:
-            console.warn('Type unknown', datas[0].$['xsi:type']);
+            console.warn('Type unknown', data.$['xsi:type']);
         }
       }
     });
