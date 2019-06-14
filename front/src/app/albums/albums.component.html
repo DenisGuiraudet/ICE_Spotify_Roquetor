@@ -15,7 +15,7 @@
   
     <tr class="mat-row" *ngFor="let album of data.albums">
         <td class="mat-cell"> 
-            <img src="{{ album.image }}" class="mat-card-avatar">
+            <img [attr.src]="album.image" class="mat-card-avatar"/>
         </td>
         <td class="mat-cell">
             {{ album.name }}

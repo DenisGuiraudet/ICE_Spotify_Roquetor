@@ -14,7 +14,7 @@
 
     <tr class="mat-row" *ngFor="let playlist of data.playlists">
         <td class="mat-cell">
-            <img src="{{ playlist.image }}" class="mat-card-avatar">
+            <img [attr.src]="playlist.image" class="mat-card-avatar"/>
         </td>
         <td class="mat-cell">
             {{ playlist.name }}

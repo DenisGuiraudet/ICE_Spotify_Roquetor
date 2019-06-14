@@ -20,6 +20,10 @@ table {
 
 .table-header {
     height: 40px;
+    .mat-header-cell {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }
 
 .mat-row.ng-star-inserted:hover {
