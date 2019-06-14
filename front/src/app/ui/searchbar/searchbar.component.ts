@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -25,6 +25,7 @@ export const _filter = (opt: string[], value: string): string[] => {
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
+  @Input() initValue: String;
   
   stateForm: FormGroup = this.fb.group({
     stateGroup: '',
@@ -43,6 +44,11 @@ export class SearchbarComponent implements OnInit {
   constructor(private fb: FormBuilder, private storeService: StoreService) {}
 
   ngOnInit() {
+    if (this.initValue) {
+      this.stateForm.get('stateGroup').setValue(this.initValue);
+    }
+
+    // Show / Search placeholders
     this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
       .pipe(
         startWith(''),
