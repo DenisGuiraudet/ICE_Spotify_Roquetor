@@ -39,3 +39,21 @@
 .page-container {
     margin: 20px;
 }
+
+&.track, 
+&.tracks {
+    background-color: #7B8FA3;
+}
+
+&.album, 
+&.albums {
+    background-color: #A39684;
+}
+&.artist,
+&.artists {
+    background-color: #BDBDA1;
+}
+&.playlist,
+&.playlists {
+    background-color: #8E8397;
+}
