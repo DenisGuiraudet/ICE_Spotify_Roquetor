@@ -3,69 +3,22 @@ package m1ICE.Ping;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-
 import com.blade.Blade;
 
-import m1ICE.Ping.Ping;
-import org.json.JSONObject;
-
-public class PingAppliServer extends java.rmi.server.UnicastRemoteObject implements Ping{
+public class PingAppliServer{
 
 	private static final long serialVersionUID = 7036878533690593349L;
-	private int      thisPort;
-	private String   thisAddress;
-	private Registry registry;    // rmi registry for lookup the remote objects.
-
-
-
-	// This method is called from the remote client by the RMI.
-
-	// This is the implementation of the ping interface.
-
-	public void receiveMessage(String oauth, String artiste) throws RemoteException{
-		System.out.println(oauth+" , "+artiste);
-	}
-
-	public PingAppliServer() throws RemoteException{
-		try{
-			// get the address of this host.
-			thisAddress = (InetAddress.getLocalHost()).toString();
-		}catch(Exception e){
-			throw new RemoteException("can't get inet address.");
-		}
-
-		thisPort = 3232;  // this port(registry's port)
-		System.out.println("this address = " + thisAddress + ", port = " + thisPort);
-		
-		try{
-			// create the registry and bind the name and object.
-			registry = LocateRegistry.createRegistry(thisPort);
-			registry.rebind("pingServer", this);
-		}catch(RemoteException e){
-			throw e;
-		}
-
-	}
 	
-	public void getResquestArtist() {
-		//TODO
-		String initRequest = "https://api.spotify.com/v1/artists/";
-	}
-	
-	public String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException{
+	public static String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
-		String request = this.getRequestAsString(whatQuerry, typeQuerry, searchValue);
+		String request = PingAppliServer.getRequestAsString(whatQuerry, typeQuerry, searchValue);
 
 		HttpGet getRequest = new HttpGet(request);
-		this.addSeachRequestHeader(getRequest, token);
+		PingAppliServer.addSeachRequestHeader(getRequest, token);
 		
 		try {
 			HttpResponse response = httpClient.execute(getRequest);
@@ -94,7 +47,7 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 		}
 	}
 	
-	private String getRequestAsString(String whatQuerry, String typeQuerry, String searchValue) {
+	private static String getRequestAsString(String whatQuerry, String typeQuerry, String searchValue) {
 		StringBuilder strBuilder = new StringBuilder();
 		if("search".equals(whatQuerry)) {
 			strBuilder.append("https://api.spotify.com/v1/search?query=");			
@@ -109,7 +62,7 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 		return strBuilder.toString();
 	}
 	
-	private void addSeachRequestHeader(HttpGet getRequest, String token){
+	private static void addSeachRequestHeader(HttpGet getRequest, String token){
 		getRequest.addHeader("Authorization", "Bearer " + token);
 		getRequest.addHeader("accept", "application/json");
 	}
@@ -128,7 +81,13 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 	        System.out.println("value is:" + value);
 	        System.out.println("token is:" + token);
 	        System.out.println("type is:" + type);
-
+	        String Json = "";
+	        try {
+	        	Json = PingAppliServer.getRequest(token, value, only, type);
+	        }
+	        catch (IOException e) {
+				e.printStackTrace();
+			}
 	    }).start();
 	}
 
