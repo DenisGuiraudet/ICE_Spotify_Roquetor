@@ -51,36 +51,40 @@ public class XmiHelper {
 				data = jsonToStore.getJSONObject("artists").getJSONArray("items");
 				if(!splittedRequest[2].isEmpty()){// 1 artist only
 					fillArtist(data.get(0),factory,cm);
-				}
-				for(int i = 0; i < data.length(); i++){
-					fillArtist(data.get(i),factory,cm);
+				}else {
+					for(int i = 0; i < data.length(); i++){
+						fillArtist(data.get(i),factory,cm);
+					}
 				}
 				break;
 			case "album":
 				data = jsonToStore.getJSONObject("albums").getJSONArray("items");
 				if(!splittedRequest[2].isEmpty()){// 1 artist only
 					fillAlbum(data.get(0),factory,cm);
-				}
-				for(int i = 0; i < data.length(); i++){
-					fillAlbum(data.get(i),factory,cm);
+				}else {
+					for(int i = 0; i < data.length(); i++){
+						fillAlbum(data.get(i),factory,cm);
+					}
 				}
 				break;
 			case "track":
 				data = jsonToStore.getJSONObject("tracks").getJSONArray("items");
 				if(!splittedRequest[2].isEmpty()){// 1 track only
 					fillTrack(data.get(0),factory,cm);
-				}
-				for(int i = 0; i < data.length(); i++){
-					fillTrack(data.get(i),factory,cm);
+				}else {
+					for(int i = 0; i < data.length(); i++){
+						fillTrack(data.get(i),factory,cm);
+					}
 				}
 				break;
 			case "playlist":
 				data = jsonToStore.getJSONObject("playlists").getJSONArray("items");
 				if(!splittedRequest[2].isEmpty()){// 1 track only
 					fillPlaylist(data.get(0),factory,cm);
-				}
-				for(int i = 0; i < data.length(); i++){
-					fillPlaylist(data.get(i),factory,cm);
+				} else {
+					for(int i = 0; i < data.length(); i++){
+						fillPlaylist(data.get(i),factory,cm);
+					}
 				}
 				break;
 			default:
