@@ -17,8 +17,15 @@ export class AlbumsComponent implements OnInit {
         name: 'name',
         popularity: 0,
         release_date: 'release_date',
-        release_date_precision: 'release_date_precision',
         tracks_total: 'total'
+      },
+      {
+        id: '12',
+        image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
+        name: 'Second album',
+        popularity: 12,
+        release_date: '09/17/2010',
+        tracks_total: '12'
       }
     ]
   }
