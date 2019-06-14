@@ -5,16 +5,17 @@
 
 <table class="mat-table">
 
-    <tr class="mat-row">
-        <th class="mat-header-cell">image</th>
-        <th class="mat-header-cell">name</th>
-        <th class="mat-header-cell">popularity</th>
-        <th class="mat-header-cell">followers</th>
+    <tr class="mat-row table-header">
+        <th class="mat-header-cell">Image</th>
+        <th class="mat-header-cell">Name</th>
+        <th class="mat-header-cell">Popularity</th>
+        <th class="mat-header-cell">Followers</th>
     </tr>
   
     <tr class="mat-row" *ngFor="let artist of data.artists">
         <td class="mat-cell">
-            {{ artist.image }}
+            <img src="{{ artist.image }}" class="mat-card-avatar">
+            
         </td>
         <td class="mat-cell">
             {{ artist.name }}
