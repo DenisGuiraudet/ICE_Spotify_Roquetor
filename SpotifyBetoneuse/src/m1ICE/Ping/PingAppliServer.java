@@ -113,7 +113,7 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 		getRequest.addHeader("Authorization", "Bearer " + token);
 		getRequest.addHeader("accept", "application/json");
 	}
-	
+	// http://127.0.0.1:9000/?value=test&type=artiste&token
 	static public void main(String args[]){
 		Blade.of().get("/", ctx -> {
 	        String value = ctx.fromString("value");
