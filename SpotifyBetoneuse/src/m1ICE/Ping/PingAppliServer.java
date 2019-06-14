@@ -88,6 +88,7 @@ public class PingAppliServer{
 	        catch (IOException e) {
 				e.printStackTrace();
 			}
+	        ctx.text("oui");
 	    }).start();
 	}
 
