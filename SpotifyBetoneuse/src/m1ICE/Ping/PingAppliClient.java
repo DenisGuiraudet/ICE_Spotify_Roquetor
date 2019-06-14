@@ -16,7 +16,7 @@ public class PingAppliClient
        Registry registry;
        String serverAddress = "localhost";
        String serverPort = "3232";
-       String token = "BQCK8XFE6zDMzaEq_HUxZUIfYIJ9Mnq5QzMTzjTeeGgCpGd6nK8eBZkGK03BLJ9-ayMCTwmVVQ8iTTU4Xmg3iEvndOiQI8W-ZnSTtknYc_jFjXAWH7MNAIGntnGJLZ446NZ1IQqRT92e4yK_dW9r0OHUH91Akx4TCn4zGdCvhnZAR8Fxg-fmJZIH1-Qu6o6nfmWyakYKG9UWvXCl9Kngp5Cz9NRz5q3zuXNqnHEg3tI6oLuwMNtmoCA-3iTXkrlhlWPrptLFU6hATKs";
+       String token = "BQAQF74qjSYKZzcXiimDd_dXJ8voKhKUa8t4fIAovGDGwVM9NlNeZJhtqOKENWUrzOHkE1x0CuSHU8V9VzGyeR6lEKDWXEAc-HuiMzwciPr2wPPUrWaEmvhS7uRViJm8I2hj_xauwetDb252iJw0slQOzG4CCuJ8yO9StLT8buyOg0szGvFgOmcWhf3jOiEgeUSl0HuDrJ9BmRW-f7yvO-RAVZoN6dBBWNri-DpjDpN8kn_iLLL4CUU4TYnFlzduT2ZN6-OK9PLs1J9IKHZ3jlYI0yTmtx2SQ1M";
        String searchValue = "Rammstein";
 
        System.out.println("sending " + searchValue + " to " + serverAddress + " : " + serverPort);
@@ -27,7 +27,7 @@ public class PingAppliClient
            pingServer = (Ping)(registry.lookup("pingServer"));
            // call the remote method
            pingServer.receiveMessage(token, searchValue);
-           String response = pingServer.getRequest(token, searchValue, "artist");
+           String response = pingServer.getRequest(token, searchValue, "search", "album");
            PingAppliClient.printResponse(response);
        }
        catch(RemoteException e){

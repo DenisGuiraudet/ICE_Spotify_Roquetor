@@ -14,17 +14,14 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import com.blade.Blade;
 
 import m1ICE.Ping.Ping;
+import org.json.JSONObject;
 
-@SuppressWarnings("deprecation")
 public class PingAppliServer extends java.rmi.server.UnicastRemoteObject implements Ping{
 
 	private static final long serialVersionUID = 7036878533690593349L;
-
-	int      thisPort;
-
-	String   thisAddress;
-
-	Registry registry;    // rmi registry for lookup the remote objects.
+	private int      thisPort;
+	private String   thisAddress;
+	private Registry registry;    // rmi registry for lookup the remote objects.
 
 
 
@@ -62,14 +59,10 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 		String initRequest = "https://api.spotify.com/v1/artists/";
 	}
 	
-	@Override
-	public String getRequest(String token, String request, String type) throws IOException{
+	public String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
-		SearchTypeEnum searchType = this.getSearchType(type);		
-		String initRequest = "https://api.spotify.com/v1/search?query=";
-		request = initRequest + request;
-		request += "&type=artist";
+		String request = this.getRequestAsString(whatQuerry, typeQuerry, searchValue);
 
 		HttpGet getRequest = new HttpGet(request);
 		this.addSeachRequestHeader(getRequest, token);
@@ -93,25 +86,27 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 				strBuilder.append(output);
 			}
 			
-			return strBuilder.toString();
+			String Json = strBuilder.toString();
+			
+			return Json;
 		} catch (IOException e) {
 			throw e;
 		}
 	}
 	
-	private SearchTypeEnum getSearchType(String type) {
-		switch (type) {
-		case "artist":
-			return SearchTypeEnum.ARTIST;
-		case "album":
-			return SearchTypeEnum.ALBUM;
-		case "track":
-			return SearchTypeEnum.TRACK;
-		case "playlist":
-			return SearchTypeEnum.PLAYLIST;
-		default:
-			return SearchTypeEnum.UNKNOWN;
+	private String getRequestAsString(String whatQuerry, String typeQuerry, String searchValue) {
+		StringBuilder strBuilder = new StringBuilder();
+		if("search".equals(whatQuerry)) {
+			strBuilder.append("https://api.spotify.com/v1/search?query=");			
 		}
+		if("show".equals(whatQuerry)) {
+			strBuilder.append("https://api.spotify.com/v1/show?query=");
+		}
+		strBuilder.append(searchValue);
+		strBuilder.append("&type=");
+		strBuilder.append(typeQuerry);
+		
+		return strBuilder.toString();
 	}
 	
 	private void addSeachRequestHeader(HttpGet getRequest, String token){

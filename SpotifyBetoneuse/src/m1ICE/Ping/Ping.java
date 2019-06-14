@@ -10,6 +10,6 @@ public interface Ping extends Remote {
 
 	void receiveMessage(String oauth, String artiste) throws RemoteException;
 	
-	String getRequest(String token, String request, String type) throws IOException;
+	public String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException;
 
 }
