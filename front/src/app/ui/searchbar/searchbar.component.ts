@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { StoreService } from '../../store.service';
@@ -41,7 +42,11 @@ export class SearchbarComponent implements OnInit {
 
   stateGroupOptions: Observable<StateGroup[]>;
 
-  constructor(private fb: FormBuilder, private storeService: StoreService) {}
+  constructor(
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private storeService: StoreService
+  ) {}
 
   ngOnInit() {
     if (this.initValue) {
@@ -68,13 +73,13 @@ export class SearchbarComponent implements OnInit {
 
   private search() {
     if (!this.storeService.spotifyUserToken) {
-      console.warn("No spotify token");
+      this.showSnackbar('No spotify token');
       return;
     }
 
     let params = this.cleaningRequest(this.stateForm.get('stateGroup').value);
     if (!params) {
-      console.warn("Missing some words in the request");
+      this.showSnackbar('Missing some words in the request');
       return;
     }
     
@@ -82,10 +87,10 @@ export class SearchbarComponent implements OnInit {
     axios.get('http://127.0.0.1:9000', {
       params
     }).then(response => {
-      console.log('response', response);
+      this.showSnackbar('response ' + response);
       this.readXml();
     }).catch(error => {
-      console.log('error', error);
+      this.showSnackbar('error ' + error);
     }).finally(() => {
       this.readXml(); // TODO: remove from here once it works
     });
@@ -166,8 +171,18 @@ export class SearchbarComponent implements OnInit {
           }
         break;
       default:
-        console.warn('Type unknown', mainDataType);
+        this.showSnackbar('Type unknown ' + mainDataType);
     }
+  }
+
+  showSnackbar(message: string) {
+    this._snackBar.open(
+      message,
+      '❌',
+      {
+        duration: 2000
+      }
+    );
   }
 
 }
