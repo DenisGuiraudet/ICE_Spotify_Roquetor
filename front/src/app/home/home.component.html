@@ -4,23 +4,21 @@
 <mat-divider></mat-divider>
 
 <mat-grid-list cols="2" rowHeight="2:1" mg-top="2">
-    <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_artist.jpg)'">
+    <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_artist.png)'">
       <button mat-button routerLink="/artist">
         <mat-icon matSuffix>image</mat-icon>
       </button>
       <button mat-button routerLink="/artists">
         <mat-icon matSuffix>view_list</mat-icon>
       </button>
-      <h1>Artiste</h1>
     </mat-grid-tile>
-    <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_album.jpg)'">
+    <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_album.png)'">
       <button mat-button routerLink="/album">
         <mat-icon matSuffix>image</mat-icon>
       </button>
       <button mat-button routerLink="/albums">
         <mat-icon matSuffix>view_list</mat-icon>
       </button>
-      <h1>Album</h1>
     </mat-grid-tile>
     <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_track.png)'">
       <button mat-button routerLink="/track">
@@ -29,7 +27,6 @@
       <button mat-button routerLink="/tracks">
         <mat-icon matSuffix>view_list</mat-icon>
       </button>
-      <h1>Titre</h1>
     </mat-grid-tile>
     <mat-grid-tile [style.backgroundImage]="'url(./assets/img/background_playlist.png)'">
       <button mat-button routerLink="/playlist">
@@ -38,6 +35,5 @@
       <button mat-button routerLink="/playlists">
         <mat-icon matSuffix>view_list</mat-icon>
       </button>
-      <h1>Playlist</h1>
     </mat-grid-tile>
   </mat-grid-list>

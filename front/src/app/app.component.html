@@ -10,6 +10,6 @@
   </mat-form-field>
 </mat-toolbar>
 
-<mat-card class="page-container">
+<mat-card class="page-container" [ngClass]="currentRoute">
   <router-outlet></router-outlet>
 </mat-card>

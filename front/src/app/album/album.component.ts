@@ -22,6 +22,18 @@ export class AlbumComponent implements OnInit {
         id: 'id',
         name: 'name',
         track_number: 0
+      },
+      {
+        duration_ms: 12,
+        id: '1212',
+        name: 'Une chanson',
+        track_number: 3
+      },
+      {
+        duration_ms: 122,
+        id: '444',
+        name: 'Toto',
+        track_number: 4
       }
     ]
   }

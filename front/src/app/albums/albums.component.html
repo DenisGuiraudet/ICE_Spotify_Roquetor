@@ -1,21 +1,21 @@
 
-<app-searchbar></app-searchbar>
+<app-searchbar [initValue]="'search album '"></app-searchbar>
 
 <mat-divider></mat-divider>
 
 <table class="mat-table">
 
-    <tr class="mat-row"> 
-        <th class="mat-header-cell">image</th>
-        <th class="mat-header-cell">name</th>
-        <th class="mat-header-cell">popularity</th>
-        <th class="mat-header-cell">tracks.total</th>
-        <th class="mat-header-cell">release_date release_date_precision</th>
+    <tr class="mat-row table-header"> 
+        <th class="mat-header-cell">Image</th>
+        <th class="mat-header-cell">Name</th>
+        <th class="mat-header-cell">Popularity</th>
+        <th class="mat-header-cell">Total Tracks</th>
+        <th class="mat-header-cell">Release Date</th>
     </tr>
   
     <tr class="mat-row" *ngFor="let album of data.albums">
         <td class="mat-cell"> 
-            {{ album.image }}
+            <img [attr.src]="album.image" class="mat-card-avatar"/>
         </td>
         <td class="mat-cell">
             {{ album.name }}
@@ -27,7 +27,7 @@
             {{ album.tracks_total }}
         </td>
         <td class="mat-cell">
-            {{ album.release_date }} {{ album.release_date_precision }}
+            {{ album.release_date }}
         </td>
     </tr>
 

@@ -1,3 +1,4 @@
+@import './common.scss';
 
 .mat-toolbar {
     display: flex;
@@ -38,4 +39,20 @@
 
 .page-container {
     margin: 20px;
+    &.album, 
+    &.albums {
+        background-color: $album-color;
+    }
+    &.artist,
+    &.artists {
+        background-color: $artist-color;
+    }
+    &.playlist,
+    &.playlists {
+        background-color: $playlist-color;
+    }
+    &.track,
+    &.tracks {
+        background-color: $track-color;
+    }
 }

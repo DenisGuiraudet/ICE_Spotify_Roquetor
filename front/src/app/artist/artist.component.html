@@ -1,10 +1,10 @@
 
-<app-searchbar></app-searchbar>
+<app-searchbar [initValue]="'show artist '"></app-searchbar>
 
 <mat-divider></mat-divider>
 
 <mat-card-header>
-    <img mat-card-avatar [attr.src]="data.image" alt="Description" />
+    <img mat-card-avatar [attr.src]="data.image"/>
     <mat-card-title>
         {{ data.popularity }} {{ data.name }}
     </mat-card-title>

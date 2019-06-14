@@ -13,7 +13,8 @@ import {
   MatIconModule,
   MatButtonModule,
   MatDividerModule,
-  MatTableModule
+  MatTableModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -60,6 +61,7 @@ import { TracksComponent } from './tracks/tracks.component';
     MatButtonModule,
     MatDividerModule,
     MatTableModule,
+    MatSnackBarModule,
     AppRoutingModule
   ],
   providers: [],
