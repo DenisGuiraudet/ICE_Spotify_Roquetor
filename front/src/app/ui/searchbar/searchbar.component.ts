@@ -84,7 +84,7 @@ export class SearchbarComponent implements OnInit {
     }
     
     // Back Call
-    axios.get('http://127.0.0.1:9000', {
+    axios.get('http://localhost:9000', {
       params
     }).then(response => {
       this.showSnackbar('response ' + response);
