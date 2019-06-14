@@ -17,7 +17,6 @@ import spotify_Requetor.Track;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link spotify_Requetor.impl.TrackImpl#getDuree <em>Duree</em>}</li>
  *   <li>{@link spotify_Requetor.impl.TrackImpl#getImage <em>Image</em>}</li>
  *   <li>{@link spotify_Requetor.impl.TrackImpl#getRelease_date <em>Release date</em>}</li>
  *   <li>{@link spotify_Requetor.impl.TrackImpl#getPopularity <em>Popularity</em>}</li>
@@ -26,24 +25,6 @@ import spotify_Requetor.Track;
  * @generated
  */
 public class TrackImpl extends RequestImpl implements Track {
-	/**
-	 * The default value of the '{@link #getDuree() <em>Duree</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuree()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DUREE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDuree() <em>Duree</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuree()
-	 * @generated
-	 * @ordered
-	 */
-	protected String duree = DUREE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,28 +104,6 @@ public class TrackImpl extends RequestImpl implements Track {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDuree() {
-		return duree;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDuree(String newDuree) {
-		String oldDuree = duree;
-		duree = newDuree;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.TRACK__DUREE, oldDuree,
-					duree));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getImage() {
 		return image;
 	}
@@ -214,8 +173,6 @@ public class TrackImpl extends RequestImpl implements Track {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.TRACK__DUREE:
-			return getDuree();
 		case Spotify_RequetorPackage.TRACK__IMAGE:
 			return getImage();
 		case Spotify_RequetorPackage.TRACK__RELEASE_DATE:
@@ -234,9 +191,6 @@ public class TrackImpl extends RequestImpl implements Track {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.TRACK__DUREE:
-			setDuree((String) newValue);
-			return;
 		case Spotify_RequetorPackage.TRACK__IMAGE:
 			setImage((String) newValue);
 			return;
@@ -258,9 +212,6 @@ public class TrackImpl extends RequestImpl implements Track {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.TRACK__DUREE:
-			setDuree(DUREE_EDEFAULT);
-			return;
 		case Spotify_RequetorPackage.TRACK__IMAGE:
 			setImage(IMAGE_EDEFAULT);
 			return;
@@ -282,8 +233,6 @@ public class TrackImpl extends RequestImpl implements Track {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.TRACK__DUREE:
-			return DUREE_EDEFAULT == null ? duree != null : !DUREE_EDEFAULT.equals(duree);
 		case Spotify_RequetorPackage.TRACK__IMAGE:
 			return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
 		case Spotify_RequetorPackage.TRACK__RELEASE_DATE:
@@ -305,9 +254,7 @@ public class TrackImpl extends RequestImpl implements Track {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (duree: ");
-		result.append(duree);
-		result.append(", image: ");
+		result.append(" (image: ");
 		result.append(image);
 		result.append(", release_date: ");
 		result.append(release_date);

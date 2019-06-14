@@ -738,22 +738,13 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int TRACK__DURATION_MS = REQUEST__DURATION_MS;
 
 	/**
-	 * The feature id for the '<em><b>Duree</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACK__DUREE = REQUEST_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACK__IMAGE = REQUEST_FEATURE_COUNT + 1;
+	int TRACK__IMAGE = REQUEST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Release date</b></em>' attribute.
@@ -762,7 +753,7 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACK__RELEASE_DATE = REQUEST_FEATURE_COUNT + 2;
+	int TRACK__RELEASE_DATE = REQUEST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Popularity</b></em>' attribute.
@@ -771,7 +762,7 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACK__POPULARITY = REQUEST_FEATURE_COUNT + 3;
+	int TRACK__POPULARITY = REQUEST_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Track</em>' class.
@@ -780,7 +771,7 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACK_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 4;
+	int TRACK_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -1141,17 +1132,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTrack();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spotify_Requetor.Track#getDuree <em>Duree</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duree</em>'.
-	 * @see spotify_Requetor.Track#getDuree()
-	 * @see #getTrack()
-	 * @generated
-	 */
-	EAttribute getTrack_Duree();
 
 	/**
 	 * Returns the meta object for the attribute '{@link spotify_Requetor.Track#getImage <em>Image</em>}'.
@@ -1542,14 +1522,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRACK = eINSTANCE.getTrack();
-
-		/**
-		 * The meta object literal for the '<em><b>Duree</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRACK__DUREE = eINSTANCE.getTrack_Duree();
 
 		/**
 		 * The meta object literal for the '<em><b>Image</b></em>' attribute feature.

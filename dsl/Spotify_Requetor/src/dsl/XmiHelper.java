@@ -124,21 +124,45 @@ public class XmiHelper {
 		Artist artist = factory.createArtist();
 		artist.setName(((JSONObject)data).get("name").toString());
 		artist.setId(((JSONObject)data).get("id").toString());
+		artist.setFollowers(((JSONObject)data).get("followers").toString());
+		artist.setPopularity(((JSONObject)data).get("popularity").toString());
+		artist.setImage(((JSONObject)data).get("image").toString());
 		cm.getRequest().add(artist);
 	}
 	private static void fillAlbum(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Album album = factory.createAlbum();
 		album.setName(((JSONObject)data).get("name").toString());
+		album.setId(((JSONObject)data).get("id").toString());
+		album.setRelease_date(((JSONObject)data).get("release_date").toString());
+		album.setPopularity(((JSONObject)data).get("popularity").toString());
+		album.setImage(((JSONObject)data).get("image").toString());
 		cm.getRequest().add(album);
 	}
 	private static void fillTrack(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Track track = factory.createTrack();
 		track.setName(((JSONObject)data).get("name").toString());
+		track.setId(((JSONObject)data).get("id").toString());
+		track.setRelease_date(((JSONObject)data).get("release_date").toString());
+		track.setPopularity(((JSONObject)data).get("popularity").toString());
+		track.setImage(((JSONObject)data).get("image").toString());
+		track.setDanceability(((JSONObject)data).get("danceability").toString());
+		track.setInstrumentalness(((JSONObject)data).get("instrumentalness").toString());
+		track.setTempo(((JSONObject)data).get("tempo").toString());
+		track.setSpeechiness(((JSONObject)data).get("speechiness").toString());
+		track.setAcousticness(((JSONObject)data).get("acoustincness").toString());
+		track.setValence(((JSONObject)data).get("valence").toString());
+		track.setLoudness(((JSONObject)data).get("loudness").toString());
+		track.setLiveness(((JSONObject)data).get("liveness").toString());
+		track.setEnergy(((JSONObject)data).get("energy").toString());
+		track.setDuration_ms(((JSONObject)data).get("duration_ms").toString());
 		cm.getRequest().add(track);
 	}
 	private static void fillPlaylist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Playlist playlist = factory.createPlaylist();
 		playlist.setName(((JSONObject)data).get("name").toString());
+		playlist.setId(((JSONObject)data).get("id").toString());
+		playlist.setDescription(((JSONObject)data).get("description").toString());
+		playlist.setImage(((JSONObject)data).get("image").toString());
 		cm.getRequest().add(playlist);
 	}
 }

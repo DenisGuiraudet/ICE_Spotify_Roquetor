@@ -27,7 +27,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Album/popularity"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Track">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/duree"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/image"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/release_date"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/popularity"/>

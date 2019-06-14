@@ -271,7 +271,7 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTrack_Duree() {
+	public EAttribute getTrack_Image() {
 		return (EAttribute) trackEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -280,7 +280,7 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTrack_Image() {
+	public EAttribute getTrack_Release_date() {
 		return (EAttribute) trackEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -289,17 +289,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTrack_Release_date() {
-		return (EAttribute) trackEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTrack_Popularity() {
-		return (EAttribute) trackEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) trackEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -520,7 +511,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		createEAttribute(albumEClass, ALBUM__POPULARITY);
 
 		trackEClass = createEClass(TRACK);
-		createEAttribute(trackEClass, TRACK__DUREE);
 		createEAttribute(trackEClass, TRACK__IMAGE);
 		createEAttribute(trackEClass, TRACK__RELEASE_DATE);
 		createEAttribute(trackEClass, TRACK__POPULARITY);
@@ -616,8 +606,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackEClass, Track.class, "Track", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrack_Duree(), ecorePackage.getEString(), "duree", null, 0, 1, Track.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrack_Image(), ecorePackage.getEString(), "image", null, 0, 1, Track.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrack_Release_date(), ecorePackage.getEString(), "release_date", null, 0, 1, Track.class,
