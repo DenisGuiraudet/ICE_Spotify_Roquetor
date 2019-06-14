@@ -1,3 +1,30 @@
-<p>
-  artists works!
-</p>
+
+<app-searchbar></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table class="mat-table">
+
+    <tr class="mat-row">
+        <th class="mat-header-cell">image</th>
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">popularity</th>
+        <th class="mat-header-cell">followers</th>
+    </tr>
+  
+    <tr class="mat-row" *ngFor="let artist of data.artists">
+        <td class="mat-cell">
+            {{ artist.image }}
+        </td>
+        <td class="mat-cell">
+            {{ artist.name }}
+        </td>
+        <td class="mat-cell">
+            {{ artist.popularity }}
+        </td>
+        <td class="mat-cell">
+            {{ artist.followers }}
+        </td>
+    </tr>
+  
+</table>

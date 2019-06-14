@@ -9,43 +9,29 @@ export class PlaylistComponent implements OnInit {
   
   data = {
     description: 'description',
-    followers: {
-        total: 0
-    },
+    followers: 0,
     id: 'id',
-    images: [
-        {
-            url: 'url'
-        }
-    ],
+    image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
     name: 'name',
-    tracks: {
-        items: [
-            {
-                track: {
-                    album: {
-                      id: 'id',
-                      images: [
-                          {
-                              url: 'url'
-                          }
-                      ],
-                      name: 'name'
-                    },
-                    artists: [
-                        {
-                            id: 'id',
-                            name: 'name'
-                        }
-                    ],
-                    duration_ms: 0,
+    tracks: [
+        {
+            album: {
+                id: 'id',
+                image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
+                name: 'name'
+            },
+            artists: [
+                {
                     id: 'id',
-                    name: 'name',
-                    popularity: 0
+                    name: 'name'
                 }
-            }
-        ]
-    }
+            ],
+            duration_ms: 0,
+            id: 'id',
+            name: 'name',
+            popularity: 0
+        }
+    ]
   }
 
   constructor() { }

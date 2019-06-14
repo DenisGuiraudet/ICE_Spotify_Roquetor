@@ -3,19 +3,32 @@
 
 <mat-divider></mat-divider>
 
-<table>
+<table class="mat-table">
 
-  <tr>
-    <th>Image</th>
-    <th>Image</th>
-  </tr>
-
-  <tr *ngFor="let album of data.albums">
-    <td>
-      <ng-container *ngIf="data.albums.length > 0">
-        {{album.images[0].url}}
-      </ng-container>
-    </td>
-  </tr>
+    <tr class="mat-row"> 
+        <th class="mat-header-cell">image</th>
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">popularity</th>
+        <th class="mat-header-cell">tracks.total</th>
+        <th class="mat-header-cell">release_date release_date_precision</th>
+    </tr>
+  
+    <tr class="mat-row" *ngFor="let album of data.albums">
+        <td class="mat-cell"> 
+            {{ album.image }}
+        </td>
+        <td class="mat-cell">
+            {{ album.name }}
+        </td>
+        <td class="mat-cell">
+            {{ album.popularity }}
+        </td>
+        <td class="mat-cell">
+            {{ album.tracks_total }}
+        </td>
+        <td class="mat-cell">
+            {{ album.release_date }} {{ album.release_date_precision }}
+        </td>
+    </tr>
 
 </table>
