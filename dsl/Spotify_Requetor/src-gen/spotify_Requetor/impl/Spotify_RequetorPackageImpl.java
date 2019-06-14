@@ -172,8 +172,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArtist_Name() {
-		return (EAttribute) artistEClass.getEStructuralFeatures().get(0);
+	public EReference getArtist_Albums() {
+		return (EReference) artistEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArtist_Album() {
+	public EReference getArtist_Tracks() {
 		return (EReference) artistEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -190,8 +190,26 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArtist_Track() {
-		return (EReference) artistEClass.getEStructuralFeatures().get(2);
+	public EAttribute getArtist_Followers() {
+		return (EAttribute) artistEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArtist_Popularity() {
+		return (EAttribute) artistEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArtist_Image() {
+		return (EAttribute) artistEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -208,8 +226,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAlbum_Name() {
-		return (EAttribute) albumEClass.getEStructuralFeatures().get(0);
+	public EReference getAlbum_Tracks() {
+		return (EReference) albumEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -217,8 +235,26 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAlbum_Track() {
-		return (EReference) albumEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAlbum_Image() {
+		return (EAttribute) albumEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlbum_Release_date() {
+		return (EAttribute) albumEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlbum_Popularity() {
+		return (EAttribute) albumEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -235,8 +271,35 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTrack_Name() {
+	public EAttribute getTrack_Duree() {
 		return (EAttribute) trackEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrack_Image() {
+		return (EAttribute) trackEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrack_Release_date() {
+		return (EAttribute) trackEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrack_Popularity() {
+		return (EAttribute) trackEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -253,8 +316,8 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlaylist_Name() {
-		return (EAttribute) playlistEClass.getEStructuralFeatures().get(0);
+	public EReference getPlaylist_Tracks() {
+		return (EReference) playlistEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -262,8 +325,26 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPlaylist_Track() {
-		return (EReference) playlistEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPlaylist_Description() {
+		return (EAttribute) playlistEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlaylist_Image() {
+		return (EAttribute) playlistEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlaylist_Followers() {
+		return (EAttribute) playlistEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -280,8 +361,107 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_DataCollected() {
+	public EAttribute getRequest_Name() {
 		return (EAttribute) requestEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Id() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Danceability() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Instrumentalness() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Tempo() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Speechiness() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Acousticness() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Valence() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Loudness() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Liveness() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Energy() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequest_Duration_ms() {
+		return (EAttribute) requestEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -291,15 +471,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 */
 	public EOperation getRequest__Search__String() {
 		return requestEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRequest__Show() {
-		return requestEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -336,25 +507,44 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		createEAttribute(commandManagerEClass, COMMAND_MANAGER__TOKEN);
 
 		artistEClass = createEClass(ARTIST);
-		createEAttribute(artistEClass, ARTIST__NAME);
-		createEReference(artistEClass, ARTIST__ALBUM);
-		createEReference(artistEClass, ARTIST__TRACK);
+		createEReference(artistEClass, ARTIST__ALBUMS);
+		createEReference(artistEClass, ARTIST__TRACKS);
+		createEAttribute(artistEClass, ARTIST__FOLLOWERS);
+		createEAttribute(artistEClass, ARTIST__POPULARITY);
+		createEAttribute(artistEClass, ARTIST__IMAGE);
 
 		albumEClass = createEClass(ALBUM);
-		createEAttribute(albumEClass, ALBUM__NAME);
-		createEReference(albumEClass, ALBUM__TRACK);
+		createEReference(albumEClass, ALBUM__TRACKS);
+		createEAttribute(albumEClass, ALBUM__IMAGE);
+		createEAttribute(albumEClass, ALBUM__RELEASE_DATE);
+		createEAttribute(albumEClass, ALBUM__POPULARITY);
 
 		trackEClass = createEClass(TRACK);
-		createEAttribute(trackEClass, TRACK__NAME);
+		createEAttribute(trackEClass, TRACK__DUREE);
+		createEAttribute(trackEClass, TRACK__IMAGE);
+		createEAttribute(trackEClass, TRACK__RELEASE_DATE);
+		createEAttribute(trackEClass, TRACK__POPULARITY);
 
 		playlistEClass = createEClass(PLAYLIST);
-		createEAttribute(playlistEClass, PLAYLIST__NAME);
-		createEReference(playlistEClass, PLAYLIST__TRACK);
+		createEReference(playlistEClass, PLAYLIST__TRACKS);
+		createEAttribute(playlistEClass, PLAYLIST__DESCRIPTION);
+		createEAttribute(playlistEClass, PLAYLIST__IMAGE);
+		createEAttribute(playlistEClass, PLAYLIST__FOLLOWERS);
 
 		requestEClass = createEClass(REQUEST);
-		createEAttribute(requestEClass, REQUEST__DATA_COLLECTED);
+		createEAttribute(requestEClass, REQUEST__NAME);
+		createEAttribute(requestEClass, REQUEST__ID);
+		createEAttribute(requestEClass, REQUEST__DANCEABILITY);
+		createEAttribute(requestEClass, REQUEST__INSTRUMENTALNESS);
+		createEAttribute(requestEClass, REQUEST__TEMPO);
+		createEAttribute(requestEClass, REQUEST__SPEECHINESS);
+		createEAttribute(requestEClass, REQUEST__ACOUSTICNESS);
+		createEAttribute(requestEClass, REQUEST__VALENCE);
+		createEAttribute(requestEClass, REQUEST__LOUDNESS);
+		createEAttribute(requestEClass, REQUEST__LIVENESS);
+		createEAttribute(requestEClass, REQUEST__ENERGY);
+		createEAttribute(requestEClass, REQUEST__DURATION_MS);
 		createEOperation(requestEClass, REQUEST___SEARCH__STRING);
-		createEOperation(requestEClass, REQUEST___SHOW);
 	}
 
 	/**
@@ -401,44 +591,82 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artistEClass, Artist.class, "Artist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArtist_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artist.class, !IS_TRANSIENT,
+		initEReference(getArtist_Albums(), this.getAlbum(), null, "albums", null, 0, -1, Artist.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getArtist_Tracks(), this.getTrack(), null, "tracks", null, 0, -1, Artist.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getArtist_Followers(), ecorePackage.getEString(), "followers", null, 0, 1, Artist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArtist_Popularity(), ecorePackage.getEString(), "popularity", null, 0, 1, Artist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArtist_Image(), ecorePackage.getEString(), "image", null, 0, 1, Artist.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArtist_Album(), this.getAlbum(), null, "album", null, 0, -1, Artist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getArtist_Track(), this.getTrack(), null, "track", null, 0, -1, Artist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(albumEClass, Album.class, "Album", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAlbum_Name(), ecorePackage.getEString(), "name", null, 0, 1, Album.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlbum_Track(), this.getTrack(), null, "track", null, 1, -1, Album.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+		initEReference(getAlbum_Tracks(), this.getTrack(), null, "tracks", null, 1, -1, Album.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getAlbum_Image(), ecorePackage.getEString(), "image", null, 0, 1, Album.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAlbum_Release_date(), ecorePackage.getEString(), "release_date", null, 0, 1, Album.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAlbum_Popularity(), ecorePackage.getEString(), "popularity", null, 0, 1, Album.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackEClass, Track.class, "Track", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrack_Name(), ecorePackage.getEString(), "name", null, 0, 1, Track.class, !IS_TRANSIENT,
+		initEAttribute(getTrack_Duree(), ecorePackage.getEString(), "duree", null, 0, 1, Track.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrack_Image(), ecorePackage.getEString(), "image", null, 0, 1, Track.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrack_Release_date(), ecorePackage.getEString(), "release_date", null, 0, 1, Track.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrack_Popularity(), ecorePackage.getEString(), "popularity", null, 0, 1, Track.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(playlistEClass, Playlist.class, "Playlist", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlaylist_Name(), ecorePackage.getEString(), "name", null, 0, 1, Playlist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlaylist_Track(), this.getTrack(), null, "track", null, 0, -1, Playlist.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getPlaylist_Tracks(), this.getTrack(), null, "tracks", null, 1, -1, Playlist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlaylist_Description(), ecorePackage.getEString(), "description", null, 0, 1, Playlist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlaylist_Image(), ecorePackage.getEString(), "image", null, 0, 1, Playlist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlaylist_Followers(), ecorePackage.getEString(), "followers", null, 0, 1, Playlist.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requestEClass, Request.class, "Request", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRequest_DataCollected(), ecorePackage.getEString(), "dataCollected", null, 0, 1,
+		initEAttribute(getRequest_Name(), ecorePackage.getEString(), "name", null, 0, 1, Request.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Id(), ecorePackage.getEString(), "id", null, 0, 1, Request.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Danceability(), ecorePackage.getEString(), "danceability", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Instrumentalness(), ecorePackage.getEString(), "instrumentalness", null, 0, 1,
 				Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Tempo(), ecorePackage.getEString(), "tempo", null, 0, 1, Request.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Speechiness(), ecorePackage.getEString(), "speechiness", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Acousticness(), ecorePackage.getEString(), "acousticness", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Valence(), ecorePackage.getEString(), "valence", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Loudness(), ecorePackage.getEString(), "loudness", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Liveness(), ecorePackage.getEString(), "liveness", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Energy(), ecorePackage.getEString(), "energy", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Duration_ms(), ecorePackage.getEString(), "duration_ms", null, 0, 1, Request.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getRequest__Search__String(), ecorePackage.getEString(), "search", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getRequest__Show(), ecorePackage.getEString(), "show", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -53,7 +53,7 @@ public class XmiHelper {
 					fillArtist(data.get(0),factory,cm);
 				}else {
 					for(int i = 0; i < data.length(); i++){
-						fillArtist(data.get(i),factory,cm);
+//						fillArtists(data.get(i),factory,cm);
 					}
 				}
 				break;
@@ -63,7 +63,7 @@ public class XmiHelper {
 					fillAlbum(data.get(0),factory,cm);
 				}else {
 					for(int i = 0; i < data.length(); i++){
-						fillAlbum(data.get(i),factory,cm);
+//						fillAlbums(data.get(i),factory,cm);
 					}
 				}
 				break;
@@ -83,7 +83,7 @@ public class XmiHelper {
 					fillPlaylist(data.get(0),factory,cm);
 				} else {
 					for(int i = 0; i < data.length(); i++){
-						fillPlaylist(data.get(i),factory,cm);
+//						fillPlaylists(data.get(i),factory,cm);
 					}
 				}
 				break;
@@ -123,6 +123,7 @@ public class XmiHelper {
 	private static void fillArtist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Artist artist = factory.createArtist();
 		artist.setName(((JSONObject)data).get("name").toString());
+		artist.setId(((JSONObject)data).get("id").toString());
 		cm.getRequest().add(artist);
 	}
 	private static void fillAlbum(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
@@ -132,17 +133,12 @@ public class XmiHelper {
 	}
 	private static void fillTrack(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Track track = factory.createTrack();
-		track.setName(getJsonAttribute(data,"name"));
+		track.setName(((JSONObject)data).get("name").toString());
 		cm.getRequest().add(track);
 	}
 	private static void fillPlaylist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Playlist playlist = factory.createPlaylist();
 		playlist.setName(((JSONObject)data).get("name").toString());
 		cm.getRequest().add(playlist);
-	}
-	
-	
-	private static String getJsonAttribute(Object data, String attr) throws JSONException {
-		return ((JSONObject)data).get(attr).toString();
 	}
 }

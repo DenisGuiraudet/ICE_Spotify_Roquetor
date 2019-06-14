@@ -36,9 +36,9 @@ public class Test {
 				t2.setName("Titanium2");
 				Track t3 = factory.createTrack();
 				t3.setName("Titanium3");
-				a.getTrack().add(t);
-				a.getTrack().add(t2);
-				a.getTrack().add(t3);
+				a.getTracks().add(t);
+				a.getTracks().add(t2);
+				a.getTracks().add(t3);
 				
 				cm.getRequest().add(a);
 				cm.getRequest().add(t);

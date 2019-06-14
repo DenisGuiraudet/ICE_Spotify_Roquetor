@@ -5,7 +5,6 @@
     <semanticResources>spotify_Requetor.genmodel</semanticResources>
     <semanticResources>CommandManager1.xmi</semanticResources>
     <semanticResources>../CommandManager.xmi</semanticResources>
-    <semanticResources>CommandManager.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_klP0cCkyEemlJ7DLEHeQbg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_knt5oCkyEemlJ7DLEHeQbg" name="spotify_Requetor" repPath="#_kmpioCkyEemlJ7DLEHeQbg">
