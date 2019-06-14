@@ -16,18 +16,28 @@
     <genClasses ecoreClass="spotify_Requetor.ecore#//Artist">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Artist/albums"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Artist/tracks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Artist/followers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Artist/popularity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Artist/image"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Album">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Album/tracks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Album/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Album/release_date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Album/popularity"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Track">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Track/duree"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Playlist">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference spotify_Requetor.ecore#//Playlist/tracks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Playlist/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Playlist/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Playlist/followers"/>
     </genClasses>
     <genClasses ecoreClass="spotify_Requetor.ecore#//Request">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/id"/>
       <genOperations ecoreOperation="spotify_Requetor.ecore#//Request/search">
         <genParameters ecoreParameter="spotify_Requetor.ecore#//Request/search/target"/>
       </genOperations>
