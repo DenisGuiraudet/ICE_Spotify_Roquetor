@@ -52,7 +52,7 @@ public class XmiHelper {
 				if(!splittedRequest[2].isEmpty()){// 1 artist only
 					fillArtist(data.get(0),factory,cm);
 				}
-				for(int i =0; i < data.length(); i++){
+				for(int i = 0; i < data.length(); i++){
 					fillArtist(data.get(i),factory,cm);
 				}
 				break;
@@ -61,27 +61,30 @@ public class XmiHelper {
 				if(!splittedRequest[2].isEmpty()){// 1 artist only
 					fillAlbum(data.get(0),factory,cm);
 				}
-				for(int i =0; i < data.length(); i++){
+				for(int i = 0; i < data.length(); i++){
 					fillAlbum(data.get(i),factory,cm);
 				}
-				
 				break;
 			case "track":
 				data = jsonToStore.getJSONObject("tracks").getJSONArray("items");
-				Track track = factory.createTrack();
-				track.setName(splittedRequest[1]);
-				cm.getRequest().add(track);
-				
+				if(!splittedRequest[2].isEmpty()){// 1 track only
+					fillTrack(data.get(0),factory,cm);
+				}
+				for(int i = 0; i < data.length(); i++){
+					fillTrack(data.get(i),factory,cm);
+				}
 				break;
 			case "playlist":
 				data = jsonToStore.getJSONObject("playlists").getJSONArray("items");
-				Playlist playlist = factory.createPlaylist();
-				playlist.setName(splittedRequest[1]);
-				cm.getRequest().add(playlist);
-				
+				if(!splittedRequest[2].isEmpty()){// 1 track only
+					fillPlaylist(data.get(0),factory,cm);
+				}
+				for(int i = 0; i < data.length(); i++){
+					fillPlaylist(data.get(i),factory,cm);
+				}
 				break;
 			default:
-				break;
+				throw new JSONException("Error, no keyword for fill line");
 		}
 		
 		
@@ -113,16 +116,29 @@ public class XmiHelper {
 		}
 	}
 
-
 	private static void fillArtist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Artist artist = factory.createArtist();
 		artist.setName(((JSONObject)data).get("name").toString());
 		cm.getRequest().add(artist);
 	}
-	private static void fillAlbum(Object data, Spotify_RequetorFactory factory, CommandManager cm) {
+	private static void fillAlbum(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Album album = factory.createAlbum();
-		album.setName("test");
+		album.setName(((JSONObject)data).get("name").toString());
 		cm.getRequest().add(album);
 	}
-
+	private static void fillTrack(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
+		Track track = factory.createTrack();
+		track.setName(getJsonAttribute(data,"name"));
+		cm.getRequest().add(track);
+	}
+	private static void fillPlaylist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
+		Playlist playlist = factory.createPlaylist();
+		playlist.setName(((JSONObject)data).get("name").toString());
+		cm.getRequest().add(playlist);
+	}
+	
+	
+	private static String getJsonAttribute(Object data, String attr) throws JSONException {
+		return ((JSONObject)data).get(attr).toString();
+	}
 }
