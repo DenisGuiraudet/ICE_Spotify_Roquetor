@@ -10,6 +10,9 @@ import java.rmi.registry.Registry;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+
+import com.blade.Blade;
+
 import m1ICE.Ping.Ping;
 
 @SuppressWarnings("deprecation")
@@ -117,13 +120,21 @@ public class PingAppliServer extends java.rmi.server.UnicastRemoteObject impleme
 	}
 	
 	static public void main(String args[]){
-		try{
-			PingAppliServer s = new PingAppliServer();
-		}catch (Exception e) {
-			e.printStackTrace();
-			System.exit(1);
-		}
+		Blade.of().get("/", ctx -> {
+	        String value = ctx.fromString("value");
+	        String type = ctx.fromString("type");
+	        String token = ctx.fromString("token");
+	        String only = ctx.fromString("only");
+	        if (only != null) {
+	        	only = "show";
+	        } else {
+	        	only = "search";
+	        }
+	        System.out.println("value is:" + value);
+	        System.out.println("token is:" + token);
+	        System.out.println("type is:" + type);
 
+	    }).start();
 	}
 
 }
