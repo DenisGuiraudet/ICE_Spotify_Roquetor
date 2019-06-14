@@ -2,3 +2,13 @@
 <app-searchbar></app-searchbar>
 
 <mat-divider></mat-divider>
+
+<mat-card-header>
+    <img mat-card-avatar [attr.src]="data.image" alt="Description" />
+    <mat-card-title>
+        {{ data.popularity }} {{ data.name }}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{ data.followers }}
+    </mat-card-subtitle>
+</mat-card-header>

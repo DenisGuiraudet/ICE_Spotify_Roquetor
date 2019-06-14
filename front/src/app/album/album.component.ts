@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StoreService } from '../store.service';
+
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -8,35 +10,27 @@ import { Component, OnInit } from '@angular/core';
 export class AlbumComponent implements OnInit {
   
   data = {
-    artists: [
-      {
-        id: 'id',
-        name: 'name'
-      }
-    ],
     id: 'id',
-    images: [
-      {
-        url: 'url'
-      }
-    ],
+    image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
     name: 'name',
     popularity: 0,
     release_date: 'release_date',
     release_date_precision: 'release_date_precision',
-    tracks: {
-      items: [
-        {
-          duration_ms: 0,
-          id: 'id',
-          name: 'name',
-          track_number: 0
-        }
-      ]
-    }
+    tracks: [
+      {
+        duration_ms: 0,
+        id: 'id',
+        name: 'name',
+        track_number: 0
+      }
+    ]
   }
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+    if (!this.storeService.spotifyUserToken) {
+      console.log('Spotify not init');
+    }
+  }
 
   ngOnInit() {
   }

@@ -2,3 +2,35 @@
 <app-searchbar></app-searchbar>
 
 <mat-divider></mat-divider>
+
+<mat-card-header>
+    <img mat-card-avatar [attr.src]="data.image" alt="Description" />
+    <mat-card-title>
+        {{ data.name }} {{ data.followers }}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{ data.description }}
+    </mat-card-subtitle>
+</mat-card-header>
+
+<table class="mat-table">
+
+    <tr class="mat-row"> 
+        <th class="mat-header-cell">name</th>
+        <th class="mat-header-cell">popularity</th>
+        <th class="mat-header-cell">duration_ms</th>
+    </tr>
+
+    <tr class="mat-row" *ngFor="let track of data.tracks">
+        <td class="mat-cell">
+            {{ track.name }}
+        </td>
+        <td class="mat-cell">
+            {{ track.popularity }}
+        </td>
+        <td class="mat-cell">
+            {{ track.duration_ms }}
+        </td>
+    </tr>
+    
+</table>

@@ -11,15 +11,9 @@ export class PlaylistsComponent implements OnInit {
     playlists: [
       {
         description: 'description',
-        followers: {
-            total: 0
-        },
+        followers: 0,
         id: 'id',
-        images: [
-            {
-                url: 'url'
-            }
-        ],
+        image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
         name: 'name',
         total: 0
       }
