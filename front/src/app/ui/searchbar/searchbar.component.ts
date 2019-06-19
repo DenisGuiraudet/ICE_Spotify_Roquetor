@@ -89,13 +89,13 @@ export class SearchbarComponent implements OnInit {
     axios.get('http://127.0.0.1:9000/', {
       params
     }).then(response => {
-      this.showSnackbar('response ' + response);
-      this.readXml(this.storeService.spotifyUserToken);
+      // this.showSnackbar('response ' + response);
+      // this.readXml(this.storeService.spotifyUserToken);
     }).catch(error => {
       // if token error, for server we have workaround
-      if (!this.storeService.spotifyUserToken) {
-        this.showSnackbar('error ' + error);
-      }
+      // if (!this.storeService.spotifyUserToken) {
+      //   this.showSnackbar('error ' + error);
+      // }
     }).finally(() => {
       this.readXml(this.storeService.spotifyUserToken); // TODO: remove from here once it works
     });
@@ -128,7 +128,8 @@ export class SearchbarComponent implements OnInit {
 
   readXml(token: String) {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "../../../../../dsl/Spotify_Requetor/" +token+ ".xmi", false);
+    rawFile.open("GET", "../assets/dsl/Spotify_Requetor/" +token+ ".xmi", true);
+    console.log(rawFile);
     rawFile.onreadystatechange = () => {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200 || rawFile.status == 0){
@@ -142,6 +143,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   parsexml(xml) {
+    console.log("marche", xml);
     let datas = xml['spotify_Requetor:CommandManager'].request;
     let mainData = datas[0].$;
     let mainDataType = mainData['xsi:type'];
