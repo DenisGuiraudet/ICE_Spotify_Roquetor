@@ -84,15 +84,18 @@ export class SearchbarComponent implements OnInit {
     }
     
     // Back Call
-    axios.get('http://127.0.0.1:9000/', {
+    axios.get('127.0.0.1:9000/', {
       params
     }).then(response => {
       this.showSnackbar('response ' + response);
-      this.readXml();
+      this.readXml(this.storeService.spotifyUserToken);
     }).catch(error => {
-      this.showSnackbar('error ' + error);
+      // if token error, for server we have workaround
+      if (!this.storeService.spotifyUserToken) {
+        this.showSnackbar('error ' + error);
+      }
     }).finally(() => {
-      this.readXml(); // TODO: remove from here once it works
+      this.readXml(this.storeService.spotifyUserToken); // TODO: remove from here once it works
     });
   }
 
@@ -121,9 +124,9 @@ export class SearchbarComponent implements OnInit {
     return params;
   }
 
-  readXml() {
+  readXml(token: String) {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "../assets/teste.xmi", false);
+    rawFile.open("GET", "../../../../../dsl/Spotify_Requetor/" +token+ ".xmi", false);
     rawFile.onreadystatechange = () => {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200 || rawFile.status == 0){

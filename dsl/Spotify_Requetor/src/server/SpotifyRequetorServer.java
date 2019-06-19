@@ -23,7 +23,6 @@ public class SpotifyRequetorServer{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
 		String request = SpotifyRequetorServer.getRequestAsString(whatQuerry, typeQuerry, searchValue);
-
 		HttpGet getRequest = new HttpGet(request);
 		SpotifyRequetorServer.addSeachRequestHeader(getRequest, token);
 		
@@ -165,7 +164,6 @@ public class SpotifyRequetorServer{
 	        catch (IOException e) {
 				e.printStackTrace();
 			}
-			
 	        ctx.text("oui");
 	    }).start();
 	}
