@@ -1,9 +1,0 @@
-dependencies {
-	compile project(':m1ice.spotifyRequetor')
-	testCompile "junit:junit:4.12"
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:${xtextVersion}"
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
-}
-//this is an eclipse plugin project
-eclipseClasspath.enabled=false
-cleanEclipseClasspath.enabled=false

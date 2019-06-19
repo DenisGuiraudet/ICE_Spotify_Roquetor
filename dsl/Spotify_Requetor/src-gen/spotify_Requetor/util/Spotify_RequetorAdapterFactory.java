@@ -67,28 +67,8 @@ public class Spotify_RequetorAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected Spotify_RequetorSwitch<Adapter> modelSwitch = new Spotify_RequetorSwitch<Adapter>() {
 		@Override
-		public Adapter caseCommand(Command object) {
-			return createCommandAdapter();
-		}
-
-		@Override
-		public Adapter caseSearch(Search object) {
-			return createSearchAdapter();
-		}
-
-		@Override
-		public Adapter caseShow(Show object) {
-			return createShowAdapter();
-		}
-
-		@Override
 		public Adapter caseCommandManager(CommandManager object) {
 			return createCommandManagerAdapter();
-		}
-
-		@Override
-		public Adapter caseType(Type object) {
-			return createTypeAdapter();
 		}
 
 		@Override
@@ -112,6 +92,11 @@ public class Spotify_RequetorAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRequest(Request object) {
+			return createRequestAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -131,48 +116,6 @@ public class Spotify_RequetorAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link spotify_Requetor.Command <em>Command</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see spotify_Requetor.Command
-	 * @generated
-	 */
-	public Adapter createCommandAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link spotify_Requetor.Search <em>Search</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see spotify_Requetor.Search
-	 * @generated
-	 */
-	public Adapter createSearchAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link spotify_Requetor.Show <em>Show</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see spotify_Requetor.Show
-	 * @generated
-	 */
-	public Adapter createShowAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link spotify_Requetor.CommandManager <em>Command Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -183,20 +126,6 @@ public class Spotify_RequetorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommandManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link spotify_Requetor.Type <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see spotify_Requetor.Type
-	 * @generated
-	 */
-	public Adapter createTypeAdapter() {
 		return null;
 	}
 
@@ -253,6 +182,20 @@ public class Spotify_RequetorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPlaylistAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link spotify_Requetor.Request <em>Request</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see spotify_Requetor.Request
+	 * @generated
+	 */
+	public Adapter createRequestAdapter() {
 		return null;
 	}
 

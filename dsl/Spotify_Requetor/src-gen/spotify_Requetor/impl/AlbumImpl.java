@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -24,40 +23,78 @@ import spotify_Requetor.Track;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link spotify_Requetor.impl.AlbumImpl#getTrack <em>Track</em>}</li>
- *   <li>{@link spotify_Requetor.impl.AlbumImpl#getName <em>Name</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.AlbumImpl#getTracks <em>Tracks</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.AlbumImpl#getImage <em>Image</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.AlbumImpl#getRelease_date <em>Release date</em>}</li>
+ *   <li>{@link spotify_Requetor.impl.AlbumImpl#getPopularity <em>Popularity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AlbumImpl extends TypeImpl implements Album {
+public class AlbumImpl extends RequestImpl implements Album {
 	/**
-	 * The cached value of the '{@link #getTrack() <em>Track</em>}' containment reference list.
+	 * The cached value of the '{@link #getTracks() <em>Tracks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrack()
+	 * @see #getTracks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Track> track;
+	protected EList<Track> tracks;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getImage()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String IMAGE_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getImage()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String image = IMAGE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getRelease_date() <em>Release date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelease_date()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RELEASE_DATE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getRelease_date() <em>Release date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelease_date()
+	 * @generated
+	 * @ordered
+	 */
+	protected String release_date = RELEASE_DATE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPopularity() <em>Popularity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPopularity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String POPULARITY_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPopularity() <em>Popularity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPopularity()
+	 * @generated
+	 * @ordered
+	 */
+	protected String popularity = POPULARITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,11 +120,11 @@ public class AlbumImpl extends TypeImpl implements Album {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Track> getTrack() {
-		if (track == null) {
-			track = new EObjectContainmentEList<Track>(Track.class, this, Spotify_RequetorPackage.ALBUM__TRACK);
+	public EList<Track> getTracks() {
+		if (tracks == null) {
+			tracks = new EObjectContainmentEList<Track>(Track.class, this, Spotify_RequetorPackage.ALBUM__TRACKS);
 		}
-		return track;
+		return tracks;
 	}
 
 	/**
@@ -95,8 +132,8 @@ public class AlbumImpl extends TypeImpl implements Album {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getImage() {
+		return image;
 	}
 
 	/**
@@ -104,11 +141,56 @@ public class AlbumImpl extends TypeImpl implements Album {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setImage(String newImage) {
+		String oldImage = image;
+		image = newImage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.ALBUM__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.ALBUM__IMAGE, oldImage,
+					image));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRelease_date() {
+		return release_date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRelease_date(String newRelease_date) {
+		String oldRelease_date = release_date;
+		release_date = newRelease_date;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.ALBUM__RELEASE_DATE,
+					oldRelease_date, release_date));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPopularity() {
+		return popularity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPopularity(String newPopularity) {
+		String oldPopularity = popularity;
+		popularity = newPopularity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Spotify_RequetorPackage.ALBUM__POPULARITY,
+					oldPopularity, popularity));
 	}
 
 	/**
@@ -119,8 +201,8 @@ public class AlbumImpl extends TypeImpl implements Album {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.ALBUM__TRACK:
-			return ((InternalEList<?>) getTrack()).basicRemove(otherEnd, msgs);
+		case Spotify_RequetorPackage.ALBUM__TRACKS:
+			return ((InternalEList<?>) getTracks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -133,10 +215,14 @@ public class AlbumImpl extends TypeImpl implements Album {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.ALBUM__TRACK:
-			return getTrack();
-		case Spotify_RequetorPackage.ALBUM__NAME:
-			return getName();
+		case Spotify_RequetorPackage.ALBUM__TRACKS:
+			return getTracks();
+		case Spotify_RequetorPackage.ALBUM__IMAGE:
+			return getImage();
+		case Spotify_RequetorPackage.ALBUM__RELEASE_DATE:
+			return getRelease_date();
+		case Spotify_RequetorPackage.ALBUM__POPULARITY:
+			return getPopularity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,12 +236,18 @@ public class AlbumImpl extends TypeImpl implements Album {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.ALBUM__TRACK:
-			getTrack().clear();
-			getTrack().addAll((Collection<? extends Track>) newValue);
+		case Spotify_RequetorPackage.ALBUM__TRACKS:
+			getTracks().clear();
+			getTracks().addAll((Collection<? extends Track>) newValue);
 			return;
-		case Spotify_RequetorPackage.ALBUM__NAME:
-			setName((String) newValue);
+		case Spotify_RequetorPackage.ALBUM__IMAGE:
+			setImage((String) newValue);
+			return;
+		case Spotify_RequetorPackage.ALBUM__RELEASE_DATE:
+			setRelease_date((String) newValue);
+			return;
+		case Spotify_RequetorPackage.ALBUM__POPULARITY:
+			setPopularity((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +261,17 @@ public class AlbumImpl extends TypeImpl implements Album {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.ALBUM__TRACK:
-			getTrack().clear();
+		case Spotify_RequetorPackage.ALBUM__TRACKS:
+			getTracks().clear();
 			return;
-		case Spotify_RequetorPackage.ALBUM__NAME:
-			setName(NAME_EDEFAULT);
+		case Spotify_RequetorPackage.ALBUM__IMAGE:
+			setImage(IMAGE_EDEFAULT);
+			return;
+		case Spotify_RequetorPackage.ALBUM__RELEASE_DATE:
+			setRelease_date(RELEASE_DATE_EDEFAULT);
+			return;
+		case Spotify_RequetorPackage.ALBUM__POPULARITY:
+			setPopularity(POPULARITY_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +285,14 @@ public class AlbumImpl extends TypeImpl implements Album {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Spotify_RequetorPackage.ALBUM__TRACK:
-			return track != null && !track.isEmpty();
-		case Spotify_RequetorPackage.ALBUM__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case Spotify_RequetorPackage.ALBUM__TRACKS:
+			return tracks != null && !tracks.isEmpty();
+		case Spotify_RequetorPackage.ALBUM__IMAGE:
+			return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
+		case Spotify_RequetorPackage.ALBUM__RELEASE_DATE:
+			return RELEASE_DATE_EDEFAULT == null ? release_date != null : !RELEASE_DATE_EDEFAULT.equals(release_date);
+		case Spotify_RequetorPackage.ALBUM__POPULARITY:
+			return POPULARITY_EDEFAULT == null ? popularity != null : !POPULARITY_EDEFAULT.equals(popularity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,8 +308,12 @@ public class AlbumImpl extends TypeImpl implements Album {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (image: ");
+		result.append(image);
+		result.append(", release_date: ");
+		result.append(release_date);
+		result.append(", popularity: ");
+		result.append(popularity);
 		result.append(')');
 		return result.toString();
 	}
