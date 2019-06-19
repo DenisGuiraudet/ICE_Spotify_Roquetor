@@ -4,7 +4,6 @@ package spotify_Requetor.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -460,15 +459,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRequest__Search__String() {
-		return requestEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Spotify_RequetorFactory getSpotify_RequetorFactory() {
 		return (Spotify_RequetorFactory) getEFactoryInstance();
 	}
@@ -534,7 +524,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 		createEAttribute(requestEClass, REQUEST__LIVENESS);
 		createEAttribute(requestEClass, REQUEST__ENERGY);
 		createEAttribute(requestEClass, REQUEST__DURATION_MS);
-		createEOperation(requestEClass, REQUEST___SEARCH__STRING);
 	}
 
 	/**
@@ -651,10 +640,6 @@ public class Spotify_RequetorPackageImpl extends EPackageImpl implements Spotify
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequest_Duration_ms(), ecorePackage.getEString(), "duration_ms", null, 0, 1, Request.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		EOperation op = initEOperation(getRequest__Search__String(), ecorePackage.getEString(), "search", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

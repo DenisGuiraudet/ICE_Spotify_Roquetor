@@ -2,11 +2,7 @@
  */
 package spotify_Requetor.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -544,17 +540,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String search(String target) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -717,20 +702,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 			return DURATION_MS_EDEFAULT == null ? duration_ms != null : !DURATION_MS_EDEFAULT.equals(duration_ms);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case Spotify_RequetorPackage.REQUEST___SEARCH__STRING:
-			return search((String) arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
