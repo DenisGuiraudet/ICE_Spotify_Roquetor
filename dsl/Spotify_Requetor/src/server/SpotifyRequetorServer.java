@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.http.HttpResponse;
@@ -70,7 +71,10 @@ public class SpotifyRequetorServer{
 				strBuilder.append("&limit=1");
 			}
 		}
-		
+		if("artist".equals(whatQuerry)) {
+			strBuilder.append("/artists/");	
+			strBuilder.append(searchValue);
+		}
 		if("albums".equals(whatQuerry)) {
 			strBuilder.append("/albums/");	
 			strBuilder.append(searchValue);
@@ -79,6 +83,17 @@ public class SpotifyRequetorServer{
 		if("audioFeatures".equals(whatQuerry)) {
 			strBuilder.append("/audio-features?ids=");	
 			strBuilder.append(searchValue);
+		}
+		if("albumsOfArtist".equals(whatQuerry)) {
+			strBuilder.append("/artists/");	
+			strBuilder.append(searchValue);
+			strBuilder.append("/albums");
+			strBuilder.append("?limit=5");
+		}
+		if("topTracksOfArtist".equals(whatQuerry)) {
+			strBuilder.append("/artists/");	
+			strBuilder.append(searchValue);
+			strBuilder.append("/top-tracks?country=FR");
 		}
 		
 		return strBuilder.toString();
@@ -118,6 +133,58 @@ public class SpotifyRequetorServer{
 		return jsonFeaturesOfTracks;
 	}
 	
+	private static String getArtistForDisplay(String token, String artistName) throws JSONException{
+		String jsonSearchArtist = "";
+		try {
+			jsonSearchArtist = SpotifyRequetorServer.getRequest(token, "show", "artist", artistName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String idArtist = SpotifyRequetorServer.getIdOfArtist(jsonSearchArtist);	
+		
+		String jsonGetArtist = "";
+		try {
+			jsonGetArtist = SpotifyRequetorServer.getRequest(token, "artist", "useless", idArtist);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		JSONObject jsonObjArtist = new JSONObject(jsonGetArtist);
+		
+		String jsonGetAlbumsOfArtist = "";
+		try {
+			jsonGetAlbumsOfArtist = SpotifyRequetorServer.getRequest(token, "albumsOfArtist", "useless", idArtist);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		JSONObject jsonObjAlbums = new JSONObject(jsonGetAlbumsOfArtist);
+		JSONArray jsonArrayAlbums = jsonObjAlbums.getJSONArray("items");
+		
+		String jsonGetTopTracksOfArtist = "";
+		try {
+			jsonGetTopTracksOfArtist = SpotifyRequetorServer.getRequest(token, "topTracksOfArtist", "useless", idArtist);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		JSONObject jsonObjTopTracks = new JSONObject(jsonGetTopTracksOfArtist);
+		JSONArray jsonArrayTopTracks = jsonObjTopTracks.getJSONArray("tracks");
+		
+		jsonObjArtist.put("albums", jsonArrayAlbums);
+		jsonObjArtist.put("tracks", jsonArrayTopTracks);
+		
+		String json = jsonObjArtist.toString();
+		return json;
+	}
+	
+	private static String getIdOfArtist(String jsonOfShowArtist) throws JSONException{
+		//parse JsonSearchAlbum to get Id of the artist
+		JSONObject jsonObj = new JSONObject(jsonOfShowArtist);
+		JSONObject albumsObject = jsonObj.getJSONObject("artists");
+		JSONArray itemsArray = albumsObject.getJSONArray("items");
+		JSONObject itemObject = (JSONObject)itemsArray.get(0);
+		String idAlbum = itemObject.getString("id");
+		
+		return idAlbum;
+	}
 	private static String getIdOfAlbum(String jsonOfShowAlbum) throws JSONException {
 		//parse JsonSearchAlbum to get Id of the album
 		JSONObject jsonObj = new JSONObject(jsonOfShowAlbum);
@@ -169,7 +236,12 @@ public class SpotifyRequetorServer{
 				e.printStackTrace();
 			}
 			
-	        ctx.text("oui");
+	        try {
+				ctx.text(SpotifyRequetorServer.getArtistForDisplay(token, "Rammstein"));
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	    }).start();
 	}
 
