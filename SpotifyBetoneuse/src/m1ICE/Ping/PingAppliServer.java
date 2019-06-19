@@ -141,7 +141,7 @@ public class PingAppliServer{
 		getRequest.addHeader("Authorization", "Bearer " + token);
 		getRequest.addHeader("accept", "application/json");
 	}
-	// http://127.0.0.1:9000/?value=test&type=artist&token=BQBc3yEqiK4kjLaAWtBNQouLC1QB0EP-3HxFVNhQzr-4YPVlk5gtMCVHoY4MUqV8_bsLvdDbzfzXTiHJCF1Fcvl9iCHbKt8tEGcmT2G64tX8GKMgorPHmedmHvFE2G8TNoXB2gCJfRCgn41aP0Ik5SwZzUip65QQgadzu_eXK8TVLCeE_nJOwhMK-WSVOY2-K0Q2XjaN2Y5z1R5VY3I0R6aDdOQwTBR0kqCnMAm0huE4hdNRFKAwEjG7a9CaOSXMaxVB0x0EYWCpaQqvGDvn2i6HCrKn8yq0Saw
+	// http://127.0.0.1:9000/?value=test&type=artist&token
 	static public void main(String args[]){
 		Blade.of().get("/", ctx -> {
 	        String value = ctx.fromString("value");
@@ -156,7 +156,13 @@ public class PingAppliServer{
 	        System.out.println("value is:" + value);
 	        System.out.println("token is:" + token);
 	        System.out.println("type is:" + type);
-	        String tmpDeleteMe = PingAppliServer.getFeaturesOfAlbum(token, "Hardkvas");
+	        String Json = "";
+	        try {
+	        	Json = PingAppliServer.getRequest(token, value, only, type);
+	        }
+	        catch (IOException e) {
+				e.printStackTrace();
+			}
 	        ctx.text("oui");
 	    }).start();
 	}
