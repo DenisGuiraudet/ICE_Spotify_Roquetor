@@ -3,16 +3,22 @@ package m1ICE.Ping;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import com.blade.Blade;
 
 public class PingAppliServer{
 
 	private static final long serialVersionUID = 7036878533690593349L;
 	
-	public static String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException{
+	public static String getRequest(String token, String whatQuerry, String typeQuerry, String searchValue) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
 		String request = PingAppliServer.getRequestAsString(whatQuerry, typeQuerry, searchValue);
@@ -48,25 +54,94 @@ public class PingAppliServer{
 	}
 	
 	private static String getRequestAsString(String whatQuerry, String typeQuerry, String searchValue) {
+		//searchValue.replaceAll("\\s", "%20"); FIXME
 		StringBuilder strBuilder = new StringBuilder();
-		if("search".equals(whatQuerry)) {
+		if("search".equals(whatQuerry) || "show".equals(whatQuerry)) {
 			strBuilder.append("https://api.spotify.com/v1/search?query=");			
+			strBuilder.append(searchValue);
+			strBuilder.append("&type=");
+			strBuilder.append(typeQuerry);
+			
+			if("show".equals(whatQuerry)) {
+				strBuilder.append("&limit=1");
+			}
 		}
-		if("show".equals(whatQuerry)) {
-			strBuilder.append("https://api.spotify.com/v1/show?query=");
+		
+		if("albums".equals(whatQuerry)) {
+			strBuilder.append("https://api.spotify.com/v1/albums/");	
+			strBuilder.append(searchValue);
+			strBuilder.append("/tracks");
 		}
-		strBuilder.append(searchValue);
-		strBuilder.append("&type=");
-		strBuilder.append(typeQuerry);
+		if("audioFeatures".equals(whatQuerry)) {
+			
+		}
 		
 		return strBuilder.toString();
+	}
+	
+	private static String getFeaturesOfAlbum(String token, String albumName) {
+		String jsonSearchAlbum = "";
+		try {
+			jsonSearchAlbum = PingAppliServer.getRequest(token, "show", "album", albumName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String idAlbum = PingAppliServer.getIdOfAlbum(jsonSearchAlbum);				
+		
+		String jsonGetTracksOfAlbum = "";
+		try {
+			jsonGetTracksOfAlbum = PingAppliServer.getRequest(token, "albums", "useless", idAlbum);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+
+		List<String> listIdOfTracksInAlbum = PingAppliServer.getAllIdsOfTrackInAlbum(jsonGetTracksOfAlbum);
+		
+		StringBuilder catIds = new StringBuilder();
+		for(String id : listIdOfTracksInAlbum) {
+			catIds.append(id + ",");
+		}
+		String idsCat = catIds.toString();
+		
+		String jsonFeaturesOfTracks = "";
+		try {
+			jsonFeaturesOfTracks = PingAppliServer.getRequest(token, "audioFeatures", "useless", idsCat);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return jsonFeaturesOfTracks;
+	}
+	
+	private static String getIdOfAlbum(String jsonOfShowAlbum) {
+		//parse JsonSearchAlbum to get Id of the album
+		JSONObject jsonObj = new JSONObject(jsonOfShowAlbum);
+		JSONObject albumsObject = jsonObj.getJSONObject("albums");
+		JSONArray itemsArray = albumsObject.getJSONArray("items");
+		JSONObject itemObject = (JSONObject)itemsArray.get(0);
+		String idAlbum = itemObject.getString("id");
+		
+		return idAlbum;
+	}
+	
+	private static List<String> getAllIdsOfTrackInAlbum(String jsonTracksOfAlbum){
+		//parse JsonGetAlbum to get all tracks		
+		List<String> ListIdOfAllTracksInAlbum = new ArrayList<String>();
+		JSONObject jsonObj = new JSONObject(jsonTracksOfAlbum);
+		JSONArray itemsArray = jsonObj.getJSONArray("items");
+		for(int i = 0; i < itemsArray.length(); i++) {
+			JSONObject itemObject = (JSONObject)itemsArray.get(i);
+			String idTrack = itemObject.getString("id");
+			ListIdOfAllTracksInAlbum.add(idTrack);
+		}
+		return ListIdOfAllTracksInAlbum;
 	}
 	
 	private static void addSeachRequestHeader(HttpGet getRequest, String token){
 		getRequest.addHeader("Authorization", "Bearer " + token);
 		getRequest.addHeader("accept", "application/json");
 	}
-	// http://127.0.0.1:9000/?value=test&type=artiste&token
+	// http://127.0.0.1:9000/?value=test&type=artist&token=BQBc3yEqiK4kjLaAWtBNQouLC1QB0EP-3HxFVNhQzr-4YPVlk5gtMCVHoY4MUqV8_bsLvdDbzfzXTiHJCF1Fcvl9iCHbKt8tEGcmT2G64tX8GKMgorPHmedmHvFE2G8TNoXB2gCJfRCgn41aP0Ik5SwZzUip65QQgadzu_eXK8TVLCeE_nJOwhMK-WSVOY2-K0Q2XjaN2Y5z1R5VY3I0R6aDdOQwTBR0kqCnMAm0huE4hdNRFKAwEjG7a9CaOSXMaxVB0x0EYWCpaQqvGDvn2i6HCrKn8yq0Saw
 	static public void main(String args[]){
 		Blade.of().get("/", ctx -> {
 	        String value = ctx.fromString("value");
@@ -81,13 +156,8 @@ public class PingAppliServer{
 	        System.out.println("value is:" + value);
 	        System.out.println("token is:" + token);
 	        System.out.println("type is:" + type);
-	        String Json = "";
-	        try {
-	        	Json = PingAppliServer.getRequest(token, value, only, type);
-	        }
-	        catch (IOException e) {
-				e.printStackTrace();
-			}
+	        String tmpDeleteMe = PingAppliServer.getFeaturesOfAlbum(token, "Hardkvas");
+	        ctx.text("oui");
 	    }).start();
 	}
 
