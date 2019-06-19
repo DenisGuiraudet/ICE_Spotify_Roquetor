@@ -1,4 +1,4 @@
-package m1ICE.Ping;
+package server;
 
 public enum SearchTypeEnum {
 	TRACK,

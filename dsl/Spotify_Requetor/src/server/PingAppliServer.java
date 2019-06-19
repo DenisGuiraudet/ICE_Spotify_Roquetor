@@ -1,4 +1,4 @@
-package m1ICE.Ping;
+package server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import com.blade.Blade;
 
 public class PingAppliServer{
-
 	private static final long serialVersionUID = 7036878533690593349L;
 	
 	public static String getRequest(String token, String searchValue, String whatQuerry, String typeQuerry) throws IOException{
