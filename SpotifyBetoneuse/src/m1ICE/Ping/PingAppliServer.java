@@ -73,7 +73,8 @@ public class PingAppliServer{
 			strBuilder.append("/tracks");
 		}
 		if("audioFeatures".equals(whatQuerry)) {
-			
+			strBuilder.append("https://api.spotify.com/v1/audio-features?ids=");	
+			strBuilder.append(searchValue);
 		}
 		
 		return strBuilder.toString();
