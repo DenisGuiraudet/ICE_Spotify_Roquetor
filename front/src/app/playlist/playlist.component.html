@@ -3,7 +3,7 @@
 
 <mat-divider></mat-divider>
 
-<mat-card-header>
+<mat-card-header *ngIf="data != null">
     <img mat-card-avatar [attr.src]="data.image"/>
     <mat-card-title>
         {{ data.name }} {{ data.followers }}
@@ -13,7 +13,7 @@
     </mat-card-subtitle>
 </mat-card-header>
 
-<table class="mat-table">
+<table class="mat-table" *ngIf="data != null">
 
     <tr class="mat-row table-header"> 
         <th class="mat-header-cell">Name</th>

@@ -222,9 +222,9 @@ public class SpotifyRequetorServer{
 	        String token = ctx.fromString("token");
 	        String only = ctx.fromString("only");
 	        if (only != null) {
-	        	only = "show";
+	        	only = "only";
 	        } else {
-	        	only = "search";
+	        	only = "";
 	        }
 	        System.out.println("value is:" + value);
 	        System.out.println("token is:" + token);

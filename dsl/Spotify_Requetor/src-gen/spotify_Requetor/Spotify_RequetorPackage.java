@@ -4,7 +4,6 @@ package spotify_Requetor;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -231,22 +230,13 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int REQUEST_FEATURE_COUNT = 12;
 
 	/**
-	 * The operation id for the '<em>Search</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST___SEARCH__STRING = 0;
-
-	/**
 	 * The number of operations of the '<em>Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_OPERATION_COUNT = 1;
+	int REQUEST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link spotify_Requetor.impl.ArtistImpl <em>Artist</em>}' class.
@@ -421,15 +411,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ARTIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Search</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIST___SEARCH__STRING = REQUEST___SEARCH__STRING;
-
-	/**
 	 * The number of operations of the '<em>Artist</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,15 +583,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	int ALBUM_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Search</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALBUM___SEARCH__STRING = REQUEST___SEARCH__STRING;
-
-	/**
 	 * The number of operations of the '<em>Album</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -772,15 +744,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRACK_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Search</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACK___SEARCH__STRING = REQUEST___SEARCH__STRING;
 
 	/**
 	 * The number of operations of the '<em>Track</em>' class.
@@ -953,15 +916,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLAYLIST_FEATURE_COUNT = REQUEST_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Search</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYLIST___SEARCH__STRING = REQUEST___SEARCH__STRING;
 
 	/**
 	 * The number of operations of the '<em>Playlist</em>' class.
@@ -1363,16 +1317,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 	EAttribute getRequest_Duration_ms();
 
 	/**
-	 * Returns the meta object for the '{@link spotify_Requetor.Request#search(java.lang.String) <em>Search</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Search</em>' operation.
-	 * @see spotify_Requetor.Request#search(java.lang.String)
-	 * @generated
-	 */
-	EOperation getRequest__Search__String();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1694,14 +1638,6 @@ public interface Spotify_RequetorPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REQUEST__DURATION_MS = eINSTANCE.getRequest_Duration_ms();
-
-		/**
-		 * The meta object literal for the '<em><b>Search</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation REQUEST___SEARCH__STRING = eINSTANCE.getRequest__Search__String();
 
 	}
 

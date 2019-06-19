@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<spotify_Requetor:CommandManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:spotify_Requetor="http://www.example.org/spotify_Requetor" token="fakeToken">
-  <request xsi:type="spotify_Requetor:Artist" name="Rammstein" id="6wWVKhxIU2cEi0K81v7HvP" followers="{&quot;total&quot;:2913654,&quot;href&quot;:null}" popularity="87" image="https://i.scdn.co/image/cdf344b2f5124d1f2f1217c45f12096730c70560"/>
-</spotify_Requetor:CommandManager>

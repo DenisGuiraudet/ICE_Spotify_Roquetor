@@ -344,12 +344,4 @@ public interface Request extends EObject {
 	 */
 	void setDuration_ms(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String search(String target);
-
 } // Request
