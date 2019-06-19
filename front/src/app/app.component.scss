@@ -1,7 +1,58 @@
-.page-container {
-    margin: 20px;
+@import './common.scss';
+
+.mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../assets/img/SpotifyReq_background.png");
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .logo {
+        height: calc(100% - 10px);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            filter: invert(75%);
+        }
+    }
+    .flex-spacer {
+        flex: 1;
+    }
+    a {
+        padding: 2px 10px;
+        margin: 2px 32px 2px 32px;
+        color: white;
+        background: rgba(green, 0.4);
+        border: solid 0 green;
+        border-radius: 4px;
+        font-size: 17px;
+        text-decoration:none;
+        transition: all 0.2s ease;
+        &:hover {
+            margin: 0 30px 0 30px;
+            background: green;
+            border-width: 2px;
+        }
+    }
+    input {
+        max-width: 200px;
+    }
 }
 
-.logo {
-    cursor: pointer;
+.page-container {
+    margin: 20px;
+    &.album, 
+    &.albums {
+        background-color: $album-color;
+    }
+    &.artist,
+    &.artists {
+        background-color: $artist-color;
+    }
+    &.playlist,
+    &.playlists {
+        background-color: $playlist-color;
+    }
+    &.track,
+    &.tracks {
+        background-color: $track-color;
+    }
 }

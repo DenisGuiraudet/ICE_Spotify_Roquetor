@@ -1,0 +1,30 @@
+
+<app-searchbar [initValue]="'search artist '"></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table class="mat-table">
+
+    <tr class="mat-row table-header">
+        <th class="mat-header-cell">Image</th>
+        <th class="mat-header-cell">Name</th>
+        <th class="mat-header-cell">Popularity</th>
+        <th class="mat-header-cell">Followers</th>
+    </tr>
+  
+    <tr class="mat-row" *ngFor="let artist of data.artists">
+        <td class="mat-cell">
+            <img [attr.src]="artist.image" class="mat-card-avatar"/>
+        </td>
+        <td class="mat-cell">
+            {{ artist.name }}
+        </td>
+        <td class="mat-cell">
+            {{ artist.popularity }}
+        </td>
+        <td class="mat-cell">
+            {{ artist.followers }}
+        </td>
+    </tr>
+  
+</table>
