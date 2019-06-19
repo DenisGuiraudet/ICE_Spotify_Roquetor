@@ -17,7 +17,6 @@ import com.blade.Blade;
 
 public class SpotifyRequetorServer{
 
-	private static final long serialVersionUID = 7036878533690593349L;
 	private static final String apiUrl = "https://api.spotify.com/v1";
 	
 	public static String getRequest(String token, String whatQuerry, String typeQuerry, String searchValue) throws IOException{
@@ -48,10 +47,11 @@ public class SpotifyRequetorServer{
 			}
 			
 			String Json = strBuilder.toString();
-			
 			return Json;
 		} catch (IOException e) {
 			throw e;
+		} finally {
+			httpClient.close();
 		}
 	}
 	
