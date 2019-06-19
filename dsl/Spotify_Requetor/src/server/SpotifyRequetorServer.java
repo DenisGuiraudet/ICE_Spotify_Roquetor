@@ -15,6 +15,8 @@ import org.json.JSONObject;
 
 import com.blade.Blade;
 
+import dsl.XmiHelper;
+
 public class SpotifyRequetorServer{
 
 	private static final String apiUrl = "https://api.spotify.com/v1";
@@ -167,7 +169,17 @@ public class SpotifyRequetorServer{
 	        catch (IOException e) {
 				e.printStackTrace();
 			}
-	        ctx.text("oui");
+	        String req = type + "/" + value + "/" + only;
+	        System.out.println("req is:" + req);
+	        try {
+	        	System.out.println("debutDSL:");
+				XmiHelper.fillXmiWithJsonData(token, req, Json);
+				System.out.println("finDSL:");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        ctx.text("ok");
 	    }).start();
 	}
 

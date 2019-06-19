@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<spotify_Requetor:CommandManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:spotify_Requetor="http://www.example.org/spotify_Requetor">
-  <request xsi:type="spotify_Requetor:Artist" name="David Guetta"/>
-  <request xsi:type="spotify_Requetor:Track" name="Titanium"/>
-  <request xsi:type="spotify_Requetor:Track" name="Titanium2"/>
-  <request xsi:type="spotify_Requetor:Track" name="Titanium3"/>
-</spotify_Requetor:CommandManager>
