@@ -129,7 +129,6 @@ export class SearchbarComponent implements OnInit {
   readXml(token: String) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "../assets/dsl/Spotify_Requetor/" +token+ ".xmi", true);
-    console.log(rawFile);
     rawFile.onreadystatechange = () => {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200 || rawFile.status == 0){
@@ -143,7 +142,6 @@ export class SearchbarComponent implements OnInit {
   }
 
   parsexml(xml) {
-    console.log("marche", xml);
     let datas = xml['spotify_Requetor:CommandManager'].request;
     let mainData = datas[0].$;
     let mainDataType = mainData['xsi:type'];
