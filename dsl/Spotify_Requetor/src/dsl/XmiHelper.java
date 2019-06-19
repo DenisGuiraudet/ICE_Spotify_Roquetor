@@ -129,6 +129,7 @@ public class XmiHelper {
 		artist.setImage(((JSONObject)data).get("image").toString());
 		cm.getRequest().add(artist);
 	}
+	
 	private static void fillAlbum(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Album album = factory.createAlbum();
 		album.setName(((JSONObject)data).get("name").toString());
@@ -138,6 +139,7 @@ public class XmiHelper {
 		album.setImage(((JSONObject)data).get("image").toString());
 		cm.getRequest().add(album);
 	}
+	
 	private static void fillTrack(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Track track = factory.createTrack();
 		track.setName(((JSONObject)data).get("name").toString());
@@ -157,6 +159,7 @@ public class XmiHelper {
 		track.setDuration_ms(((JSONObject)data).get("duration_ms").toString());
 		cm.getRequest().add(track);
 	}
+	
 	private static void fillPlaylist(Object data, Spotify_RequetorFactory factory, CommandManager cm) throws JSONException {
 		Playlist playlist = factory.createPlaylist();
 		playlist.setName(((JSONObject)data).get("name").toString());
