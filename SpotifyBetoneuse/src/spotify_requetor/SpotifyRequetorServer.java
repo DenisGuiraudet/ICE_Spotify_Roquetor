@@ -157,16 +157,14 @@ public class SpotifyRequetorServer{
 	        System.out.println("value is:" + value);
 	        System.out.println("token is:" + token);
 	        System.out.println("type is:" + type);
-	        String Json = "";
-	        Json = SpotifyRequetorServer.getFeaturesOfAlbum(token, "Hardkvas");
-	        /*
+	        String Json = "";	        
 	        try {
-	        	Json = PingAppliServer.getRequest(token, value, only, type);
+	        	Json = SpotifyRequetorServer.getRequest(token, only, type, value);
 	        }
 	        catch (IOException e) {
 				e.printStackTrace();
 			}
-			*/
+			
 	        ctx.text("oui");
 	    }).start();
 	}
