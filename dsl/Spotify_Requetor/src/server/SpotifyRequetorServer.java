@@ -18,6 +18,7 @@ import com.blade.Blade;
 public class SpotifyRequetorServer{
 
 	private static final long serialVersionUID = 7036878533690593349L;
+	private static final String apiUrl = "https://api.spotify.com/v1";
 	
 	public static String getRequest(String token, String whatQuerry, String typeQuerry, String searchValue) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
@@ -58,8 +59,9 @@ public class SpotifyRequetorServer{
 		searchValue = searchValue.replaceAll(" ", "%20");
 
 		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append(apiUrl);
 		if("search".equals(whatQuerry) || "show".equals(whatQuerry)) {
-			strBuilder.append("https://api.spotify.com/v1/search?query=");			
+			strBuilder.append("/search?query=");			
 			strBuilder.append(searchValue);
 			strBuilder.append("&type=");
 			strBuilder.append(typeQuerry);
@@ -70,12 +72,12 @@ public class SpotifyRequetorServer{
 		}
 		
 		if("albums".equals(whatQuerry)) {
-			strBuilder.append("https://api.spotify.com/v1/albums/");	
+			strBuilder.append("/albums/");	
 			strBuilder.append(searchValue);
 			strBuilder.append("/tracks");
 		}
 		if("audioFeatures".equals(whatQuerry)) {
-			strBuilder.append("https://api.spotify.com/v1/audio-features?ids=");	
+			strBuilder.append("/audio-features?ids=");	
 			strBuilder.append(searchValue);
 		}
 		
