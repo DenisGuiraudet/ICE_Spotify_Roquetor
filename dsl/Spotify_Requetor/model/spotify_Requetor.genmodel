@@ -50,9 +50,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/liveness"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/energy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spotify_Requetor.ecore#//Request/duration_ms"/>
-      <genOperations ecoreOperation="spotify_Requetor.ecore#//Request/search">
-        <genParameters ecoreParameter="spotify_Requetor.ecore#//Request/search/target"/>
-      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
