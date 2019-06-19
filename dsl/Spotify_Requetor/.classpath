@@ -11,7 +11,7 @@
 	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
 	<classpathentry kind="lib" path="lib/blade-asm-0.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/blade-log-0.1.6.jar"/>
-	<classpathentry kind="lib" path="lib/blade-mvc-2.0.15.ALPHA.jar"/>
+	<classpathentry kind="lib" path="lib/blade-mvc-2.0.15.ALPHA.jar" sourcepath="C:/Users/pause/.m2/repository/com/bladejava/blade-mvc/2.0.15.ALPHA/blade-mvc-2.0.15.ALPHA-sources.jar"/>
 	<classpathentry kind="lib" path="lib/netty-buffer-4.1.30.Final.jar"/>
 	<classpathentry kind="lib" path="lib/netty-codec-4.1.30.Final.jar"/>
 	<classpathentry kind="lib" path="lib/netty-codec-http-4.1.30.Final.jar"/>
