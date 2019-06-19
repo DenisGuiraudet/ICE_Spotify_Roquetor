@@ -99,14 +99,18 @@ public class XmiHelper {
 				dataTrack = null;
 			}
 			if (!splittedRequest[2].isEmpty()) {
-				StatsBean stats = new StatsBean();
-				stats.makeStats(dataTrack);
-				// 1 artist only
-				fillAlbum(dataAlbum.get(0), factory, cm, stats);
-				// fill tracks
-				if (dataAlbum != null) {// if Album has tracks
-					for (int i = 0; i < dataAlbum.length(); i++) {
-						fillTrack(dataTrack.get(i), factory, cm, stats);
+				StatsBean stats;
+				if (dataTrack != null) {
+					stats = new StatsBean();
+					stats.makeStats(dataTrack);
+					// 1 artist only
+					fillAlbum(dataAlbum.get(0), factory, cm, stats);
+					
+					// fill tracks
+					if (dataAlbum != null) {// if Album has tracks
+						for (int i = 0; i < dataAlbum.length(); i++) {
+							fillTrack(dataTrack.get(i), factory, cm, stats);
+						}
 					}
 				}
 			} else {
@@ -123,10 +127,12 @@ public class XmiHelper {
 				dataTrack1 = null;
 			}
 			if (!splittedRequest[2].isEmpty()) {
-				StatsBean stats = new StatsBean();
-				stats.makeStats(dataTrack1);
-				// 1 track only
-				fillTrack(dataTrack1.get(0), factory, cm, stats);
+				if (dataTrack1 != null) {
+					StatsBean stats = new StatsBean();
+					stats.makeStats(dataTrack1);
+					// 1 track only
+					fillTrack(dataTrack1.get(0), factory, cm, stats);
+				}
 			} else {
 				for (int i = 0; i < dataTrack1.length(); i++) {
 					fillTrack(dataTrack1.get(i), factory, cm, null);
@@ -147,10 +153,12 @@ public class XmiHelper {
 				dataTrack2 = null;
 			}
 			if (!splittedRequest[2].isEmpty()) {
-				StatsBean stats = new StatsBean();
-				stats.makeStats(dataTrack2);
-				// 1 playlist only
-				fillPlaylist(dataPlaylist.get(0), factory, cm, stats);
+				if (dataTrack2 != null) {
+					StatsBean stats = new StatsBean();
+					stats.makeStats(dataTrack2);
+					// 1 playlist only
+					fillPlaylist(dataPlaylist.get(0), factory, cm, stats);
+				}
 			} else {
 				for (int i = 0; i < dataPlaylist.length(); i++) {
 					fillPlaylist(dataPlaylist.get(i), factory, cm, null);
