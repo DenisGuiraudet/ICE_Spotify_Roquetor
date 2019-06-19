@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistsComponent implements OnInit {
   
-  data = {
+  data = this.storeService.data;
+  /*data = {
     playlists: [
       {
         description: 'description',
@@ -18,7 +19,7 @@ export class PlaylistsComponent implements OnInit {
         total: 0
       }
     ]
-  }
+  }*/
 
   constructor() { }
 
