@@ -55,7 +55,8 @@ public class SpotifyRequetorServer{
 	}
 	
 	private static String getRequestAsString(String whatQuerry, String typeQuerry, String searchValue) {
-		//searchValue.replaceAll("\\s", "%20"); FIXME
+		searchValue = searchValue.replaceAll(" ", "%20");
+
 		StringBuilder strBuilder = new StringBuilder();
 		if("search".equals(whatQuerry) || "show".equals(whatQuerry)) {
 			strBuilder.append("https://api.spotify.com/v1/search?query=");			
