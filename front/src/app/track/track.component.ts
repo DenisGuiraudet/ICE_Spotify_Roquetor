@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-track',
@@ -32,7 +33,11 @@ export class TrackComponent implements OnInit {
     tempo: 0
   }*/
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+    if (!this.storeService.spotifyUserToken) {
+      console.log('Spotify not init');
+    }
+  }
 
   ngOnInit() {
   }
