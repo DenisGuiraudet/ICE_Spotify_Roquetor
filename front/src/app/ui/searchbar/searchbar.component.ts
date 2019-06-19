@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {Router} from "@angular/router";
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Observable} from 'rxjs';
@@ -45,7 +46,8 @@ export class SearchbarComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private storeService: StoreService
+    private storeService: StoreService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -145,29 +147,37 @@ export class SearchbarComponent implements OnInit {
       case SPOTIFY_TYPES.ALBUM:
         if (typeof mainData.track !== 'undefined') {
           this.storeService.data = helperParser.parseAlbum(datas);
+          this.router.navigate(['/album']);
         } else {
           this.storeService.data = helperParser.parseAlbums(datas);
+          this.router.navigate(['/albums']);
         }
         break;
       case SPOTIFY_TYPES.ARTIST:
           if (datas.length === 1) {
             this.storeService.data = helperParser.parseArtist(datas);
+            this.router.navigate(['/artist']);
           } else {
             this.storeService.data = helperParser.parseArtists(datas);
+            this.router.navigate(['/artists']);
           }
         break;
       case SPOTIFY_TYPES.PLAYLIST:
           if (typeof mainData.track !== 'undefined') {
             this.storeService.data = helperParser.parsePlaylist(datas);
+            this.router.navigate(['/playlist']);
           } else {
             this.storeService.data = helperParser.parsePlaylists(datas);
+            this.router.navigate(['/playlists']);
           }
         break;
       case SPOTIFY_TYPES.TRACK:
           if (datas.length === 1) {
             this.storeService.data = helperParser.parseTrack(datas);
+            this.router.navigate(['/track']);
           } else {
             this.storeService.data = helperParser.parseTracks(datas);
+            this.router.navigate(['/tracks']);
           }
         break;
       default:
