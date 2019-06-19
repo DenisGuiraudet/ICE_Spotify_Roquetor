@@ -1,8 +1,15 @@
 
 <mat-toolbar>
-  <span class="logo" routerLink="/">Spotify Requetor</span>
+  <img src="./assets/img/SpotifyReq_name_white.png" class="logo" routerLink="/" />
+  <div class="flex-spacer"></div>
+  <a href="https://developer.spotify.com/console/get-current-user/" target="_blank">
+    Récupérer un token
+  </a>
+  <mat-form-field>
+    <input matInput [(ngModel)]="storeService.spotifyUserToken" />
+  </mat-form-field>
 </mat-toolbar>
 
-<mat-card class="page-container">
+<mat-card class="page-container" [ngClass]="currentRoute">
   <router-outlet></router-outlet>
 </mat-card>

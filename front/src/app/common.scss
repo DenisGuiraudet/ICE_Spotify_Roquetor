@@ -1,0 +1,31 @@
+
+$album-color: darken(#A39684, 30);
+$artist-color: darken(#BDBDA1, 30);
+$playlist-color: darken(#8E8397, 30);
+$track-color: darken(#7B8FA3, 30);
+
+.mat-card-header,
+table {
+    margin-top: 1.34375em;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-cell {
+    text-align: center;
+    margin-top : 10px;
+}
+
+.table-header {
+    height: 40px;
+    .mat-header-cell {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+.mat-row.ng-star-inserted:hover {
+    opacity: 0.6;
+}

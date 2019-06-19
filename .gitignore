@@ -1,5 +1,4 @@
 
 \.DS_Store
-/.metadata/
-
-SpotifyBetoneuse/httpResponse\.json
+\.metadata
+\.recommenders

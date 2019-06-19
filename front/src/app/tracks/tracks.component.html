@@ -1,0 +1,30 @@
+
+<app-searchbar [initValue]="'search track '"></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table class="mat-table">
+
+    <tr class="mat-row table-header">
+        <th class="mat-header-cell">Image</th>
+        <th class="mat-header-cell">Name</th>
+        <th class="mat-header-cell">Popularity</th>
+        <th class="mat-header-cell">Duration (ms)</th>
+    </tr>
+
+    <tr class="mat-row" *ngFor="let track of data.tracks">
+        <td class="mat-cell"> 
+            <img [attr.src]="track.album.image" class="mat-card-avatar"/>
+        </td>
+        <td class="mat-cell">
+            {{ track.name }}
+        </td>
+        <td class="mat-cell">
+            {{ track.popularity }}
+        </td>
+        <td class="mat-cell">
+            {{ track.duration_ms }}
+        </td>
+    </tr>
+    
+</table>

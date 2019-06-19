@@ -1,7 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { StoreService } from '../../store.service';
+import axios from 'axios';
+import { parseString } from 'xml2js';
+import { TYPES, SPOTIFY_TYPES } from '../../constants';
+import helperParser from '../../helpers/parser';
 
 export interface StateGroup {
   letter: string;
@@ -20,6 +26,7 @@ export const _filter = (opt: string[], value: string): string[] => {
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
+  @Input() initValue: String;
   
   stateForm: FormGroup = this.fb.group({
     stateGroup: '',
@@ -35,9 +42,18 @@ export class SearchbarComponent implements OnInit {
 
   stateGroupOptions: Observable<StateGroup[]>;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private storeService: StoreService
+  ) {}
 
   ngOnInit() {
+    if (this.initValue) {
+      this.stateForm.get('stateGroup').setValue(this.initValue);
+    }
+
+    // Show / Search placeholders
     this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
       .pipe(
         startWith(''),
@@ -56,7 +72,117 @@ export class SearchbarComponent implements OnInit {
   }
 
   private search() {
-    console.log(this.stateForm.get('stateGroup').value);
+    if (!this.storeService.spotifyUserToken) {
+      this.showSnackbar('No spotify token');
+      return;
+    }
+
+    let params = this.cleaningRequest(this.stateForm.get('stateGroup').value);
+    if (!params) {
+      this.showSnackbar('Missing some words in the request');
+      return;
+    }
+    
+    // Back Call
+    axios.get('http://127.0.0.1:9000/', {
+      params
+    }).then(response => {
+      this.showSnackbar('response ' + response);
+      this.readXml();
+    }).catch(error => {
+      this.showSnackbar('error ' + error);
+    }).finally(() => {
+      this.readXml(); // TODO: remove from here once it works
+    });
+  }
+
+  private cleaningRequest(request): object {
+    let words = request.split(' ');
+    if (words.length < 3) {
+      return null;
+    }
+
+    let value = "";
+    for(let i = 2; i < words.length; i++) {
+      value += words[i];
+      if(i != words.length-1)
+      value += " ";
+    }
+
+    let params = {
+      token: this.storeService.spotifyUserToken,
+      value,
+      type: words[1]
+    };
+    if(words[0] == 'show') {
+      params['only'] = 'only';
+    }
+
+    return params;
+  }
+
+  readXml() {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "../assets/teste.xmi", false);
+    rawFile.onreadystatechange = () => {
+        if(rawFile.readyState === 4){
+            if(rawFile.status === 200 || rawFile.status == 0){
+                parseString(rawFile.responseText, (err, result) => {
+                  this.parsexml(result);
+                });
+            }
+        }
+    }
+    rawFile.send(null);
+  }
+
+  parsexml(xml) {
+    let datas = xml['spotify_Requetor:CommandManager'].request;
+    let mainData = datas[0].$;
+    let mainDataType = mainData['xsi:type'];
+
+    switch (mainDataType) {
+      case SPOTIFY_TYPES.ALBUM:
+        if (typeof mainData.track !== 'undefined') {
+          this.storeService.data = helperParser.parseAlbum(datas);
+        } else {
+          this.storeService.data = helperParser.parseAlbums(datas);
+        }
+        break;
+      case SPOTIFY_TYPES.ARTIST:
+          if (datas.length === 1) {
+            this.storeService.data = helperParser.parseArtist(datas);
+          } else {
+            this.storeService.data = helperParser.parseArtists(datas);
+          }
+        break;
+      case SPOTIFY_TYPES.PLAYLIST:
+          if (typeof mainData.track !== 'undefined') {
+            this.storeService.data = helperParser.parsePlaylist(datas);
+          } else {
+            this.storeService.data = helperParser.parsePlaylists(datas);
+          }
+        break;
+      case SPOTIFY_TYPES.TRACK:
+          if (datas.length === 1) {
+            this.storeService.data = helperParser.parseTrack(datas);
+          } else {
+            this.storeService.data = helperParser.parseTracks(datas);
+          }
+        break;
+      default:
+        this.showSnackbar('Type unknown ' + mainDataType);
+    }
+  }
+
+  showSnackbar(message: string) {
+    this._snackBar.open(
+      message,
+      '❌',
+      {
+        duration: 2000
+      }
+    );
   }
 
 }

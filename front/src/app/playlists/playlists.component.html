@@ -1,0 +1,30 @@
+
+<app-searchbar [initValue]="'search playlist '"></app-searchbar>
+
+<mat-divider></mat-divider>
+
+<table class="mat-table">
+
+    <tr class="mat-row table-header">
+        <th class="mat-header-cell">Image</th>
+        <th class="mat-header-cell">Name</th>
+        <th class="mat-header-cell">Description</th>
+        <th class="mat-header-cell">Followers</th>
+    </tr>
+
+    <tr class="mat-row" *ngFor="let playlist of data.playlists">
+        <td class="mat-cell">
+            <img [attr.src]="playlist.image" class="mat-card-avatar"/>
+        </td>
+        <td class="mat-cell">
+            {{ playlist.name }}
+        </td>
+        <td class="mat-cell">
+            {{ playlist.description }}
+        </td>
+        <td class="mat-cell">
+            {{ playlist.followers }}
+        </td>
+    </tr>
+    
+</table>
