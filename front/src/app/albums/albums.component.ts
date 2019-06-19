@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from "@angular/router";
+import {FormBuilder} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import { StoreService } from '../store.service';
+import { SearchbarComponent } from '../ui/searchbar/searchbar.component';
 
 @Component({
   selector: 'app-albums',
@@ -8,6 +11,7 @@ import { StoreService } from '../store.service';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+  private searchbar: SearchbarComponent;
 
   data = {
     albums: [
@@ -30,13 +34,23 @@ export class AlbumsComponent implements OnInit {
     ]
   }
 
-  constructor(private storeService: StoreService) {
+  constructor(
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private storeService: StoreService,
+    private router: Router
+  ) {
+    this.searchbar = new SearchbarComponent(fb, _snackBar, storeService, router);
     if (!this.storeService.spotifyUserToken) {
       console.log('Spotify not init');
     }
   }
 
   ngOnInit() {
+  }
+
+  private search(name) {
+    this.searchbar.search("search album " + name);
   }
 
 }

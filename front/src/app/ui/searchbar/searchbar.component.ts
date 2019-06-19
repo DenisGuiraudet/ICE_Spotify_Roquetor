@@ -73,13 +73,13 @@ export class SearchbarComponent implements OnInit {
     return this.stateGroups;
   }
 
-  private search() {
+  public search(outsideSearch) {
     if (!this.storeService.spotifyUserToken) {
       this.showSnackbar('No spotify token');
       return;
     }
 
-    let params = this.cleaningRequest(this.stateForm.get('stateGroup').value);
+    let params = this.cleaningRequest(outsideSearch ? outsideSearch : this.stateForm.get('stateGroup').value);
     if (!params) {
       this.showSnackbar('Missing some words in the request');
       return;
