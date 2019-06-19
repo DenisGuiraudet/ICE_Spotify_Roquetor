@@ -13,7 +13,8 @@ import { SearchbarComponent } from '../ui/searchbar/searchbar.component';
 export class AlbumsComponent implements OnInit {
   private searchbar: SearchbarComponent;
 
-  data = {
+  data = this.storeService.data;
+  /*data = {
     albums: [
       {
         id: 'id',
@@ -32,7 +33,7 @@ export class AlbumsComponent implements OnInit {
         tracks_total: '12'
       }
     ]
-  }
+  }*/
 
   constructor(
     private fb: FormBuilder,

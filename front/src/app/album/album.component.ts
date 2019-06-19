@@ -8,8 +8,9 @@ import { StoreService } from '../store.service';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
-  
-  data = {
+
+  data = this.storeService.data;
+  /*data = {
     id: 'id',
     image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
     name: 'name',
@@ -36,7 +37,7 @@ export class AlbumComponent implements OnInit {
         track_number: 4
       }
     ]
-  }
+  }*/
 
   constructor(private storeService: StoreService) {
     if (!this.storeService.spotifyUserToken) {
