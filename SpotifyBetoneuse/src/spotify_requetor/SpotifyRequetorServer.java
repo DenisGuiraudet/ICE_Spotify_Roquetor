@@ -1,4 +1,4 @@
-package m1ICE.Ping;
+package spotify_requetor;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,17 +14,17 @@ import org.json.JSONObject;
 
 import com.blade.Blade;
 
-public class PingAppliServer{
+public class SpotifyRequetorServer{
 
 	private static final long serialVersionUID = 7036878533690593349L;
 	
 	public static String getRequest(String token, String whatQuerry, String typeQuerry, String searchValue) throws IOException{
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		
-		String request = PingAppliServer.getRequestAsString(whatQuerry, typeQuerry, searchValue);
+		String request = SpotifyRequetorServer.getRequestAsString(whatQuerry, typeQuerry, searchValue);
 
 		HttpGet getRequest = new HttpGet(request);
-		PingAppliServer.addSeachRequestHeader(getRequest, token);
+		SpotifyRequetorServer.addSeachRequestHeader(getRequest, token);
 		
 		try {
 			HttpResponse response = httpClient.execute(getRequest);
@@ -83,21 +83,21 @@ public class PingAppliServer{
 	private static String getFeaturesOfAlbum(String token, String albumName) {
 		String jsonSearchAlbum = "";
 		try {
-			jsonSearchAlbum = PingAppliServer.getRequest(token, "show", "album", albumName);
+			jsonSearchAlbum = SpotifyRequetorServer.getRequest(token, "show", "album", albumName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String idAlbum = PingAppliServer.getIdOfAlbum(jsonSearchAlbum);				
+		String idAlbum = SpotifyRequetorServer.getIdOfAlbum(jsonSearchAlbum);				
 		
 		String jsonGetTracksOfAlbum = "";
 		try {
-			jsonGetTracksOfAlbum = PingAppliServer.getRequest(token, "albums", "useless", idAlbum);
+			jsonGetTracksOfAlbum = SpotifyRequetorServer.getRequest(token, "albums", "useless", idAlbum);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 
-		List<String> listIdOfTracksInAlbum = PingAppliServer.getAllIdsOfTrackInAlbum(jsonGetTracksOfAlbum);
+		List<String> listIdOfTracksInAlbum = SpotifyRequetorServer.getAllIdsOfTrackInAlbum(jsonGetTracksOfAlbum);
 		
 		StringBuilder catIds = new StringBuilder();
 		for(String id : listIdOfTracksInAlbum) {
@@ -107,7 +107,7 @@ public class PingAppliServer{
 		
 		String jsonFeaturesOfTracks = "";
 		try {
-			jsonFeaturesOfTracks = PingAppliServer.getRequest(token, "audioFeatures", "useless", idsCat);
+			jsonFeaturesOfTracks = SpotifyRequetorServer.getRequest(token, "audioFeatures", "useless", idsCat);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -158,12 +158,15 @@ public class PingAppliServer{
 	        System.out.println("token is:" + token);
 	        System.out.println("type is:" + type);
 	        String Json = "";
+	        Json = SpotifyRequetorServer.getFeaturesOfAlbum(token, "Hardkvas");
+	        /*
 	        try {
 	        	Json = PingAppliServer.getRequest(token, value, only, type);
 	        }
 	        catch (IOException e) {
 				e.printStackTrace();
 			}
+			*/
 	        ctx.text("oui");
 	    }).start();
 	}
