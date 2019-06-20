@@ -240,7 +240,11 @@ public class SpotifyRequetorServer{
 	        System.out.println("req is:" + req);
 	        try {
 	        	System.out.println("debutDSL:");
-				XmiHelper.fillXmiWithJsonData(token, req, Json);
+				//Good one
+	        	//XmiHelper.fillXmiWithJsonData(token, req, Json);
+	        	//Démo
+	        	XmiHelper.fillXmiWithJsonData(token, req,
+						"{  \"artists\" : {    \"href\" : \"https://api.spotify.com/v1/search?query=Rammstein&type=artist&market=FR&offset=0&limit=20\",    \"items\" : [ {      \"external_urls\" : {        \"spotify\" : \"https://open.spotify.com/artist/6wWVKhxIU2cEi0K81v7HvP\"      },      \"followers\" : {        \"href\" : null,        \"total\" : 2913654      },      \"genres\" : [ \"alternative metal\", \"german metal\", \"industrial\", \"industrial metal\", \"industrial rock\", \"neue deutsche harte\" ],      \"href\" : \"https://api.spotify.com/v1/artists/6wWVKhxIU2cEi0K81v7HvP\",      \"id\" : \"6wWVKhxIU2cEi0K81v7HvP\",      \"images\" : [ {        \"height\" : 640,        \"url\" : \"https://i.scdn.co/image/cdf344b2f5124d1f2f1217c45f12096730c70560\",        \"width\" : 640      }, {        \"height\" : 320,        \"url\" : \"https://i.scdn.co/image/d7bba2e8eb624d93d8cc7cb57d9ba5fb35f0f901\",        \"width\" : 320      }, {        \"height\" : 160,        \"url\" : \"https://i.scdn.co/image/019518862c16964fa30906a55ad2cd46f3f35c1a\",        \"width\" : 160      } ],      \"name\" : \"Rammstein\",      \"popularity\" : 87,      \"type\" : \"artist\",      \"uri\" : \"spotify:artist:6wWVKhxIU2cEi0K81v7HvP\"    } ],    \"limit\" : 20,    \"next\" : null,    \"offset\" : 0,    \"previous\" : null,    \"total\" : 1  },\"tracks\" : {\"items\" : []} }");
 				System.out.println("finDSL:");
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
