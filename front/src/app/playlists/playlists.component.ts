@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-playlists',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistsComponent implements OnInit {
   
-  data = {
+  data = this.storeService.data;
+  /*data = {
     playlists: [
       {
         description: 'description',
@@ -18,9 +20,13 @@ export class PlaylistsComponent implements OnInit {
         total: 0
       }
     ]
-  }
+  }*/
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+    if (!this.storeService.spotifyUserToken) {
+      console.log('Spotify not init');
+    }
+  }
 
   ngOnInit() {
   }

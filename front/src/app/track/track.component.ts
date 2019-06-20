@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-track',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrackComponent implements OnInit {
   
-  data = {
+  data = this.storeService.data;
+  /*data = {
     album: {
       id: 'id',
       image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
@@ -29,9 +31,13 @@ export class TrackComponent implements OnInit {
     speechiness: 0,
     valence: 0,
     tempo: 0
-  }
+  }*/
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+    if (!this.storeService.spotifyUserToken) {
+      console.log('Spotify not init');
+    }
+  }
 
   ngOnInit() {
   }

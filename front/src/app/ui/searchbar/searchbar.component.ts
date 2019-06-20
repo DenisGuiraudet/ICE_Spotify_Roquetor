@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {Router} from "@angular/router";
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Observable} from 'rxjs';
@@ -45,7 +46,8 @@ export class SearchbarComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private storeService: StoreService
+    private storeService: StoreService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -71,28 +73,31 @@ export class SearchbarComponent implements OnInit {
     return this.stateGroups;
   }
 
-  private search() {
+  public search(outsideSearch) {
     if (!this.storeService.spotifyUserToken) {
       this.showSnackbar('No spotify token');
       return;
     }
 
-    let params = this.cleaningRequest(this.stateForm.get('stateGroup').value);
+    let params = this.cleaningRequest(outsideSearch ? outsideSearch : this.stateForm.get('stateGroup').value);
     if (!params) {
       this.showSnackbar('Missing some words in the request');
       return;
     }
     
     // Back Call
-    axios.get('http://localhost:9000', {
+    axios.get('http://127.0.0.1:9000/', {
       params
     }).then(response => {
-      this.showSnackbar('response ' + response);
-      this.readXml();
+      // this.showSnackbar('response ' + response);
+      // this.readXml(this.storeService.spotifyUserToken);
     }).catch(error => {
-      this.showSnackbar('error ' + error);
+      // if token error, for server we have workaround
+      // if (!this.storeService.spotifyUserToken) {
+      //   this.showSnackbar('error ' + error);
+      // }
     }).finally(() => {
-      this.readXml(); // TODO: remove from here once it works
+      this.readXml(this.storeService.spotifyUserToken); // TODO: remove from here once it works
     });
   }
 
@@ -121,9 +126,9 @@ export class SearchbarComponent implements OnInit {
     return params;
   }
 
-  readXml() {
+  readXml(token: String) {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "../assets/teste.xmi", false);
+    rawFile.open("GET", "../assets/dsl/Spotify_Requetor/" +token+ ".xmi", true);
     rawFile.onreadystatechange = () => {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200 || rawFile.status == 0){
@@ -145,29 +150,37 @@ export class SearchbarComponent implements OnInit {
       case SPOTIFY_TYPES.ALBUM:
         if (typeof mainData.track !== 'undefined') {
           this.storeService.data = helperParser.parseAlbum(datas);
+          this.router.navigate(['/album']);
         } else {
           this.storeService.data = helperParser.parseAlbums(datas);
+          this.router.navigate(['/albums']);
         }
         break;
       case SPOTIFY_TYPES.ARTIST:
           if (datas.length === 1) {
             this.storeService.data = helperParser.parseArtist(datas);
+            this.router.navigate(['/artist']);
           } else {
             this.storeService.data = helperParser.parseArtists(datas);
+            this.router.navigate(['/artists']);
           }
         break;
       case SPOTIFY_TYPES.PLAYLIST:
           if (typeof mainData.track !== 'undefined') {
             this.storeService.data = helperParser.parsePlaylist(datas);
+            this.router.navigate(['/playlist']);
           } else {
             this.storeService.data = helperParser.parsePlaylists(datas);
+            this.router.navigate(['/playlists']);
           }
         break;
       case SPOTIFY_TYPES.TRACK:
           if (datas.length === 1) {
             this.storeService.data = helperParser.parseTrack(datas);
+            this.router.navigate(['/track']);
           } else {
             this.storeService.data = helperParser.parseTracks(datas);
+            this.router.navigate(['/tracks']);
           }
         break;
       default:

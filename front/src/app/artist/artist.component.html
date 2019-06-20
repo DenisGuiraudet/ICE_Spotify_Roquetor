@@ -3,7 +3,7 @@
 
 <mat-divider></mat-divider>
 
-<mat-card-header>
+<mat-card-header *ngIf="data != null">
     <img mat-card-avatar [attr.src]="data.image"/>
     <mat-card-title>
         {{ data.popularity }} {{ data.name }}

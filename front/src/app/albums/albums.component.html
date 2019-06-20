@@ -3,7 +3,7 @@
 
 <mat-divider></mat-divider>
 
-<table class="mat-table">
+<table class="mat-table" *ngIf="data != null">
 
     <tr class="mat-row table-header"> 
         <th class="mat-header-cell">Image</th>
@@ -13,7 +13,7 @@
         <th class="mat-header-cell">Release Date</th>
     </tr>
   
-    <tr class="mat-row" *ngFor="let album of data.albums">
+    <tr class="mat-row" *ngFor="let album of data.albums" (click)="search(album.name)">
         <td class="mat-cell"> 
             <img [attr.src]="album.image" class="mat-card-avatar"/>
         </td>

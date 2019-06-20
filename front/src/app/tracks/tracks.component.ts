@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-tracks',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TracksComponent implements OnInit {
   
-  data = {
+  data = this.storeService.data;
+  /*data = {
     tracks: [
       {
         album: {
@@ -21,9 +23,13 @@ export class TracksComponent implements OnInit {
         popularity: 0
       }
     ]
-  }
+  }*/
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+    if (!this.storeService.spotifyUserToken) {
+      console.log('Spotify not init');
+    }
+  }
 
   ngOnInit() {
   }
