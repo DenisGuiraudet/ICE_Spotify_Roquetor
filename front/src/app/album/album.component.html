@@ -9,7 +9,7 @@
         {{ data.popularity }} {{ data.name }}
     </mat-card-title>
     <mat-card-subtitle>
-        {{ data.release_date }} {{ data.release_date_precision }}
+        {{ data.release_date }}
     </mat-card-subtitle>
 </mat-card-header>
 
@@ -18,7 +18,7 @@
     <tr class="mat-row table-header">
         <th class="mat-header-cell">Name</th>
         <th class="mat-header-cell">Track Number</th>
-        <th class="mat-header-cell">Duration (ms)</th>
+        <th class="mat-header-cell">Danceability</th>
     </tr>
   
     <tr class="mat-row" *ngFor="let track of data.tracks">
@@ -29,7 +29,7 @@
             {{ track.track_number }}
         </td>
         <td class="mat-cell">
-            {{ track.duration_ms }}
+            {{ track.danceability }}
         </td>
     </tr>
   

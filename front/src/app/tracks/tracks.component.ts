@@ -8,8 +8,7 @@ import { StoreService } from '../store.service';
 })
 export class TracksComponent implements OnInit {
   
-  data = this.storeService.data;
-  /*data = {
+  data = {
     tracks: [
       {
         album: {
@@ -23,7 +22,7 @@ export class TracksComponent implements OnInit {
         popularity: 0
       }
     ]
-  }*/
+  }
 
   constructor(private storeService: StoreService) {
     if (!this.storeService.spotifyUserToken) {

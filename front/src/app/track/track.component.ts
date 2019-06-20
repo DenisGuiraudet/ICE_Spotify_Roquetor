@@ -8,8 +8,7 @@ import { StoreService } from '../store.service';
 })
 export class TrackComponent implements OnInit {
   
-  data = this.storeService.data;
-  /*data = {
+  data = {
     album: {
       id: 'id',
       image: 'https://assets.afcdn.com/story/20180420/1155990_w767h767c1cx1879cy955.jpg',
@@ -31,7 +30,7 @@ export class TrackComponent implements OnInit {
     speechiness: 0,
     valence: 0,
     tempo: 0
-  }*/
+  }
 
   constructor(private storeService: StoreService) {
     if (!this.storeService.spotifyUserToken) {
